@@ -1,0 +1,79 @@
+\hypertarget{class_s_q_l_interpreter_1_1_data_table}{}\doxysection{SQLInterpreter\+::Data\+Table Class Reference}
+\label{class_s_q_l_interpreter_1_1_data_table}\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+
+
+{\ttfamily \#include $<$Data\+Table.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_a4a515f32917c8791b9746d77460b367d}{Data\+Table}} ()
+\item 
+bool \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_a81fe81bf47048aa1d1bf26de15a23e2e}{insert}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_row}{Data\+Row}} $>$ data\+Row)
+\item 
+const bool \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_a22ee4483d59efff691243e2db5947842}{is\+Full}} () const
+\item 
+bool \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_ad8642f74e49b288ae0c90c9619b29c75}{fetch\+Data}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_row}{Data\+Row}} $>$$>$ \&results)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_container}{Data\+Container}} $>$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_ab27d4f8b25e142c6a60ff4c2a658429a}{d\+\_\+data\+Container}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table_a268493870499492ffcf6b541adfcd0f9}{num\+Rows}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_a4a515f32917c8791b9746d77460b367d}\label{class_s_q_l_interpreter_1_1_data_table_a4a515f32917c8791b9746d77460b367d}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!DataTable@{DataTable}}
+\index{DataTable@{DataTable}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{DataTable()}{DataTable()}}
+{\footnotesize\ttfamily SQLInterpreter\+::\+Data\+Table\+::\+Data\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_ad8642f74e49b288ae0c90c9619b29c75}\label{class_s_q_l_interpreter_1_1_data_table_ad8642f74e49b288ae0c90c9619b29c75}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!fetchData@{fetchData}}
+\index{fetchData@{fetchData}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{fetchData()}{fetchData()}}
+{\footnotesize\ttfamily bool SQLInterpreter\+::\+Data\+Table\+::fetch\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_row}{Data\+Row}} $>$$>$ \&}]{results }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_a81fe81bf47048aa1d1bf26de15a23e2e}\label{class_s_q_l_interpreter_1_1_data_table_a81fe81bf47048aa1d1bf26de15a23e2e}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!insert@{insert}}
+\index{insert@{insert}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool SQLInterpreter\+::\+Data\+Table\+::insert (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_row}{Data\+Row}} $>$}]{data\+Row }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_a22ee4483d59efff691243e2db5947842}\label{class_s_q_l_interpreter_1_1_data_table_a22ee4483d59efff691243e2db5947842}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!isFull@{isFull}}
+\index{isFull@{isFull}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily const bool SQLInterpreter\+::\+Data\+Table\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_ab27d4f8b25e142c6a60ff4c2a658429a}\label{class_s_q_l_interpreter_1_1_data_table_ab27d4f8b25e142c6a60ff4c2a658429a}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!d\_dataContainer@{d\_dataContainer}}
+\index{d\_dataContainer@{d\_dataContainer}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{d\_dataContainer}{d\_dataContainer}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_container}{Data\+Container}}$>$ SQLInterpreter\+::\+Data\+Table\+::d\+\_\+data\+Container\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_data_table_a268493870499492ffcf6b541adfcd0f9}\label{class_s_q_l_interpreter_1_1_data_table_a268493870499492ffcf6b541adfcd0f9}} 
+\index{SQLInterpreter::DataTable@{SQLInterpreter::DataTable}!numRows@{numRows}}
+\index{numRows@{numRows}!SQLInterpreter::DataTable@{SQLInterpreter::DataTable}}
+\doxysubsubsection{\texorpdfstring{numRows}{numRows}}
+{\footnotesize\ttfamily uint32\+\_\+t SQLInterpreter\+::\+Data\+Table\+::num\+Rows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_data_table_8h}{Data\+Table.\+h}}\item 
+\mbox{\hyperlink{_data_table_8cpp}{Data\+Table.\+cpp}}\end{DoxyCompactItemize}

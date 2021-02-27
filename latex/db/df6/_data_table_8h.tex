@@ -1,0 +1,54 @@
+\hypertarget{_data_table_8h}{}\doxysection{Data\+Table.\+h File Reference}
+\label{_data_table_8h}\index{DataTable.h@{DataTable.h}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Data\+Table.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_q_l_interpreter_1_1_row}{SQLInterpreter\+::\+Row}}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_row}{SQLInterpreter\+::\+Data\+Row}}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_page}{SQLInterpreter\+::\+Page}}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_container}{SQLInterpreter\+::\+Data\+Container}}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_data_table}{SQLInterpreter\+::\+Data\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_s_q_l_interpreter}{SQLInterpreter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ Page $>$ \mbox{\hyperlink{namespace_s_q_l_interpreter_ab218dc09d3a15b945ba0d296051ac6cb}{SQLInterpreter\+::get\+New\+Page}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Data\+Container $>$ \mbox{\hyperlink{namespace_s_q_l_interpreter_a5f2c73d65dae7109c1f3cba22055d102}{SQLInterpreter\+::get\+Data\+Container\+Factory}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{namespace_s_q_l_interpreter_a1769d00eb05e1f46277115d521cee466}{SQLInterpreter\+::\+COLUMN\+\_\+\+USERNAME\+\_\+\+SIZE}} =255
+\item 
+const int \mbox{\hyperlink{namespace_s_q_l_interpreter_a962aefb532765bdc501d4e25f27e4c55}{SQLInterpreter\+::\+COLUMN\+\_\+\+EMAIL\+\_\+\+SIZE}} =255
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{namespace_s_q_l_interpreter_adb31dc456ef1e8bd169c069dbf6d5aae}{SQLInterpreter\+::\+ROW\+\_\+\+SIZE}} = sizeof(Data\+Row)
+\item 
+const int \mbox{\hyperlink{namespace_s_q_l_interpreter_a1bd8f733e6dff9f579cd30880be33afa}{SQLInterpreter\+::\+MAX\+\_\+\+PAGE\+\_\+\+SIZE}} = 4096
+\item 
+const int \mbox{\hyperlink{namespace_s_q_l_interpreter_a992bb4644b79ab3c9fbd68e2c70353a3}{SQLInterpreter\+::\+TABLE\+\_\+\+MAX\+\_\+\+PAGES}} = 100
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{namespace_s_q_l_interpreter_a0203063641c721f61388fea768fcde60}{SQLInterpreter\+::\+ROWS\+\_\+\+PER\+\_\+\+PAGE}} = MAX\+\_\+\+PAGE\+\_\+\+SIZE / ROW\+\_\+\+SIZE
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{namespace_s_q_l_interpreter_ad9e9dcf924d0511823cf44dd325014f7}{SQLInterpreter\+::\+TABLE\+\_\+\+MAX\+\_\+\+ROWS}} = ROWS\+\_\+\+PER\+\_\+\+PAGE $\ast$ TABLE\+\_\+\+MAX\+\_\+\+PAGES
+\end{DoxyCompactItemize}

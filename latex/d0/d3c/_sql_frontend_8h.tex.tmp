@@ -1,0 +1,27 @@
+\hypertarget{_sql_frontend_8h}{}\doxysection{Sql\+Frontend.\+h File Reference}
+\label{_sql_frontend_8h}\index{SqlFrontend.h@{SqlFrontend.h}}
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}Data\+Table.\+h\char`\"{}}\newline
+Include dependency graph for Sql\+Frontend.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement}{SQLInterpreter\+::\+Statement}}
+\item 
+class \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{SQLInterpreter\+::\+Sql\+Frontend}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_s_q_l_interpreter}{SQLInterpreter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespace_s_q_l_interpreter_a4b67a23ffea79623690abef7b3275616}{SQLInterpreter\+::split}} (std\+::string \&s, std\+::string \&delimiter)
+\end{DoxyCompactItemize}

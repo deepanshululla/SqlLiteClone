@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/deepanshululla/CLionProjects/sqlLiteClone/DataTable.h
+memory
+-
+map
+-
+vector
+-
+string
+-
+
+/Users/deepanshululla/CLionProjects/sqlLiteClone/SqlFrontend.cpp
+SqlFrontend.h
+/Users/deepanshululla/CLionProjects/sqlLiteClone/SqlFrontend.h
+iostream
+-
+
+/Users/deepanshululla/CLionProjects/sqlLiteClone/SqlFrontend.h
+unordered_map
+-
+string
+-
+memory
+-
+DataTable.h
+/Users/deepanshululla/CLionProjects/sqlLiteClone/DataTable.h
+

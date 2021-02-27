@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/deepanshululla/CLionProjects/sqlLiteClone/DataTable.cpp
+DataTable.h
+/Users/deepanshululla/CLionProjects/sqlLiteClone/DataTable.h
+
+/Users/deepanshululla/CLionProjects/sqlLiteClone/DataTable.h
+memory
+-
+map
+-
+vector
+-
+string
+-
+array
+-
+iostream
+-
+
