@@ -4,7 +4,7 @@
 #include <memory>
 #include <vector>
 #include "DataRow.h"
-
+#include <cereal/archives/binary.hpp>
 
 namespace SQLCore {
     const uint32_t ROW_SIZE = sizeof(DataRow);
@@ -23,11 +23,16 @@ namespace SQLCore {
 
     private:
         std::vector<std::shared_ptr<DataRow>> d_rows;
-
-
+        template<class Archive>
+        void serialize(Archive& archive)
+        {
+            std::vector<DataRow> serResults{};
+            for (auto row : d_rows) {
+                serResults.push_back(*row);
+            }
+            archive(serResults);  // Simply list all the fields to be serialized/deserialized.
+        }
     };
-
     std::shared_ptr<Page> getNewPage();
-
-}
+};
 #endif //SQLLITECLONE_PAGE_H

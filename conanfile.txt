@@ -1,0 +1,5 @@
+[requires]
+cereal/1.2.2@conan/stable
+
+ [generators]
+ cmake

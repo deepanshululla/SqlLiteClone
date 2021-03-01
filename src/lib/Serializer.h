@@ -1,11 +1,12 @@
 #ifndef SQLLITECLONE_SERIALIZER_H
 #define SQLLITECLONE_SERIALIZER_H
-#include <cereal/archives/binary.hpp>
+
 
 #include "DataRow.h"
 
+
 namespace SQLCore {
-    template<class T>
+    template <class T>
     class Serializer {
     public:
         virtual ~Serializer() {};
@@ -14,11 +15,20 @@ namespace SQLCore {
 
         virtual bool deserialize(T data) const = 0;
     };
-
-
-    class BinarySerializer : public Serializer<SQLCore::DataRow> {
+    template <class T>
+    class BinarySerializer : public Serializer<T>{
+    public:
+        template<typename U>                       // member template
+        BinarySerializer(const BinarySerializer<U>& other);
+        BinarySerializer<T>(const std::string& fileName);
+        bool serialize(T data) const;
+        bool deserialize(T data) const;
+    private:
+        std::string d_fileName;
 
     };
+
+    std::shared_ptr<Serializer<DataRow>> getSerializer(const std::string& fileName);
 }
 
 #endif //SQLLITECLONE_SERIALIZER_H

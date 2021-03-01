@@ -10,6 +10,10 @@ namespace SQLCore {
             d_pages.emplace_back(getNewPage());
         }
         d_pages.back()->addRow(dataRow);
+        if (!d_dataSerializer->serialize(*dataRow)){
+            std::cerr <<"Failed to serialize data to file" << std::endl;
+            return false;
+        };
         return true;;
     }
 
@@ -19,5 +23,6 @@ namespace SQLCore {
                 results.push_back(row);
             }
         }
+
     }
 }

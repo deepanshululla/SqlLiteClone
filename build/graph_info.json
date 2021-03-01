@@ -1,0 +1,14 @@
+{
+ "options": [
+  [
+   "cereal:thread_safe",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": null,
+  "version": null,
+  "user": null,
+  "channel": null
+ }
+}
