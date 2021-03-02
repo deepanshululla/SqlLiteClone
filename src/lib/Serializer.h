@@ -17,9 +17,7 @@ namespace SQLCore {
     class Serializer {
     public:
         virtual ~Serializer() {};
-
         virtual bool serialize(std::shared_ptr<T>& data) const = 0;
-
         virtual bool deserialize(std::shared_ptr<T>& data) const = 0;
     };
     template <class T>
@@ -33,11 +31,9 @@ namespace SQLCore {
         bool deserialize(std::shared_ptr<T>& data) const;
     private:
         std::string d_fileName;
-
     };
 
     std::shared_ptr<Serializer<Page>> getSerializer(const std::string& fileName);
-    std::shared_ptr<Serializer<DataRow>> getRowSerializer(const std::string& fileName);
 }
 
 #endif //SQLLITECLONE_SERIALIZER_H

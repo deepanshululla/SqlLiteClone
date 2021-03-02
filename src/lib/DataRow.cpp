@@ -8,8 +8,4 @@ namespace SQLCore {
     DataRow::operator std::string() const {
         return "DataRow(" + std::to_string(d_id)+","+d_email+","+d_username + ")";
     }
-
-//    DataRow::DataRow(const DataRow &other) :d_id(other.d_id), d_email(other.d_email), d_username(other.d_username) {
-//
-//    }
 }

@@ -49,8 +49,5 @@ namespace SQLCore{
     std::shared_ptr<Serializer<Page>> getSerializer(const std::string& fileName) {
         return std::shared_ptr<BinarySerializer<Page>>(new BinarySerializer<Page>(fileName));
     }
-    std::shared_ptr<Serializer<DataRow>> getRowSerializer(const std::string& fileName) {
-        return std::shared_ptr<BinarySerializer<DataRow>>(new BinarySerializer<DataRow>(fileName));
-    }
 
 }

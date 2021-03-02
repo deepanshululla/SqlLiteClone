@@ -6,30 +6,13 @@
 #include <cereal/types/string.hpp>
 #include <cereal/types/vector.hpp>
 #include <cereal/types/memory.hpp>
-#include <cereal/types/map.hpp>
-#include <cereal/types/unordered_map.hpp>
-#include <cereal/types/base_class.hpp>
-#include <cereal/types/common.hpp>
-#include <cereal/types/polymorphic.hpp>
-#include <cereal/types/forward_list.hpp>
-#include <cereal/types/list.hpp>
-#include <cereal/types/complex.hpp>
 
 
 
 
 namespace SQLCore {
-//    const int COLUMN_USERNAME_SIZE=255;
-//    const int COLUMN_EMAIL_SIZE=255;
-//    typedef struct {
-//        uint32_t id;
-//        char username[COLUMN_USERNAME_SIZE];
-//        char email[COLUMN_EMAIL_SIZE];
-//    } Row;
-
     class DataRow {
     public:
-//        DataRow(const DataRow& other);
         DataRow(uint32_t id, const std::string& username, const std::string& email);
         explicit operator std::string() const;
         template<class Archive>
@@ -50,8 +33,6 @@ namespace SQLCore {
         uint32_t d_id;
         std::string d_username;
         std::string d_email;
-
-
     };
 
 }
