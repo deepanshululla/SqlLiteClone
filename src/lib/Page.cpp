@@ -10,8 +10,13 @@ namespace SQLCore {
         return true;
     }
 
-    Page::Page() :d_rows(std::vector<std::shared_ptr<DataRow>>{}){
+//    Page::Page(std::vector<std::shared_ptr<DataRow>>& rows) :d_rows(rows){
+//
+//    }
+    Page::Page() :d_rows(std::vector<std::shared_ptr<DataRow>> {}){
 
     }
+
+
 
 }

@@ -4,7 +4,11 @@
 #include <memory>
 #include <vector>
 #include "DataRow.h"
-#include <cereal/archives/binary.hpp>
+//#include <cereal/archives/binary.hpp>
+//#include <cereal/types/memory.hpp>
+//#include <cereal/types/vector.hpp>
+//#include <cereal/types/string.hpp>
+
 
 namespace SQLCore {
     const uint32_t ROW_SIZE = sizeof(DataRow);
@@ -15,23 +19,29 @@ namespace SQLCore {
     class Page {
     public:
         Page();
+//        Page(std::vector<std::shared_ptr<DataRow>>& rows);
         inline const bool isFull() const{return d_rows.size() == ROWS_PER_PAGE;};
         bool addRow(std::shared_ptr<DataRow> dataRow);
         inline const std::vector<std::shared_ptr<DataRow>> rows() const {
             return d_rows;
         }
-
-    private:
-        std::vector<std::shared_ptr<DataRow>> d_rows;
         template<class Archive>
         void serialize(Archive& archive)
         {
-            std::vector<DataRow> serResults{};
-            for (auto row : d_rows) {
-                serResults.push_back(*row);
-            }
-            archive(serResults);  // Simply list all the fields to be serialized/deserialized.
+            archive(d_rows);  // Simply list all the fields to be serialized/deserialized.
         }
+    private:
+        std::vector<std::shared_ptr<DataRow>> d_rows;
+
+
+//        template<class Archive>
+//        static void load_and_construct( Archive & ar, cereal::construct<Page> & construct )
+//        {
+//            std::vector<std::shared_ptr<DataRow>> args;
+//            ar(CEREAL_NVP(args));
+//            construct(args);
+//        }
+
     };
     std::shared_ptr<Page> getNewPage();
 };
