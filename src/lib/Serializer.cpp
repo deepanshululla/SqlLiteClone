@@ -7,21 +7,24 @@ namespace SQLCore{
 
 
 
-    template<class T>
-    template<typename U>
-    BinarySerializer<T>::BinarySerializer(const BinarySerializer<U> &other) :d_fileName(other.d_fileName){
+    template<class T, class Id>
+    template<typename U, typename V>
+    BinarySerializer<T, Id>::BinarySerializer(const BinarySerializer<U, V> &other) :d_fileDirectory(other.d_fileDirectory){
 
     }
 
 
 
-    template <class T>
-    BinarySerializer<T>::BinarySerializer(const std::string& fileName) :d_fileName(fileName){
+    template <class T, typename Id>
+    BinarySerializer<T, Id>::BinarySerializer(const std::string& fileDirectory) :d_fileDirectory(fileDirectory){
 
     }
-    template <class T>
-    bool BinarySerializer<T>::deserialize(std::shared_ptr<T>& data) const {
-        std::ifstream ifs(d_fileName, std::ios::binary);  // Input file stream. You might use string streams as well.
+
+    template <class T, typename Id>
+    bool BinarySerializer<T, Id>::deserialize(std::shared_ptr<T>& data, Id id) const {
+        std::string fileName;
+        getFileName(id, fileName);
+        std::ifstream ifs(fileName, std::ios::binary);  // Input file stream. You might use string streams as well.
         {
             cereal::BinaryInputArchive iarchive(ifs);  // Choose binary format, reading direction.
             iarchive(data);
@@ -31,9 +34,11 @@ namespace SQLCore{
         return true;
 
     }
-    template <class T>
-    bool BinarySerializer<T>::serialize(std::shared_ptr<T>& data) const {
-        std::ofstream ofs(d_fileName, std::ios::binary);  // Output file stream.
+    template <class T, class Id>
+    bool BinarySerializer<T, Id>::serialize(std::shared_ptr<T>& data, Id id) const {
+        std::string fileName;
+        getFileName(id, fileName);
+        std::ofstream ofs(fileName, std::ios::binary);  // Output file stream.
         {
             cereal::BinaryOutputArchive oarchive(ofs); // Choose binary format, writingdirection.
             oarchive(data); // Save the modified instance.
@@ -44,10 +49,19 @@ namespace SQLCore{
         return true;
     }
 
+    template<class T, class Id>
+    void BinarySerializer<T, Id>::getFileName(Id id, std::string &fileName) const {
+        fileName = d_fileDirectory + "/" + std::to_string(id) + ".bin";
+    }
 
+    std::shared_ptr<Serializer<Page, int>> getSerializer(const std::string& fileDirectory) {
+        return std::shared_ptr<BinarySerializer<Page, int>>(new BinarySerializer<Page, int>(fileDirectory));
+    }
 
-    std::shared_ptr<Serializer<Page>> getSerializer(const std::string& fileName) {
-        return std::shared_ptr<BinarySerializer<Page>>(new BinarySerializer<Page>(fileName));
+    int getFileId(std::string &fileName) {
+        std::vector<std::string> splitVector;
+        Utilities::Utils::split(fileName, (std::string &) ".", splitVector);
+        return std::stoi(splitVector[0]);
     }
 
 }

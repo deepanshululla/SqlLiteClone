@@ -3,37 +3,35 @@
 
 
 #include "Page.h"
-#include <cereal/archives/binary.hpp>
-
-#include <cereal/types/string.hpp>
-#include <cereal/types/memory.hpp>
-#include <cereal/types/map.hpp>
-#include <cereal/types/vector.hpp>
-#include <cereal/types/string.hpp>
-
-
+#include "Utils.h"
+#include "Serializer.h"
+namespace Utils {
+    class Utils;
+}
 namespace SQLCore {
-    template <class T>
+    template <class T, class Id>
     class Serializer {
     public:
         virtual ~Serializer() {};
-        virtual bool serialize(std::shared_ptr<T>& data) const = 0;
-        virtual bool deserialize(std::shared_ptr<T>& data) const = 0;
+        virtual bool serialize(std::shared_ptr<T>& data, Id id) const = 0;
+        virtual bool deserialize(std::shared_ptr<T>& data, Id id) const = 0;
     };
-    template <class T>
-    class BinarySerializer : public Serializer<T>{
+    template <class T, class Id>
+    class BinarySerializer : public Serializer<T, Id>{
     public:
         // The general copy constructor
-        template<typename U>                       // member template
-        explicit BinarySerializer(const BinarySerializer<U>& other);
-        explicit BinarySerializer<T>(const std::string& fileName);
-        bool serialize(std::shared_ptr<T>& data) const;
-        bool deserialize(std::shared_ptr<T>& data) const;
+        template<typename U, typename V>                       // member template
+        explicit BinarySerializer(const BinarySerializer<U, V>& other);
+        explicit BinarySerializer<T, Id>(const std::string& fileDirectory);
+        bool serialize(std::shared_ptr<T>& data, Id id) const;
+        bool deserialize(std::shared_ptr<T>& data,  Id id) const;
     private:
-        std::string d_fileName;
-    };
+        std::string d_fileDirectory;
+        void getFileName(Id id, std::string& fileName) const;
 
-    std::shared_ptr<Serializer<Page>> getSerializer(const std::string& fileName);
+    };
+    int getFileId(std::string &fileName);
+    std::shared_ptr<Serializer<Page, int>> getSerializer(const std::string& fileName);
 }
 
 #endif //SQLLITECLONE_SERIALIZER_H

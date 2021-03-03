@@ -63,7 +63,7 @@ const Statement::StatementType Statement::deduceType(const std::string &statemen
 const bool Statement::extractDataForInsert(std::vector<std::string>& result) {
     std::string remainingWordsString = d_statementString.substr(d_statementString.find(" "),d_statementString.length());
     std::string delimiter = " ";
-    result = split(remainingWordsString, delimiter);
+    Utilities::Utils::split(remainingWordsString, delimiter, result);
     if (result.size() != 4) {
         std::cerr << "Invalid insert statement." << std::endl;
         return false;
@@ -72,16 +72,5 @@ const bool Statement::extractDataForInsert(std::vector<std::string>& result) {
     return true;
 };
 
-std::vector<std::string> split(std::string& s, std::string& delimiter){
-        std::vector<std::string> list;
-        size_t pos = 0;
-        std::string token;
-        while ((pos = s.find(delimiter)) != std::string::npos) {
-            token = s.substr(0, pos);
-            list.push_back(token);
-            s.erase(0, pos + delimiter.length());
-        }
-        list.push_back(s);
-        return list;
-}
+
 }
