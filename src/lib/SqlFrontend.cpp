@@ -5,20 +5,33 @@
 namespace SQLInterpreter {
 
 bool SqlFrontend::execute(Statement s) {
+SQLCore::Cursor cursor =SQLCore::Cursor(d_dataTable);
 
 if (s.statementType()==Statement::STATEMENT_SELECT){
     std::vector<std::shared_ptr<SQLCore::DataRow>> results;
 
-    if (!d_dataTable->fetchData(results)) {
+//    if (!d_dataTable->fetchData(results)) {
+//        std::cout << "Failed to find data" << std::endl;
+//    };
+//    for (auto it = results.begin(); it!=results.end(); ++it) {
+//        std::shared_ptr<SQLCore::DataRow> dataRow = *it;
+//        std::cout << std::string(*(dataRow)) << std::endl;
+//    }
+//
+    if (cursor.isEnd()) {
         std::cout << "Failed to find data" << std::endl;
-    };
-    for (auto it = results.begin(); it!=results.end(); ++it) {
-        std::shared_ptr<SQLCore::DataRow> dataRow = *it;
+        return false;
+    }
+    while (!cursor.isEnd()) {
+        std::shared_ptr<SQLCore::DataRow> dataRow = cursor.cursorValue();
         std::cout << std::string(*(dataRow)) << std::endl;
+        cursor.advance();
     }
 
     std::cout << "Select statement executed" << std::endl;
     return true;
+
+
 }
 else if (s.statementType()==Statement::STATEMENT_INSERT) {
     std::vector<std::string> dataParts;
@@ -42,35 +55,7 @@ else {
 SqlFrontend::SqlFrontend() :d_dataTable(std::make_shared<SQLCore::DataTable>(SQLCore::DataTable())){
 };
 
-Statement::Statement(const std::string& statementString): d_statementString(statementString),
-                                                            d_StatementType(deduceType(statementString))
-{
-}
 
-
-
-const Statement::StatementType Statement::deduceType(const std::string &statementString) const {
-    std::unordered_map<std::string,StatementType> statementMap = { {"select",STATEMENT_SELECT}, {"insert",STATEMENT_INSERT} };
-    std::string firstWord = statementString.substr(0, statementString.find(" "));
-    auto it = statementMap.find(firstWord);
-    if (it != statementMap.end()) {
-        return it->second;
-    } else {
-        return STATEMENT_UNKNOWN;
-    }
-}
-
-const bool Statement::extractDataForInsert(std::vector<std::string>& result) {
-    std::string remainingWordsString = d_statementString.substr(d_statementString.find(" "),d_statementString.length());
-    std::string delimiter = " ";
-    Utilities::Utils::split(remainingWordsString, delimiter, result);
-    if (result.size() != 4) {
-        std::cerr << "Invalid insert statement." << std::endl;
-        return false;
-    }
-
-    return true;
-};
 
 
 }

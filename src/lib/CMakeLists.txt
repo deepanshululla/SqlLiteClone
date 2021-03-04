@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(sqlLiteClone)
 set(CMAKE_CXX_STANDARD 17)
-add_library(sqlLiteCloneLib DataTable.cpp IOBuffer.cpp Repl.cpp Serializer.cpp SqlFrontend.cpp DataRow.cpp DataRow.h DataContainer.cpp DataContainer.h Page.cpp Page.h Utils.cpp Utils.h)
+add_library(sqlLiteCloneLib DataTable.cpp IOBuffer.cpp Repl.cpp Serializer.cpp SqlFrontend.cpp DataRow.cpp DataRow.h DataContainer.cpp DataContainer.h Page.cpp Page.h Utils.cpp Utils.h Cursor.cpp Cursor.h)
 message("CalcLib current source dir = ${CMAKE_CURRENT_SOURCE_DIR}")
 
 include(${CMAKE_SOURCE_DIR}/build/conanbuildinfo.cmake)

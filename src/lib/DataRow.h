@@ -14,6 +14,7 @@ namespace SQLCore {
     class DataRow {
     public:
         DataRow(uint32_t id, const std::string& username, const std::string& email);
+        inline const uint32_t id() const {return d_id;};
         explicit operator std::string() const;
         template<class Archive>
         void serialize(Archive & archive)

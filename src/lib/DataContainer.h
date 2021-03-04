@@ -11,14 +11,18 @@ namespace SQLCore {
     public:
         DataContainer();
         DataContainer(std::vector<std::shared_ptr<Page>>& pages);
+        DataContainer(std::vector<std::shared_ptr<Page>>& pages, int numRows);
         const bool addRow(std::shared_ptr<DataRow>& dataRow);
+        inline const int numRows() const { return d_numRows;};
+        std::shared_ptr<Page> getPage(int pageId) const;
         void rows(std::vector<std::shared_ptr<DataRow>>& results) const;
     private:
         std::vector<std::shared_ptr<Page>> d_pages;
+        int d_numRows;
         std::shared_ptr<Serializer<Page, int>> d_dataSerializer;
     };
     std::shared_ptr<DataContainer> getDataContainerFactory();
-    void loadPages(std::vector<std::shared_ptr<Page>>& pages, const std::string& directory);
+    int loadPages(std::vector<std::shared_ptr<Page>>& pages, const std::string& directory);
 }
 
 #endif //SQLLITECLONE_DATACONTAINER_H

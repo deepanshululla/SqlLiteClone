@@ -4,7 +4,7 @@ project(sqlLiteClone)
 add_subdirectory(lib)
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(sqlLiteClone main.cpp)
+add_executable(sqlLiteClone main.cpp lib/Statement.cpp lib/Statement.h)
 include(${CMAKE_SOURCE_DIR}/build/conanbuildinfo.cmake)
 conan_basic_setup()
 message("conan libs = ${CONAN_LIBS}")

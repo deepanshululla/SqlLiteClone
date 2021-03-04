@@ -13,7 +13,7 @@ namespace SQLCore {
     class Serializer {
     public:
         virtual ~Serializer() {};
-        virtual bool serialize(std::shared_ptr<T>& data, Id id) const = 0;
+        virtual bool serialize(std::shared_ptr<T> data, Id id) const = 0;
         virtual bool deserialize(std::shared_ptr<T>& data, Id id) const = 0;
     };
     template <class T, class Id>
@@ -23,7 +23,7 @@ namespace SQLCore {
         template<typename U, typename V>                       // member template
         explicit BinarySerializer(const BinarySerializer<U, V>& other);
         explicit BinarySerializer<T, Id>(const std::string& fileDirectory);
-        bool serialize(std::shared_ptr<T>& data, Id id) const;
+        bool serialize(std::shared_ptr<T> data, Id id) const;
         bool deserialize(std::shared_ptr<T>& data,  Id id) const;
     private:
         std::string d_fileDirectory;
