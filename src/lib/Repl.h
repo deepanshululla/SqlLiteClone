@@ -16,50 +16,58 @@
 
 namespace SQLInterpreter {
     class Statement;
+
     class SqlFrontend;
 }
 namespace DbCore {
 
 
+    template<class T>
+    class Command {
+    public:
+        typedef void(T::*Method)();
 
-template <class T>
-class Command {
-public:
-    typedef void(T:: *Method)();
-    Command(T* t, Method f):d_object(t), d_method(f){};
-    inline void execute() const{ d_object->d_method;};
-private:
+        Command(T *t, Method f) : d_object(t), d_method(f) {};
 
-    const T* d_object;
-    const Method d_method;
-    // prohibit copying
-    Command(const Command& c);
-    Command& operator=(const Command&);
-};
+        inline void execute() const { d_object->d_method; };
+    private:
 
+        const T *d_object;
+        const Method d_method;
 
+        // prohibit copying
+        Command(const Command &c);
 
-class Repl {
-
-public:
-    typedef enum {
-        META_COMMAND_SUCCESS,
-        META_COMMAND_UNRECOGNIZED_COMMAND
-    } MetaCommandResult;
-    Repl();
-    [[noreturn]] void execute();
-private:
-    const std::string PROMPT ="db>";
-    const std::shared_ptr<SQLInterpreter::SqlFrontend> d_sqlFrontEnd;
-    inline void print_prompt() {
-        std::cout << PROMPT;
+        Command &operator=(const Command &);
     };
-    std::shared_ptr<IoBuffer> readInput();
-    MetaCommandResult executeMetaCommand(std::shared_ptr<IoBuffer> ioBuffer);
 
-};
+
+    class Repl {
+
+    public:
+        typedef enum {
+            META_COMMAND_SUCCESS,
+            META_COMMAND_UNRECOGNIZED_COMMAND
+        } MetaCommandResult;
+
+        Repl();
+
+        [[noreturn]] void execute();
+
+    private:
+        const std::string PROMPT = "db>";
+        const std::shared_ptr<SQLInterpreter::SqlFrontend> d_sqlFrontEnd;
+
+        inline void print_prompt() {
+            std::cout << PROMPT;
+        };
+
+        std::shared_ptr<IoBuffer> readInput();
+
+        MetaCommandResult executeMetaCommand(std::shared_ptr<IoBuffer> ioBuffer);
+
+    };
 }
-
 
 
 #endif //SQLLITECLONE_REPL_H

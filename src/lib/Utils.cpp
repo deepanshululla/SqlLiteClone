@@ -1,10 +1,10 @@
 #include "Utils.h"
 
 
-namespace Utilities{
+namespace Utilities {
 
 
-    void Utils::split(std::string& s, std::string& delimiter, std::vector<std::string>& list) {
+    void Utils::split(std::string &s, std::string &delimiter, std::vector<std::string> &list) {
         size_t pos = 0;
         std::string token;
         while ((pos = s.find(delimiter)) != std::string::npos) {
@@ -15,7 +15,7 @@ namespace Utilities{
         list.push_back(s);
     }
 
-    void Utils::getFileNamesFromDirectory(std::vector<std::string> &list, const std::string& directory) {
+    void Utils::getFileNamesFromDirectory(std::vector<std::string> &list, const std::string &directory) {
         struct dirent *entry;
         DIR *dir = opendir(directory.c_str());
         if (dir == NULL) {

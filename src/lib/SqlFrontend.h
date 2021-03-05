@@ -10,19 +10,22 @@
 
 namespace SQLCore {
     class Cursor;
+
     class DataTable;
+
     class DataRow;
 }
 
 namespace SQLInterpreter {
-class SqlFrontend {
-public:
-    SqlFrontend();
-    bool execute(Statement s);
+    class SqlFrontend {
+    public:
+        SqlFrontend();
 
-private:
-    std::shared_ptr<SQLCore::DataTable> d_dataTable;
-};
+        bool execute(Statement s);
+
+    private:
+        std::shared_ptr<SQLCore::DataTable> d_dataTable;
+    };
 
 }
 
