@@ -49,3 +49,5 @@ Executed.
 db > .exit
  
 ```
+
+[Link to documentation](./html/index.html)
