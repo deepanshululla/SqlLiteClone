@@ -24,3 +24,28 @@ The project is inspired from https://cstack.github.io/db_tutorial
 3) A basic where clause is supported to query by ID.
 
 
+
+### syntax
+
+The front end of the DataBase is very naive and is a work in progress.
+
+So far, we support REPL that works something like this:
+
+```
+db > insert 1 user1 email1
+Executed.
+db > select *
+(1, user1, email1)
+Executed.
+db > insert 2 user2 email2
+Executed.
+db > select *
+(1, user1, email1)
+(2, user2, email2)
+Executed.
+db > select * where id = 2
+(2, user2, email2)
+Executed.
+db > .exit
+ 
+```
