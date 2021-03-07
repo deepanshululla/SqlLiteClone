@@ -51,7 +51,7 @@ db > .exit
  
 ```
 
-[Link to documentation](https://deepanshululla.github.io/SqlLiteClone)
+[Link to documentation](https://deepanshululla.com/SqlLiteClone/)
 
 
 ## Todo 
