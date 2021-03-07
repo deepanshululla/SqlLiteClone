@@ -6,9 +6,8 @@ namespace SQLCore {
     Cursor::Cursor(std::shared_ptr<DataTable> &datatable) : d_dataTable(datatable),
                                                             d_endOfTable(datatable->isEmpty()),
                                                             d_pageNum(datatable->rootPageNum()),
-                                                            d_cellNum(0),
-                                                            d_rootNode(getNode(NODE_ROOT, datatable->getPage(
-                                                                    datatable->rootPageNum()))) {
+                                                            d_cellNum(0)
+                                                            {
 
     }
 
@@ -52,15 +51,6 @@ namespace SQLCore {
     }
 
 
-    void insertNode(std::shared_ptr<Cursor> &cursor, uint32_t key, std::shared_ptr<DataRow> &dataRow) {
-        std::shared_ptr<Node> node = getNode(NODE_LEAF, cursor->getPageById(cursor->pageNum()));
-        int numCellsInPage = node->numCells();
-        if (cursor->cellNum() < numCellsInPage) {
-            cursor->insert(dataRow);
-
-        }
-
-    }
 
     std::shared_ptr<Cursor> getCursor(std::shared_ptr<DataTable>& datatable) {
         return std::shared_ptr<Cursor>(new Cursor(datatable));

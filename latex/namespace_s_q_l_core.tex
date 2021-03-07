@@ -3,8 +3,6 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}}
-\item 
 class \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}}
 \item 
 class \mbox{\hyperlink{class_s_q_l_core_1_1_data_container}{Data\+Container}}
@@ -21,20 +19,8 @@ class \mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{Serializer}}
 \item 
 class \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} \{ \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda91b55602158a3b7a637d98effd7c3023}{NODE\+\_\+\+INTERNAL}}
-, \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381ddac833ccfd45076c8d298a719512433a66}{NODE\+\_\+\+LEAF}}
-, \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda3493d6e75906eb9a7d1d873fc6d1bb2f}{NODE\+\_\+\+ROOT}}
- \}
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ \mbox{\hyperlink{namespace_s_q_l_core_a7b24975a629c1d2c3c727ae2db90363c}{get\+Node}} (\mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} node\+Type, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$ page)
-\item 
-void \mbox{\hyperlink{namespace_s_q_l_core_a04b1b1c96da3389ba51833f4991f9f68}{insert\+Node}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} $>$ \&cursor, uint32\+\_\+t key, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&data\+Row)
 \item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} $>$ \mbox{\hyperlink{namespace_s_q_l_core_abcb13574ef7b161fda5804bd0212e622}{get\+Cursor}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table}{Data\+Table}} $>$ \&datatable)
 \item 
@@ -69,29 +55,6 @@ const int \mbox{\hyperlink{namespace_s_q_l_core_a93602a31b5c483dbefc453ec8c1cd02
 \item 
 const uint32\+\_\+t \mbox{\hyperlink{namespace_s_q_l_core_a8e0b890cd9eaa56e4247842b02ddd46f}{ROWS\+\_\+\+PER\+\_\+\+PAGE}} = \mbox{\hyperlink{namespace_s_q_l_core_ab76129df304b832c615eb6d4b612a047}{MAX\+\_\+\+PAGE\+\_\+\+SIZE}} / \mbox{\hyperlink{namespace_s_q_l_core_a33362dab8015a7b1e60fd45e8f1fe163}{ROW\+\_\+\+SIZE}}
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}\label{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}} 
-\index{SQLCore@{SQLCore}!NodeType@{NodeType}}
-\index{NodeType@{NodeType}!SQLCore@{SQLCore}}
-\doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{SQLCore\+::\+Node\+Type}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_INTERNAL@{NODE\_INTERNAL}!SQLCore@{SQLCore}}\index{SQLCore@{SQLCore}!NODE\_INTERNAL@{NODE\_INTERNAL}}}\mbox{\Hypertarget{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda91b55602158a3b7a637d98effd7c3023}\label{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda91b55602158a3b7a637d98effd7c3023}} 
-NODE\+\_\+\+INTERNAL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_LEAF@{NODE\_LEAF}!SQLCore@{SQLCore}}\index{SQLCore@{SQLCore}!NODE\_LEAF@{NODE\_LEAF}}}\mbox{\Hypertarget{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381ddac833ccfd45076c8d298a719512433a66}\label{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381ddac833ccfd45076c8d298a719512433a66}} 
-NODE\+\_\+\+LEAF&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NODE\_ROOT@{NODE\_ROOT}!SQLCore@{SQLCore}}\index{SQLCore@{SQLCore}!NODE\_ROOT@{NODE\_ROOT}}}\mbox{\Hypertarget{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda3493d6e75906eb9a7d1d873fc6d1bb2f}\label{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dda3493d6e75906eb9a7d1d873fc6d1bb2f}} 
-NODE\+\_\+\+ROOT&\\
-\hline
-
-\end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
@@ -143,14 +106,6 @@ Here is the caller graph for this function\+:
 
 Here is the caller graph for this function\+:
 % FIG 5
-\mbox{\Hypertarget{namespace_s_q_l_core_a7b24975a629c1d2c3c727ae2db90363c}\label{namespace_s_q_l_core_a7b24975a629c1d2c3c727ae2db90363c}} 
-\index{SQLCore@{SQLCore}!getNode@{getNode}}
-\index{getNode@{getNode}!SQLCore@{SQLCore}}
-\doxysubsubsection{\texorpdfstring{getNode()}{getNode()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ SQLCore\+::get\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}}}]{node\+Type,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$}]{page }\end{DoxyParamCaption})}
-
-Here is the caller graph for this function\+:
-% FIG 6
 \mbox{\Hypertarget{namespace_s_q_l_core_a80d5365a6d2a1d9f0dcd11cbcf461552}\label{namespace_s_q_l_core_a80d5365a6d2a1d9f0dcd11cbcf461552}} 
 \index{SQLCore@{SQLCore}!getSerializer@{getSerializer}}
 \index{getSerializer@{getSerializer}!SQLCore@{SQLCore}}
@@ -158,15 +113,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{Serializer}}$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}}, int $>$ $>$ SQLCore\+::get\+Serializer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Directory }\end{DoxyParamCaption})}
 
 Here is the caller graph for this function\+:
-% FIG 7
-\mbox{\Hypertarget{namespace_s_q_l_core_a04b1b1c96da3389ba51833f4991f9f68}\label{namespace_s_q_l_core_a04b1b1c96da3389ba51833f4991f9f68}} 
-\index{SQLCore@{SQLCore}!insertNode@{insertNode}}
-\index{insertNode@{insertNode}!SQLCore@{SQLCore}}
-\doxysubsubsection{\texorpdfstring{insertNode()}{insertNode()}}
-{\footnotesize\ttfamily void SQLCore\+::insert\+Node (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} $>$ \&}]{cursor,  }\item[{uint32\+\_\+t}]{key,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&}]{data\+Row }\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:
-% FIG 8
+% FIG 6
 \mbox{\Hypertarget{namespace_s_q_l_core_afa86a5c3c204ba89e4c39afa16c8d97a}\label{namespace_s_q_l_core_afa86a5c3c204ba89e4c39afa16c8d97a}} 
 \index{SQLCore@{SQLCore}!loadMetaData@{loadMetaData}}
 \index{loadMetaData@{loadMetaData}!SQLCore@{SQLCore}}
@@ -174,9 +121,9 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} $>$ SQLCore\+::load\+Meta\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{directory }\end{DoxyParamCaption})}
 
 Here is the call graph for this function\+:
-% FIG 9
+% FIG 7
 Here is the caller graph for this function\+:
-% FIG 10
+% FIG 8
 \mbox{\Hypertarget{namespace_s_q_l_core_a53def6bee2577512dd741b2ff87ca67d}\label{namespace_s_q_l_core_a53def6bee2577512dd741b2ff87ca67d}} 
 \index{SQLCore@{SQLCore}!loadPages@{loadPages}}
 \index{loadPages@{loadPages}!SQLCore@{SQLCore}}
@@ -184,9 +131,9 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily void SQLCore\+::load\+Pages (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$$>$ \&}]{pages,  }\item[{const std\+::string \&}]{directory }\end{DoxyParamCaption})}
 
 Here is the call graph for this function\+:
-% FIG 11
+% FIG 9
 Here is the caller graph for this function\+:
-% FIG 12
+% FIG 10
 
 
 \doxysubsection{Variable Documentation}

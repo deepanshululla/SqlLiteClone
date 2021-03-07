@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nodetype_315',['NodeType',['../namespace_s_q_l_core.html#adcde1ad7d24eea7110dc7c4df63381dd',1,'SQLCore']]]
+  ['statementtype_263',['StatementType',['../class_s_q_l_interpreter_1_1_statement.html#ac1d478299ae6dc5e7deae1c587e08987',1,'SQLInterpreter::Statement']]]
 ];

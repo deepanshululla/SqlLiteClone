@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binaryserializer_156',['BinarySerializer',['../class_s_q_l_core_1_1_binary_serializer.html',1,'SQLCore']]]
+  ['binaryserializer_129',['BinarySerializer',['../class_s_q_l_core_1_1_binary_serializer.html',1,'SQLCore']]]
 ];

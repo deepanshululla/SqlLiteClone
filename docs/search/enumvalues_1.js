@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['node_5finternal_319',['NODE_INTERNAL',['../namespace_s_q_l_core.html#adcde1ad7d24eea7110dc7c4df63381dda91b55602158a3b7a637d98effd7c3023',1,'SQLCore']]],
-  ['node_5fleaf_320',['NODE_LEAF',['../namespace_s_q_l_core.html#adcde1ad7d24eea7110dc7c4df63381ddac833ccfd45076c8d298a719512433a66',1,'SQLCore']]],
-  ['node_5froot_321',['NODE_ROOT',['../namespace_s_q_l_core.html#adcde1ad7d24eea7110dc7c4df63381dda3493d6e75906eb9a7d1d873fc6d1bb2f',1,'SQLCore']]]
+  ['statement_5finsert_266',['STATEMENT_INSERT',['../class_s_q_l_interpreter_1_1_statement.html#ac1d478299ae6dc5e7deae1c587e08987af48758e1bf4160c476590db831d0133b',1,'SQLInterpreter::Statement']]],
+  ['statement_5fselect_267',['STATEMENT_SELECT',['../class_s_q_l_interpreter_1_1_statement.html#ac1d478299ae6dc5e7deae1c587e08987a4772eeaf9a57b596f34b534d3c1a133d',1,'SQLInterpreter::Statement']]],
+  ['statement_5funknown_268',['STATEMENT_UNKNOWN',['../class_s_q_l_interpreter_1_1_statement.html#ac1d478299ae6dc5e7deae1c587e08987abbac4153cb5f94443ba778a49eb6204b',1,'SQLInterpreter::Statement']]]
 ];

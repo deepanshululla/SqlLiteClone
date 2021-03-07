@@ -16,32 +16,9 @@
 
 namespace SQLInterpreter {
     class Statement;
-
     class SqlFrontend;
 }
 namespace DbCore {
-
-
-    template<class T>
-    class Command {
-    public:
-        typedef void(T::*Method)();
-
-        Command(T *t, Method f) : d_object(t), d_method(f) {};
-
-        inline void execute() const { d_object->d_method; };
-    private:
-
-        const T *d_object;
-        const Method d_method;
-
-        // prohibit copying
-        Command(const Command &c);
-
-        Command &operator=(const Command &);
-    };
-
-
     class Repl {
 
     public:
