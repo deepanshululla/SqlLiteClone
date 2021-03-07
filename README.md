@@ -10,6 +10,7 @@ So relational DB is what we make.
 
 The project is inspired from https://cstack.github.io/db_tutorial
 
+This however just takes advantage of the C++ map stl library for storing data over the filesystem.
 
 ### What it does?
 
@@ -51,3 +52,10 @@ db > .exit
 ```
 
 [Link to documentation](https://deepanshululla.github.io/SqlLiteClone)
+
+
+## Todo 
+
+1. Create a Docker image for this.
+
+2. Support updates and deletes.
