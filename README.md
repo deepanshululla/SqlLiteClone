@@ -50,4 +50,4 @@ db > .exit
  
 ```
 
-[Link to documentation](./docs/index.html)
+[Link to documentation](https://deepanshululla.github.io/SqlLiteClone)
