@@ -22,15 +22,15 @@ namespace SQLCore {
 
     class Node {
     public:
-        Node(NodeType nodeType, bool isRootNode, std::shared_ptr<Page> &page;
-
-        );
+        Node(NodeType nodeType, bool isRootNode, std::shared_ptr<Page> &page);
 
         const std::shared_ptr<Node> parent() const { return d_parent; };
 
         void setParent(std::shared_ptr<Node> &node) { d_parent = node; };
 
         inline bool isRoot() const { return d_isRootNode; }
+
+        inline int numCells() const { return d_page->rows().size();};
 
         inline bool isLeaf() const { return d_isLeafNode; }
 
@@ -46,20 +46,12 @@ namespace SQLCore {
         bool d_isRootNode;
         std::shared_ptr<Page> d_page;
         NodeType d_nodeType;
+
     };
 
 
-    std::shared_ptr<Node> getNode(NodeType nodeType, std::shared_ptr<Page> &page);
+    std::shared_ptr<Node> getNode(NodeType nodeType, std::shared_ptr<Page> page);
 
-    class Btree {
-        const uint32_t NODE_TYPE_SIZE = sizeof(uint8_t);
-        const uint32_t NODE_TYPE_OFFSET = 0;
-        const uint32_t IS_ROOT_SIZE = sizeof(uint8_t);
-        const uint32_t IS_ROOT_OFFSET = NODE_TYPE_SIZE;
-        const uint32_t PARENT_POINTER_SIZE = sizeof(uint32_t);
-        const uint32_t PARENT_POINTER_OFFSET = IS_ROOT_OFFSET + IS_ROOT_SIZE;
-        const uint8_t COMMON_NODE_HEADER_SIZE = NODE_TYPE_SIZE + IS_ROOT_SIZE + PARENT_POINTER_SIZE;
-    };
 }
 
 

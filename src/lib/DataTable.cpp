@@ -5,18 +5,16 @@ namespace SQLCore {
 
     bool DataTable::insert(std::shared_ptr<DataRow> &dataRow) {
         if (isFull()) {
-            std::cout << "Data table is full." << std::endl;
+            std::cout << "Error: Table full." << std::endl;
             return false;
         }
         d_dataContainer->addRow(dataRow);
         return true;
     }
 
-    std::shared_ptr<DataRow> DataTable::getRow(int rowId) const {
-        int pageId = rowId / TABLE_MAX_ROWS;
+    std::shared_ptr<DataRow> DataTable::getRow(int pageId, int cellNumber) const {
         std::shared_ptr<Page> page = getPage(pageId);
-        int rowPosition = rowId % TABLE_MAX_ROWS;
-        return page->rows()[rowPosition];
+        return page->rows()[cellNumber%ROWS_PER_PAGE];
     }
 
     DataTable::DataTable() : d_dataContainer(getDataContainerFactory()) {};

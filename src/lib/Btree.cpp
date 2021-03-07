@@ -10,7 +10,7 @@ namespace SQLCore {
               d_parent(nullptr) {
     }
 
-    std::shared_ptr<Node> getNode(NodeType nodeType, std::shared_ptr<Page> &page) {
+    std::shared_ptr<Node> getNode(NodeType nodeType, std::shared_ptr<Page> page) {
         if (nodeType == NODE_LEAF || nodeType == NODE_INTERNAL) {
             return std::shared_ptr<Node>(new Node(nodeType, false, page));
         }

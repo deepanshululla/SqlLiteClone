@@ -3,12 +3,15 @@
 
 namespace SQLCore {
     std::shared_ptr<DataContainer> getDataContainerFactory() {
-        std::vector<std::shared_ptr<Page>> pages;
+        std::vector<std::shared_ptr<Page>> pages{};
         loadPages(pages, DIRECTORY_LOCATION);
 
         std::shared_ptr<DataContainer> dataContainer(new DataContainer(pages, 0));
-        size_t numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
-        dataContainer->setNumRows(numRowsInLastPage + (pages.size() - 1) * ROWS_PER_PAGE);
+        size_t numRowsInLastPage;
+        if (!pages.empty()){
+            numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
+            dataContainer->setNumRows(numRowsInLastPage + (pages.size() - 1) * ROWS_PER_PAGE);
+        }
         return dataContainer;
     }
 
@@ -60,6 +63,10 @@ namespace SQLCore {
     }
 
     std::shared_ptr<Page> DataContainer::getLoadedPage(int pageId) const {
+        if (d_pages.empty()) {
+            return std::shared_ptr<Page>(nullptr);
+        }
+
         if (pageId > d_pages.size()) {
             std::cerr << "Invalid Page Access" << std::endl;
             return std::shared_ptr<Page>(nullptr);

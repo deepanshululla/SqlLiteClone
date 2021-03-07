@@ -2,7 +2,7 @@
 #define SQLLITECLONE_PAGE_H
 
 #include <memory>
-#include <vector>
+#include <map>
 #include "DataRow.h"
 
 
@@ -10,25 +10,29 @@ namespace SQLCore {
     const uint32_t ROW_SIZE = sizeof(DataRow);
 
     const int MAX_PAGE_SIZE = 4096;
-    const int TABLE_MAX_PAGES = 100;
+    const int TABLE_MAX_PAGES = 19;
     const uint32_t ROWS_PER_PAGE = MAX_PAGE_SIZE / ROW_SIZE;
 
     class Page {
     public:
-        Page(int id);
+        Page(uint32_t id);
 
-        Page(int id, std::vector<std::shared_ptr<DataRow>> &rows);
+        Page(uint32_t id, std::map<uint32_t,std::shared_ptr<DataRow>> &rows);
 
         inline const bool isUnloaded() const { return d_isUnloaded; };
 
         inline const bool isFull() const { return d_rows.size() == ROWS_PER_PAGE; };
 
-        bool addRow(std::shared_ptr<DataRow> dataRow);
+        bool addRow(std::shared_ptr<DataRow>& dataRow);
 
         inline const int id() const { return d_id; };
 
         inline const std::vector<std::shared_ptr<DataRow>> rows() const {
-            return d_rows;
+            std::vector<std::shared_ptr<DataRow>> result{};
+            for (auto row : d_rows) {
+                result.push_back(row.second);
+            }
+            return result;
         }
 
         template<class Archive>
@@ -39,13 +43,13 @@ namespace SQLCore {
         template<class Archive>
         static void load_and_construct(Archive &ar, cereal::construct<Page> &construct) {
             int id;
-            std::vector<std::shared_ptr<DataRow>> args;
+            std::map<uint32_t,std::shared_ptr<DataRow>> args;
             ar(id, args);
             construct(id, args);
         }
 
     private:
-        std::vector<std::shared_ptr<DataRow>> d_rows;
+        std::map<uint32_t,std::shared_ptr<DataRow>> d_rows;
         int d_id;
         bool d_isUnloaded;
 

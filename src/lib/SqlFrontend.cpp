@@ -5,39 +5,51 @@
 namespace SQLInterpreter {
 
     bool SqlFrontend::execute(Statement s) {
-        SQLCore::Cursor cursor = SQLCore::Cursor(d_dataTable);
+        std::shared_ptr<SQLCore::Cursor> cursor = SQLCore::getCursor(d_dataTable);
 
         if (s.statementType() == Statement::STATEMENT_SELECT) {
             std::vector<std::shared_ptr<SQLCore::DataRow>> results;
-            if (cursor.isEnd()) {
-                std::cout << "Failed to find data" << std::endl;
-                return false;
-            }
-            while (!cursor.isEnd()) {
-                std::shared_ptr<SQLCore::DataRow> dataRow = cursor.cursorValue();
+            while (!cursor->isEnd()) {
+                std::shared_ptr<SQLCore::DataRow> dataRow = cursor->cursorValue();
                 std::cout << std::string(*(dataRow)) << std::endl;
-                cursor.advance();
+                cursor->advance();
             }
 
-            std::cout << "Select statement executed" << std::endl;
+            std::cout << "Executed." << std::endl;
             return true;
-
-
         } else if (s.statementType() == Statement::STATEMENT_INSERT) {
             std::vector<std::string> dataParts;
             if (!s.extractDataForInsert(dataParts)) {
                 return false;
             }
+            std::string id = dataParts[1];
+
+            if (id.find('-') == 0) {
+                std::cout << "ID must be positive." << std::endl;
+                return false;
+            }
+            std::string email = dataParts[2];
+            std::string userName = dataParts[3];
+            if (email.length() > 255 || userName.length() > 255) {
+                std::cout << "String is too long." << std::endl;
+                return false;
+            }
+
+
 
             std::shared_ptr<SQLCore::DataRow> dataRow(
-                    new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
-                                         dataParts[2],
-                                         dataParts[3]));
-            d_dataTable->insert(dataRow);
-            std::cout << "Insert statement executed" << std::endl;
+                    new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(id)),
+                                         email,
+                                         userName));
+
+            if (d_dataTable->insert(dataRow)){
+                std::cout << "Executed." << std::endl;
+            }
+
+
             return true;
         } else {
-            std::cout << "Unknown SQL command" << std::endl;
+            std::cout << "Unknown SQL command." << std::endl;
             return false;
         }
     }

@@ -30,15 +30,15 @@ namespace SQLCore {
 
         inline const bool isEmpty() const { return d_dataContainer->numRows() == 0; };
 
-        std::shared_ptr<DataRow> getRow(int rowId) const;
+        std::shared_ptr<DataRow> getRow(int pageId, int cellNumber) const;
 
         inline const uint32_t rootPageNum() const { return d_rootPageNum; };
 
         inline const bool isFull() const { return d_dataContainer->numRows() == TABLE_MAX_ROWS; };
-    private:
         inline std::shared_ptr<Page> getPage(int pageId) const { return d_dataContainer->getLoadedPage(pageId); };
+    private:
         std::shared_ptr<DataContainer> d_dataContainer;
-        uint32_t d_rootPageNum;
+        uint32_t d_rootPageNum=0;
     };
 
     std::shared_ptr<DataTable> getDataTableFactory();;

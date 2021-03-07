@@ -9,6 +9,7 @@ namespace SQLCore {
     }
 
     DataRow::operator std::string() const {
-        return "DataRow(" + std::to_string(d_id) + "," + d_email + "," + d_username + ")";
+        return "(" + std::to_string(d_id) + ", " + d_username + ", " + d_email + ")";
     }
+
 }

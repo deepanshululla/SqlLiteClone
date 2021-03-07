@@ -4,7 +4,7 @@
 #include <string>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
-#include <cereal/types/vector.hpp>
+#include <cereal/types/map.hpp>
 #include <cereal/types/memory.hpp>
 
 
@@ -30,11 +30,11 @@ namespace SQLCore {
             ar(id, username, email);
             construct(id, username, email);
         }
-
     private:
         uint32_t d_id;
         std::string d_username;
         std::string d_email;
+
     };
 
 }
