@@ -13,7 +13,7 @@ The project is inspired from https://cstack.github.io/db_tutorial
 
 ### What it does?
 
-1) This is a append only database, which means deletes are not supported.
+1) This is a append only database, which means deletes and updates are not supported yet.
 
 2) This only supports one table for now, whose schema looks like
  * int id
@@ -21,6 +21,6 @@ The project is inspired from https://cstack.github.io/db_tutorial
  * string username
  
  
- 
+3) A basic where clause is supported to query by ID.
 
 
