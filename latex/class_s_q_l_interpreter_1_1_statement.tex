@@ -1,0 +1,115 @@
+\hypertarget{class_s_q_l_interpreter_1_1_statement}{}\doxysection{SQLInterpreter\+::Statement Class Reference}
+\label{class_s_q_l_interpreter_1_1_statement}\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+
+
+{\ttfamily \#include $<$Statement.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} \{ \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987af48758e1bf4160c476590db831d0133b}{STATEMENT\+\_\+\+INSERT}}
+, \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987a4772eeaf9a57b596f34b534d3c1a133d}{STATEMENT\+\_\+\+SELECT}}
+, \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987abbac4153cb5f94443ba778a49eb6204b}{STATEMENT\+\_\+\+UNKNOWN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a9ba28c35bce88a3c741b3d63462d94be}{Statement}} (const std\+::string \&\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a91fba9034e247784a08b2904baeba83c}{statement\+String}})
+\item 
+const std\+::string \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a91fba9034e247784a08b2904baeba83c}{statement\+String}} () const
+\item 
+const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_aec39d156d65f4019a6628f05b8c90787}{statement\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a0de0a26a24f36394956564f6e1fdb6bd}{deduce\+Type}} (const std\+::string \&\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a91fba9034e247784a08b2904baeba83c}{statement\+String}}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a75e899242778c04526eadf9c2c9554f3}{d\+\_\+statement\+String}}
+\item 
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_a16cde1dd2082011c564ba316516ba2b7}{d\+\_\+\+Statement\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}\label{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!StatementType@{StatementType}}
+\index{StatementType@{StatementType}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{StatementType}{StatementType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{SQLInterpreter\+::\+Statement\+::\+Statement\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATEMENT\_INSERT@{STATEMENT\_INSERT}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!STATEMENT\_INSERT@{STATEMENT\_INSERT}}}\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987af48758e1bf4160c476590db831d0133b}\label{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987af48758e1bf4160c476590db831d0133b}} 
+STATEMENT\+\_\+\+INSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATEMENT\_SELECT@{STATEMENT\_SELECT}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!STATEMENT\_SELECT@{STATEMENT\_SELECT}}}\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987a4772eeaf9a57b596f34b534d3c1a133d}\label{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987a4772eeaf9a57b596f34b534d3c1a133d}} 
+STATEMENT\+\_\+\+SELECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATEMENT\_UNKNOWN@{STATEMENT\_UNKNOWN}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!STATEMENT\_UNKNOWN@{STATEMENT\_UNKNOWN}}}\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987abbac4153cb5f94443ba778a49eb6204b}\label{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987abbac4153cb5f94443ba778a49eb6204b}} 
+STATEMENT\+\_\+\+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_a9ba28c35bce88a3c741b3d63462d94be}\label{class_s_q_l_interpreter_1_1_statement_a9ba28c35bce88a3c741b3d63462d94be}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!Statement@{Statement}}
+\index{Statement@{Statement}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{Statement()}{Statement()}}
+{\footnotesize\ttfamily SQLInterpreter\+::\+Statement\+::\+Statement (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{statement\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_a0de0a26a24f36394956564f6e1fdb6bd}\label{class_s_q_l_interpreter_1_1_statement_a0de0a26a24f36394956564f6e1fdb6bd}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!deduceType@{deduceType}}
+\index{deduceType@{deduceType}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{deduceType()}{deduceType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+::\+Statement\+Type}} SQLInterpreter\+::\+Statement\+::deduce\+Type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{statement\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_a91fba9034e247784a08b2904baeba83c}\label{class_s_q_l_interpreter_1_1_statement_a91fba9034e247784a08b2904baeba83c}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!statementString@{statementString}}
+\index{statementString@{statementString}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{statementString()}{statementString()}}
+{\footnotesize\ttfamily const std\+::string SQLInterpreter\+::\+Statement\+::statement\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_aec39d156d65f4019a6628f05b8c90787}\label{class_s_q_l_interpreter_1_1_statement_aec39d156d65f4019a6628f05b8c90787}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!statementType@{statementType}}
+\index{statementType@{statementType}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{statementType()}{statementType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} SQLInterpreter\+::\+Statement\+::statement\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_a75e899242778c04526eadf9c2c9554f3}\label{class_s_q_l_interpreter_1_1_statement_a75e899242778c04526eadf9c2c9554f3}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!d\_statementString@{d\_statementString}}
+\index{d\_statementString@{d\_statementString}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{d\_statementString}{d\_statementString}}
+{\footnotesize\ttfamily std\+::string SQLInterpreter\+::\+Statement\+::d\+\_\+statement\+String\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_statement_a16cde1dd2082011c564ba316516ba2b7}\label{class_s_q_l_interpreter_1_1_statement_a16cde1dd2082011c564ba316516ba2b7}} 
+\index{SQLInterpreter::Statement@{SQLInterpreter::Statement}!d\_StatementType@{d\_StatementType}}
+\index{d\_StatementType@{d\_StatementType}!SQLInterpreter::Statement@{SQLInterpreter::Statement}}
+\doxysubsubsection{\texorpdfstring{d\_StatementType}{d\_StatementType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement_ac1d478299ae6dc5e7deae1c587e08987}{Statement\+Type}} SQLInterpreter\+::\+Statement\+::d\+\_\+\+Statement\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_statement_8h}{Statement.\+h}}\item 
+src/lib/\mbox{\hyperlink{_statement_8cpp}{Statement.\+cpp}}\end{DoxyCompactItemize}

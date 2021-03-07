@@ -1,0 +1,14 @@
+digraph "SQLCore::getSerializer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="SQLCore::getSerializer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SQLCore::DataContainer\l::getLoadedPage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_q_l_core_1_1_data_container.html#aac58e98f362c915202baf3b3499cff36",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SQLCore::DataContainer\l::getRow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_q_l_core_1_1_data_container.html#a8bff4831aa1611e1d1e97a2ee71d0107",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SQLCore::DataContainer\l::rows",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_s_q_l_core_1_1_data_container.html#a97062f7ca416dd7d53cc1d0e4c2d1200",tooltip=" "];
+}

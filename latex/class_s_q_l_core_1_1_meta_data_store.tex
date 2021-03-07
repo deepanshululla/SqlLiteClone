@@ -1,0 +1,57 @@
+\hypertarget{class_s_q_l_core_1_1_meta_data_store}{}\doxysection{SQLCore\+::Meta\+Data\+Store Class Reference}
+\label{class_s_q_l_core_1_1_meta_data_store}\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+
+
+{\ttfamily \#include $<$Meta\+Data\+Store.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a9482101c864fe24dac34c42cf906313e}{get\+Mapping}} (uint32\+\_\+t cell\+Num)
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a74eab03e1a5a6cf75ae8a7b9bceccc62}{add\+Mapping}} (uint32\+\_\+t cell\+Num, int page\+Id)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ uint32\+\_\+t, int $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a825345c4318f96a2eec33a6cb01cce8b}{d\+\_\+cell\+Mapping}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a74eab03e1a5a6cf75ae8a7b9bceccc62}\label{class_s_q_l_core_1_1_meta_data_store_a74eab03e1a5a6cf75ae8a7b9bceccc62}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!addMapping@{addMapping}}
+\index{addMapping@{addMapping}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{addMapping()}{addMapping()}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Meta\+Data\+Store\+::add\+Mapping (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cell\+Num,  }\item[{int}]{page\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a9482101c864fe24dac34c42cf906313e}\label{class_s_q_l_core_1_1_meta_data_store_a9482101c864fe24dac34c42cf906313e}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!getMapping@{getMapping}}
+\index{getMapping@{getMapping}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{getMapping()}{getMapping()}}
+{\footnotesize\ttfamily int SQLCore\+::\+Meta\+Data\+Store\+::get\+Mapping (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cell\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}\label{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!serialize@{serialize}}
+\index{serialize@{serialize}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void SQLCore\+::\+Meta\+Data\+Store\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a825345c4318f96a2eec33a6cb01cce8b}\label{class_s_q_l_core_1_1_meta_data_store_a825345c4318f96a2eec33a6cb01cce8b}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!d\_cellMapping@{d\_cellMapping}}
+\index{d\_cellMapping@{d\_cellMapping}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{d\_cellMapping}{d\_cellMapping}}
+{\footnotesize\ttfamily std\+::map$<$uint32\+\_\+t,int$>$ SQLCore\+::\+Meta\+Data\+Store\+::d\+\_\+cell\+Mapping\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_meta_data_store_8h}{Meta\+Data\+Store.\+h}}\item 
+src/lib/\mbox{\hyperlink{_meta_data_store_8cpp}{Meta\+Data\+Store.\+cpp}}\end{DoxyCompactItemize}

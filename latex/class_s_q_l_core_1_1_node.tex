@@ -1,0 +1,135 @@
+\hypertarget{class_s_q_l_core_1_1_node}{}\doxysection{SQLCore\+::Node Class Reference}
+\label{class_s_q_l_core_1_1_node}\index{SQLCore::Node@{SQLCore::Node}}
+
+
+{\ttfamily \#include $<$Btree.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_node_a24ef3900372e56c7540c0648a2dd9291}{Node}} (\mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} \mbox{\hyperlink{class_s_q_l_core_1_1_node_a22991c9276a2d4e6bf45056399623326}{node\+Type}}, bool is\+Root\+Node, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$ \&page)
+\item 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_node_a2d8d7fba6e67e9b2c226e4f8b632e628}{parent}} () const
+\item 
+void \mbox{\hyperlink{class_s_q_l_core_1_1_node_aba67f33ab49144b312c1d5f7a0cdaf8f}{set\+Parent}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ \&node)
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_node_add6f603dea1d8db3aead3a1ba49481d1}{is\+Root}} () const
+\item 
+int \mbox{\hyperlink{class_s_q_l_core_1_1_node_a84ac0bcd35c4d4ea21bfeafceea1f0e8}{num\+Cells}} () const
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_node_a858032726eac68c846c119f797915c2b}{is\+Leaf}} () const
+\item 
+const \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} \mbox{\hyperlink{class_s_q_l_core_1_1_node_a22991c9276a2d4e6bf45056399623326}{node\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_s_q_l_core_1_1_node_a12da5da4c14a5c41c74593183b829810}{set\+Is\+Root}} (bool \mbox{\hyperlink{class_s_q_l_core_1_1_node_add6f603dea1d8db3aead3a1ba49481d1}{is\+Root}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_node_a70009d6af0c2c87620e7cbe5268c885c}{d\+\_\+parent}} = nullptr
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_node_a56da974548e3f9cc57eeec37b8a5ff63}{d\+\_\+is\+Leaf\+Node}}
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_node_acdd4a2d2f76048bbcb7dbaf8ae371c5d}{d\+\_\+is\+Root\+Node}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_node_af7850b31051b078161556c12d1c1e18a}{d\+\_\+page}}
+\item 
+\mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} \mbox{\hyperlink{class_s_q_l_core_1_1_node_ac764b8e75453c7e541f53329018ab61d}{d\+\_\+node\+Type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a24ef3900372e56c7540c0648a2dd9291}\label{class_s_q_l_core_1_1_node_a24ef3900372e56c7540c0648a2dd9291}} 
+\index{SQLCore::Node@{SQLCore::Node}!Node@{Node}}
+\index{Node@{Node}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily SQLCore\+::\+Node\+::\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}}}]{node\+Type,  }\item[{bool}]{is\+Root\+Node,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$ \&}]{page }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a858032726eac68c846c119f797915c2b}\label{class_s_q_l_core_1_1_node_a858032726eac68c846c119f797915c2b}} 
+\index{SQLCore::Node@{SQLCore::Node}!isLeaf@{isLeaf}}
+\index{isLeaf@{isLeaf}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{isLeaf()}{isLeaf()}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Node\+::is\+Leaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_add6f603dea1d8db3aead3a1ba49481d1}\label{class_s_q_l_core_1_1_node_add6f603dea1d8db3aead3a1ba49481d1}} 
+\index{SQLCore::Node@{SQLCore::Node}!isRoot@{isRoot}}
+\index{isRoot@{isRoot}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{isRoot()}{isRoot()}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Node\+::is\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a22991c9276a2d4e6bf45056399623326}\label{class_s_q_l_core_1_1_node_a22991c9276a2d4e6bf45056399623326}} 
+\index{SQLCore::Node@{SQLCore::Node}!nodeType@{nodeType}}
+\index{nodeType@{nodeType}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{nodeType()}{nodeType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} SQLCore\+::\+Node\+::node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a84ac0bcd35c4d4ea21bfeafceea1f0e8}\label{class_s_q_l_core_1_1_node_a84ac0bcd35c4d4ea21bfeafceea1f0e8}} 
+\index{SQLCore::Node@{SQLCore::Node}!numCells@{numCells}}
+\index{numCells@{numCells}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{numCells()}{numCells()}}
+{\footnotesize\ttfamily int SQLCore\+::\+Node\+::num\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a2d8d7fba6e67e9b2c226e4f8b632e628}\label{class_s_q_l_core_1_1_node_a2d8d7fba6e67e9b2c226e4f8b632e628}} 
+\index{SQLCore::Node@{SQLCore::Node}!parent@{parent}}
+\index{parent@{parent}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}}$>$ SQLCore\+::\+Node\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a12da5da4c14a5c41c74593183b829810}\label{class_s_q_l_core_1_1_node_a12da5da4c14a5c41c74593183b829810}} 
+\index{SQLCore::Node@{SQLCore::Node}!setIsRoot@{setIsRoot}}
+\index{setIsRoot@{setIsRoot}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{setIsRoot()}{setIsRoot()}}
+{\footnotesize\ttfamily void SQLCore\+::\+Node\+::set\+Is\+Root (\begin{DoxyParamCaption}\item[{bool}]{is\+Root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_aba67f33ab49144b312c1d5f7a0cdaf8f}\label{class_s_q_l_core_1_1_node_aba67f33ab49144b312c1d5f7a0cdaf8f}} 
+\index{SQLCore::Node@{SQLCore::Node}!setParent@{setParent}}
+\index{setParent@{setParent}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void SQLCore\+::\+Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}} $>$ \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a56da974548e3f9cc57eeec37b8a5ff63}\label{class_s_q_l_core_1_1_node_a56da974548e3f9cc57eeec37b8a5ff63}} 
+\index{SQLCore::Node@{SQLCore::Node}!d\_isLeafNode@{d\_isLeafNode}}
+\index{d\_isLeafNode@{d\_isLeafNode}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{d\_isLeafNode}{d\_isLeafNode}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Node\+::d\+\_\+is\+Leaf\+Node\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_acdd4a2d2f76048bbcb7dbaf8ae371c5d}\label{class_s_q_l_core_1_1_node_acdd4a2d2f76048bbcb7dbaf8ae371c5d}} 
+\index{SQLCore::Node@{SQLCore::Node}!d\_isRootNode@{d\_isRootNode}}
+\index{d\_isRootNode@{d\_isRootNode}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{d\_isRootNode}{d\_isRootNode}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Node\+::d\+\_\+is\+Root\+Node\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_ac764b8e75453c7e541f53329018ab61d}\label{class_s_q_l_core_1_1_node_ac764b8e75453c7e541f53329018ab61d}} 
+\index{SQLCore::Node@{SQLCore::Node}!d\_nodeType@{d\_nodeType}}
+\index{d\_nodeType@{d\_nodeType}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{d\_nodeType}{d\_nodeType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_s_q_l_core_adcde1ad7d24eea7110dc7c4df63381dd}{Node\+Type}} SQLCore\+::\+Node\+::d\+\_\+node\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_af7850b31051b078161556c12d1c1e18a}\label{class_s_q_l_core_1_1_node_af7850b31051b078161556c12d1c1e18a}} 
+\index{SQLCore::Node@{SQLCore::Node}!d\_page@{d\_page}}
+\index{d\_page@{d\_page}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{d\_page}{d\_page}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}}$>$ SQLCore\+::\+Node\+::d\+\_\+page\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_node_a70009d6af0c2c87620e7cbe5268c885c}\label{class_s_q_l_core_1_1_node_a70009d6af0c2c87620e7cbe5268c885c}} 
+\index{SQLCore::Node@{SQLCore::Node}!d\_parent@{d\_parent}}
+\index{d\_parent@{d\_parent}!SQLCore::Node@{SQLCore::Node}}
+\doxysubsubsection{\texorpdfstring{d\_parent}{d\_parent}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_core_1_1_node}{Node}}$>$ SQLCore\+::\+Node\+::d\+\_\+parent = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_btree_8h}{Btree.\+h}}\item 
+src/lib/\mbox{\hyperlink{_btree_8cpp}{Btree.\+cpp}}\end{DoxyCompactItemize}

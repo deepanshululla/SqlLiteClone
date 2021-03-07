@@ -1,0 +1,100 @@
+\hypertarget{class_s_q_l_core_1_1_data_row}{}\doxysection{SQLCore\+::Data\+Row Class Reference}
+\label{class_s_q_l_core_1_1_data_row}\index{SQLCore::DataRow@{SQLCore::DataRow}}
+
+
+{\ttfamily \#include $<$Data\+Row.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}{Data\+Row}} (uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}{id}}, const std\+::string \&username, const std\+::string \&email)
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}{id}} () const
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a273e6af06e8bd6f01d67e0b8feb0ab6d}{operator std\+::string}} () const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a245fabbff03fea69f3bd008128098318}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\static void \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_adfa8bd592c2ea5ed5056b1fb816a82c0}{load\+\_\+and\+\_\+construct}} (Archive \&ar, cereal\+::construct$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&construct)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_ae34f2e8e2a761b33549bade2f35f8007}{d\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a319b2a65bc95b9aad982868528f642cc}{d\+\_\+username}}
+\item 
+std\+::string \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a2478da0de2f56534558e5b6548bbc375}{d\+\_\+email}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}\label{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!DataRow@{DataRow}}
+\index{DataRow@{DataRow}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{DataRow()}{DataRow()}}
+{\footnotesize\ttfamily SQLCore\+::\+Data\+Row\+::\+Data\+Row (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{email }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}\label{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!id@{id}}
+\index{id@{id}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily const uint32\+\_\+t SQLCore\+::\+Data\+Row\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_adfa8bd592c2ea5ed5056b1fb816a82c0}\label{class_s_q_l_core_1_1_data_row_adfa8bd592c2ea5ed5056b1fb816a82c0}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!load\_and\_construct@{load\_and\_construct}}
+\index{load\_and\_construct@{load\_and\_construct}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{load\_and\_construct()}{load\_and\_construct()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+static void SQLCore\+::\+Data\+Row\+::load\+\_\+and\+\_\+construct (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{cereal\+::construct$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&}]{construct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a273e6af06e8bd6f01d67e0b8feb0ab6d}\label{class_s_q_l_core_1_1_data_row_a273e6af06e8bd6f01d67e0b8feb0ab6d}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily SQLCore\+::\+Data\+Row\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a245fabbff03fea69f3bd008128098318}\label{class_s_q_l_core_1_1_data_row_a245fabbff03fea69f3bd008128098318}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!serialize@{serialize}}
+\index{serialize@{serialize}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void SQLCore\+::\+Data\+Row\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a2478da0de2f56534558e5b6548bbc375}\label{class_s_q_l_core_1_1_data_row_a2478da0de2f56534558e5b6548bbc375}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!d\_email@{d\_email}}
+\index{d\_email@{d\_email}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{d\_email}{d\_email}}
+{\footnotesize\ttfamily std\+::string SQLCore\+::\+Data\+Row\+::d\+\_\+email\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_ae34f2e8e2a761b33549bade2f35f8007}\label{class_s_q_l_core_1_1_data_row_ae34f2e8e2a761b33549bade2f35f8007}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!d\_id@{d\_id}}
+\index{d\_id@{d\_id}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{d\_id}{d\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t SQLCore\+::\+Data\+Row\+::d\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a319b2a65bc95b9aad982868528f642cc}\label{class_s_q_l_core_1_1_data_row_a319b2a65bc95b9aad982868528f642cc}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!d\_username@{d\_username}}
+\index{d\_username@{d\_username}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{d\_username}{d\_username}}
+{\footnotesize\ttfamily std\+::string SQLCore\+::\+Data\+Row\+::d\+\_\+username\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_data_row_8h}{Data\+Row.\+h}}\item 
+src/lib/\mbox{\hyperlink{_data_row_8cpp}{Data\+Row.\+cpp}}\end{DoxyCompactItemize}

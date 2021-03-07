@@ -1,0 +1,119 @@
+\hypertarget{class_s_q_l_core_1_1_data_table}{}\doxysection{SQLCore\+::Data\+Table Class Reference}
+\label{class_s_q_l_core_1_1_data_table}\index{SQLCore::DataTable@{SQLCore::DataTable}}
+
+
+{\ttfamily \#include $<$Data\+Table.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a31a7d206188fadcebed0b3ff0aaba845}{Data\+Table}} ()
+\item 
+bool \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a3415ad0f18d4bdd46bac8a9081a8e23d}{insert}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&data\+Row)
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_ac17dde2ef532fbae7d336dd251399821}{num\+Rows}} () const
+\item 
+const bool \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a2eb8f2509eebd85a61b2ed1f7f98d4c7}{is\+Empty}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a7989a9cae144d6575ed11cafedd76747}{get\+Row}} (uint32\+\_\+t cell\+Number) const
+\item 
+const int \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a7ec0bdc1cc13753565f19743960ca4db}{get\+Page\+Id}} (uint32\+\_\+t cell\+Number) const
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a61269a5eab43a72ddcad44bfa8bec153}{root\+Page\+Num}} () const
+\item 
+const bool \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a5de650cba95e22449afeb5dc2e159175}{is\+Full}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_ace3c078259050c049a3a0057198cae33}{get\+Page}} (int page\+Id) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_container}{Data\+Container}} $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_acf4a43595352755f149f8ecb32000a7e}{d\+\_\+data\+Container}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_table_a50f879c2af624720b631b7818eedd6c8}{d\+\_\+root\+Page\+Num}} =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a31a7d206188fadcebed0b3ff0aaba845}\label{class_s_q_l_core_1_1_data_table_a31a7d206188fadcebed0b3ff0aaba845}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!DataTable@{DataTable}}
+\index{DataTable@{DataTable}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{DataTable()}{DataTable()}}
+{\footnotesize\ttfamily SQLCore\+::\+Data\+Table\+::\+Data\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_ace3c078259050c049a3a0057198cae33}\label{class_s_q_l_core_1_1_data_table_ace3c078259050c049a3a0057198cae33}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!getPage@{getPage}}
+\index{getPage@{getPage}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{getPage()}{getPage()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}}$>$ SQLCore\+::\+Data\+Table\+::get\+Page (\begin{DoxyParamCaption}\item[{int}]{page\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a7ec0bdc1cc13753565f19743960ca4db}\label{class_s_q_l_core_1_1_data_table_a7ec0bdc1cc13753565f19743960ca4db}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!getPageId@{getPageId}}
+\index{getPageId@{getPageId}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{getPageId()}{getPageId()}}
+{\footnotesize\ttfamily const int SQLCore\+::\+Data\+Table\+::get\+Page\+Id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cell\+Number }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a7989a9cae144d6575ed11cafedd76747}\label{class_s_q_l_core_1_1_data_table_a7989a9cae144d6575ed11cafedd76747}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!getRow@{getRow}}
+\index{getRow@{getRow}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{getRow()}{getRow()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ SQLCore\+::\+Data\+Table\+::get\+Row (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cell\+Number }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a3415ad0f18d4bdd46bac8a9081a8e23d}\label{class_s_q_l_core_1_1_data_table_a3415ad0f18d4bdd46bac8a9081a8e23d}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!insert@{insert}}
+\index{insert@{insert}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool SQLCore\+::\+Data\+Table\+::insert (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$ \&}]{data\+Row }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a2eb8f2509eebd85a61b2ed1f7f98d4c7}\label{class_s_q_l_core_1_1_data_table_a2eb8f2509eebd85a61b2ed1f7f98d4c7}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily const bool SQLCore\+::\+Data\+Table\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a5de650cba95e22449afeb5dc2e159175}\label{class_s_q_l_core_1_1_data_table_a5de650cba95e22449afeb5dc2e159175}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!isFull@{isFull}}
+\index{isFull@{isFull}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{isFull()}{isFull()}}
+{\footnotesize\ttfamily const bool SQLCore\+::\+Data\+Table\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_ac17dde2ef532fbae7d336dd251399821}\label{class_s_q_l_core_1_1_data_table_ac17dde2ef532fbae7d336dd251399821}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!numRows@{numRows}}
+\index{numRows@{numRows}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{numRows()}{numRows()}}
+{\footnotesize\ttfamily const uint32\+\_\+t SQLCore\+::\+Data\+Table\+::num\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a61269a5eab43a72ddcad44bfa8bec153}\label{class_s_q_l_core_1_1_data_table_a61269a5eab43a72ddcad44bfa8bec153}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!rootPageNum@{rootPageNum}}
+\index{rootPageNum@{rootPageNum}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{rootPageNum()}{rootPageNum()}}
+{\footnotesize\ttfamily const uint32\+\_\+t SQLCore\+::\+Data\+Table\+::root\+Page\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_acf4a43595352755f149f8ecb32000a7e}\label{class_s_q_l_core_1_1_data_table_acf4a43595352755f149f8ecb32000a7e}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!d\_dataContainer@{d\_dataContainer}}
+\index{d\_dataContainer@{d\_dataContainer}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{d\_dataContainer}{d\_dataContainer}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_q_l_core_1_1_data_container}{Data\+Container}}$>$ SQLCore\+::\+Data\+Table\+::d\+\_\+data\+Container\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_table_a50f879c2af624720b631b7818eedd6c8}\label{class_s_q_l_core_1_1_data_table_a50f879c2af624720b631b7818eedd6c8}} 
+\index{SQLCore::DataTable@{SQLCore::DataTable}!d\_rootPageNum@{d\_rootPageNum}}
+\index{d\_rootPageNum@{d\_rootPageNum}!SQLCore::DataTable@{SQLCore::DataTable}}
+\doxysubsubsection{\texorpdfstring{d\_rootPageNum}{d\_rootPageNum}}
+{\footnotesize\ttfamily uint32\+\_\+t SQLCore\+::\+Data\+Table\+::d\+\_\+root\+Page\+Num =0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_data_table_8h}{Data\+Table.\+h}}\item 
+src/lib/\mbox{\hyperlink{_data_table_8cpp}{Data\+Table.\+cpp}}\end{DoxyCompactItemize}
