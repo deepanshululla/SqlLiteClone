@@ -1,5 +1,6 @@
 documentation:
-	 doxygen Doxyfile
+	rm -rf docs/* latex/*
+	doxygen Doxyfile
 
 cleanData:
 	rm -rf data/*
