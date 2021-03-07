@@ -1,0 +1,59 @@
+\hypertarget{class_s_q_l_core_1_1_serializer}{}\doxysection{SQLCore\+::Serializer$<$ T, Id $>$ Class Template Reference}
+\label{class_s_q_l_core_1_1_serializer}\index{SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}}
+
+
+{\ttfamily \#include $<$Serializer.\+h$>$}
+
+
+
+Inheritance diagram for SQLCore\+::Serializer$<$ T, Id $>$\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_s_q_l_core_1_1_serializer_a99bb374063d20a3b1a60042cf6435685}{$\sim$\+Serializer}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_s_q_l_core_1_1_serializer_a78fa909d5c254063b09c823e291d23a4}{serialize}} (std\+::shared\+\_\+ptr$<$ T $>$ data, Id id) const =0
+\item 
+virtual bool \mbox{\hyperlink{class_s_q_l_core_1_1_serializer_a2e2d2909f24a94f046d7e9e815708136}{deserialize}} (std\+::shared\+\_\+ptr$<$ T $>$ \&data, Id id) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_serializer_a99bb374063d20a3b1a60042cf6435685}\label{class_s_q_l_core_1_1_serializer_a99bb374063d20a3b1a60042cf6435685}} 
+\index{SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}!````~Serializer@{$\sim$Serializer}}
+\index{````~Serializer@{$\sim$Serializer}!SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Serializer()}{~Serializer()}}
+{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
+virtual \mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{SQLCore\+::\+Serializer}}$<$ T, Id $>$\+::$\sim$\mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{Serializer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_serializer_a2e2d2909f24a94f046d7e9e815708136}\label{class_s_q_l_core_1_1_serializer_a2e2d2909f24a94f046d7e9e815708136}} 
+\index{SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
+virtual bool \mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{SQLCore\+::\+Serializer}}$<$ T, Id $>$\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$ \&}]{data,  }\item[{Id}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_adffeef05aa26a6c8adf07f3440102e55}{SQLCore\+::\+Binary\+Serializer$<$ T, Id $>$}}.
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_serializer_a78fa909d5c254063b09c823e291d23a4}\label{class_s_q_l_core_1_1_serializer_a78fa909d5c254063b09c823e291d23a4}} 
+\index{SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}!serialize@{serialize}}
+\index{serialize@{serialize}!SQLCore::Serializer$<$ T, Id $>$@{SQLCore::Serializer$<$ T, Id $>$}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
+virtual bool \mbox{\hyperlink{class_s_q_l_core_1_1_serializer}{SQLCore\+::\+Serializer}}$<$ T, Id $>$\+::serialize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$}]{data,  }\item[{Id}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_a33ba315e1f0fac2cf8d88c3de2cf3408}{SQLCore\+::\+Binary\+Serializer$<$ T, Id $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{_serializer_8h}{Serializer.\+h}}\end{DoxyCompactItemize}
