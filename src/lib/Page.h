@@ -23,7 +23,9 @@ namespace SQLCore {
 
         inline const bool isFull() const { return d_rows.size() == ROWS_PER_PAGE; };
 
-        bool addRow(std::shared_ptr<DataRow>& dataRow);
+        bool addRow(const std::shared_ptr<DataRow>& dataRow);
+
+        std::shared_ptr<DataRow> getRow(uint32_t id) const;
 
         inline const int id() const { return d_id; };
 

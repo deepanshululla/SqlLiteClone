@@ -20,7 +20,6 @@ namespace SQLInterpreter {
     class SqlFrontend {
     public:
         SqlFrontend();
-
         bool execute(Statement s);
 
     private:

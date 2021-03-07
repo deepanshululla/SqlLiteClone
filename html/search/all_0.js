@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['addrow_0',['addRow',['../db/dd0/class_s_q_l_interpreter_1_1_page.html#a74ae822efc47394dd38e0d49d756057e',1,'SQLInterpreter::Page::addRow()'],['../d6/d20/class_s_q_l_interpreter_1_1_data_container.html#a25e58a46893f5fdf23769afc70ed7091',1,'SQLInterpreter::DataContainer::addRow()']]]
+  ['readme_2emd_0',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]],
+  ['relational_20database_20clone_20in_20c_2b_2b_1',['Relational DataBase Clone in C++',['../d3/dcc/md__r_e_a_d_m_e.html',1,'']]]
 ];

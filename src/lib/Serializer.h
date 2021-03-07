@@ -1,10 +1,11 @@
 #ifndef SQLLITECLONE_SERIALIZER_H
 #define SQLLITECLONE_SERIALIZER_H
 
-
+#include "MetaDataStore.h"
 #include "Page.h"
 #include "Utils.h"
 #include "Serializer.h"
+#include <string>
 
 namespace Utils {
     class Utils;
@@ -37,6 +38,8 @@ namespace SQLCore {
     private:
         std::string d_fileDirectory;
 
+        auto conv_to_string(Id val) const;
+
         void getFileName(Id id, std::string &fileName) const;
 
     };
@@ -44,6 +47,7 @@ namespace SQLCore {
     int getFileId(std::string &fileName);
 
     std::shared_ptr<Serializer<Page, int>> getSerializer(const std::string &fileName);
+    std::shared_ptr<Serializer<MetaDataStore, std::string>> getMetaDataSerializer(const std::string &fileDirectory);
 }
 
 #endif //SQLLITECLONE_SERIALIZER_H

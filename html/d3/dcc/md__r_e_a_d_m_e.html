@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Relational DB Clone in C++</title>
+<title>My Project: Relational DataBase Clone in C++</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -62,12 +62,22 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Relational DB Clone in C++ </div>  </div>
+<div class="title">Relational DataBase Clone in C++ </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Disclaimer: This is not a production DB and is limited in capabilities in what it can do. The goal of the project was to learn out the DB internals.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-SqlLiteClone</h1>
+<div class="textblock"><p>Disclaimer: This is not a production DB and is limited in capabilities in what it can do. The goal of the project was to learn out the DB internals. It should not be considered a replacement for a DB leave alone a replacement for SQLlite.</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Reason to work on this</h2>
+<p>I wanted to make my current knowledge of C++ by making something that is fun. So relational DB is what we make.</p>
+<p>The project is inspired from <a href="https://cstack.github.io/db_tutorial">https://cstack.github.io/db_tutorial</a></p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+What it does?</h2>
+<p>1) This is a append only database, which means deletes are not supported.</p>
+<p>2) This only supports one table for now, whose schema looks like</p><ul>
+<li>int id</li>
+<li>string email</li>
+<li>string username </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

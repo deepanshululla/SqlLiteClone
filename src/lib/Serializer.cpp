@@ -18,10 +18,15 @@ namespace SQLCore {
     template<class T, typename Id>
     bool BinarySerializer<T, Id>::deserialize(std::shared_ptr<T> &data, Id id) const {
         std::string fileName;
+
         getFileName(id, fileName);
         // Input file stream. You might use string streams as well.
         {
             std::ifstream ifs(fileName, std::ios::binary);
+            if (!(ifs.good())) {
+                ifs.close();
+                return false;
+            }
             cereal::BinaryInputArchive iarchive(ifs);  // Choose binary format, reading direction.
             iarchive(data);
             ifs.close();
@@ -46,9 +51,24 @@ namespace SQLCore {
     }
 
     template<class T, class Id>
-    void BinarySerializer<T, Id>::getFileName(Id id, std::string &fileName) const {
-        fileName = d_fileDirectory + "/" + std::to_string(id) + ".bin";
+    auto BinarySerializer<T, Id>::conv_to_string(Id val) const {
+        if constexpr (std::is_same<Id, std::string>::value)
+        {
+            return static_cast<std::string>(val);
+        }
+        else
+        {
+            return std::to_string(val);
+        }
     }
+
+    template<class T, class Id>
+    void BinarySerializer<T, Id>::getFileName(Id id, std::string &fileName) const {
+        std::string myId = conv_to_string(id);
+        fileName = d_fileDirectory + "/" + myId + ".bin";
+    }
+
+
 
     std::shared_ptr<Serializer<Page, int>> getSerializer(const std::string &fileDirectory) {
         return std::shared_ptr<BinarySerializer<Page, int>>(new BinarySerializer<Page, int>(fileDirectory));
@@ -58,6 +78,10 @@ namespace SQLCore {
         std::vector<std::string> splitVector;
         Utilities::Utils::split(fileName, (std::string &) ".", splitVector);
         return std::stoi(splitVector[0]);
+    }
+
+    std::shared_ptr<Serializer<MetaDataStore, std::string>> getMetaDataSerializer(const std::string &fileDirectory) {
+        return std::shared_ptr<BinarySerializer<MetaDataStore, std::string>>(new BinarySerializer<MetaDataStore, std::string>(fileDirectory));
     }
 
 }

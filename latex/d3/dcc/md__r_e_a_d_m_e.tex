@@ -1,1 +1,12 @@
-Disclaimer\+: This is not a production DB and is limited in capabilities in what it can do. The goal of the project was to learn out the DB internals.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Sql\+Lite\+Clone}\label{md__r_e_a_d_m_e_autotoc_md1}
+Disclaimer\+: This is not a production DB and is limited in capabilities in what it can do. The goal of the project was to learn out the DB internals. It should not be considered a replacement for a DB leave alone a replacement for SQLlite.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{Reason to work on this}\label{md__r_e_a_d_m_e_autotoc_md1}
+I wanted to make my current knowledge of C++ by making something that is fun. So relational DB is what we make.
+
+The project is inspired from \href{https://cstack.github.io/db_tutorial}{\texttt{ https\+://cstack.\+github.\+io/db\+\_\+tutorial}}\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{What it does?}\label{md__r_e_a_d_m_e_autotoc_md2}
+1) This is a append only database, which means deletes are not supported.
+
+2) This only supports one table for now, whose schema looks like
+\begin{DoxyItemize}
+\item int id
+\item string email
+\item string username 
+\end{DoxyItemize}

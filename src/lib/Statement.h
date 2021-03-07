@@ -11,20 +11,29 @@ namespace SQLInterpreter {
         typedef enum {
             STATEMENT_INSERT, STATEMENT_SELECT, STATEMENT_UNKNOWN
         } StatementType;
-
         explicit Statement(const std::string &statementString);
-
-        [[nodiscard]] inline const StatementType &statementType() const { return d_StatementType; };
-
-        const bool extractDataForInsert(std::vector<std::string> &result);
-
+        inline const std::string statementString() const { return d_statementString;};
+        [[nodiscard]] inline const StatementType statementType() const { return d_StatementType; };
     private:
         std::string d_statementString;
         StatementType d_StatementType;
+        [[nodiscard]] StatementType deduceType(const std::string &statementString) const;
+    };
 
-        [[nodiscard]] const StatementType deduceType(const std::string &statementString) const;
+    class SelectStatement {
+    public:
+            static bool extract(std::vector<std::string> &result, const std::string &statementString);
+            static bool validate( std::vector<std::string>& dataParts);
+
+    };
+
+    class InsertStatement  {
+        public:
+            static bool extract(std::vector<std::string> &result, const std::string &statementString);
+            static bool validate(std::vector<std::string>& dataParts);
     };
 }
+
 
 
 #endif //SQLLITECLONE_STATEMENT_H

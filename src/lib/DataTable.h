@@ -24,14 +24,14 @@ namespace SQLCore {
     public:
         DataTable();
 
-        bool insert(std::shared_ptr<DataRow> &dataRow);
+        bool insert(const std::shared_ptr<DataRow> &dataRow);
 
         inline const uint32_t numRows() const { return d_dataContainer->numRows(); };
 
         inline const bool isEmpty() const { return d_dataContainer->numRows() == 0; };
 
-        std::shared_ptr<DataRow> getRow(int pageId, int cellNumber) const;
-
+        std::shared_ptr<DataRow> getRow(uint32_t cellNumber) const;
+        inline const int getPageId(uint32_t cellNumber) const { return d_dataContainer->getPageId(cellNumber);};
         inline const uint32_t rootPageNum() const { return d_rootPageNum; };
 
         inline const bool isFull() const { return d_dataContainer->numRows() == TABLE_MAX_ROWS; };

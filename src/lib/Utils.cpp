@@ -4,7 +4,7 @@
 namespace Utilities {
 
 
-    void Utils::split(std::string &s, std::string &delimiter, std::vector<std::string> &list) {
+    void Utils::split(std::string s, std::string &delimiter, std::vector<std::string> &list) {
         size_t pos = 0;
         std::string token;
         while ((pos = s.find(delimiter)) != std::string::npos) {

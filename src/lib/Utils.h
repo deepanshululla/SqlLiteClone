@@ -13,7 +13,7 @@
 namespace Utilities {
     class Utils {
     public:
-        static void split(std::string &s, std::string &delimiter, std::vector<std::string> &list);
+        static void split(std::string s, std::string &delimiter, std::vector<std::string> &list);
 
         static void getFileNamesFromDirectory(std::vector<std::string> &list, const std::string &directory);
     };

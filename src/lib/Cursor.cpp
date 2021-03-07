@@ -33,7 +33,22 @@ namespace SQLCore {
     }
 
     std::shared_ptr<DataRow> Cursor::cursorValue() const {
-        return d_dataTable->getRow(d_pageNum, d_cellNum);
+        return d_dataTable->getRow(d_cellNum);
+    }
+
+    bool Cursor::insert(const std::shared_ptr<DataRow> &dataRow) const {
+
+        return d_dataTable->insert(dataRow);
+    };
+
+    bool Cursor::advance(int position) {
+        d_cellNum = position;
+        if (!d_endOfTable && d_cellNum > d_dataTable->numRows()) {
+            d_endOfTable = true;
+            return false;
+        }
+        d_pageNum = d_dataTable->getPageId(position);
+        return true;
     }
 
 
@@ -41,9 +56,10 @@ namespace SQLCore {
         std::shared_ptr<Node> node = getNode(NODE_LEAF, cursor->getPageById(cursor->pageNum()));
         int numCellsInPage = node->numCells();
         if (cursor->cellNum() < numCellsInPage) {
-
+            cursor->insert(dataRow);
 
         }
+
     }
 
     std::shared_ptr<Cursor> getCursor(std::shared_ptr<DataTable>& datatable) {
