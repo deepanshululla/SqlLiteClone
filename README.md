@@ -50,4 +50,4 @@ db > .exit
  
 ```
 
-[Link to documentation](./html/index.html)
+[Link to documentation](./html)
