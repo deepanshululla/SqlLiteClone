@@ -54,8 +54,27 @@ db > .exit
 [Link to documentation](https://deepanshululla.com/SqlLiteClone/)
 
 
-## Todo 
+
+
+## Prerequisites
+
+1. Conan the C++ package manager
+
+2. Rspec the BDD test tool in Ruby
+
+## setup
+
+1. git clone <project>
+
+2. run `make installDeps`
+
+3. Run as you run your CMAKE project.
+
+
+#### Todo
 
 1. Create a Docker image for this.
 
 2. Support updates and deletes.
+
+PRs welcome!
