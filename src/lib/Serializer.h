@@ -24,17 +24,15 @@ namespace SQLCore {
     template<class T, class Id>
     class BinarySerializer : public Serializer<T, Id> {
     public:
-        // The general copy constructor
-        template<typename U, typename V>
-        // member template
-        explicit BinarySerializer(const BinarySerializer<U, V> &other);
 
         explicit BinarySerializer<T, Id>(const std::string &fileDirectory);
 
         bool serialize(std::shared_ptr<T> data, Id id) const;
 
         bool deserialize(std::shared_ptr<T> &data, Id id) const;
-
+        // mark copy operations as restricted
+        BinarySerializer<T, Id>(const BinarySerializer<T, Id>& other)=delete;
+        BinarySerializer<T, Id>& operator=(const BinarySerializer<T, Id>& other)=delete;
     private:
         std::string d_fileDirectory;
 

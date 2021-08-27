@@ -3,12 +3,6 @@
 
 
 namespace SQLCore {
-    template<class T, class Id>
-    template<typename U, typename V>
-    BinarySerializer<T, Id>::BinarySerializer(const BinarySerializer<U, V> &other) :d_fileDirectory(
-            other.d_fileDirectory) {
-
-    }
 
     template<class T, typename Id>
     BinarySerializer<T, Id>::BinarySerializer(const std::string &fileDirectory) :d_fileDirectory(fileDirectory) {
