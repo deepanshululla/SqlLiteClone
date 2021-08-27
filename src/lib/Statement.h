@@ -12,6 +12,8 @@ namespace SQLInterpreter {
             STATEMENT_INSERT, STATEMENT_SELECT, STATEMENT_UNKNOWN
         } StatementType;
         explicit Statement(const std::string &statementString);
+        Statement(const Statement& other)=delete;
+        Statement& operator=(const Statement& other)=delete;
         inline const std::string statementString() const { return d_statementString;};
         [[nodiscard]] inline const StatementType statementType() const { return d_StatementType; };
     private:

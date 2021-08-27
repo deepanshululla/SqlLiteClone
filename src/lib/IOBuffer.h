@@ -10,6 +10,8 @@ private:
     const std::string d_buffer;
 public:
     explicit IoBuffer(const std::string buffer) : d_buffer(buffer) {};
+    IoBuffer(const IoBuffer& other)=delete;
+    IoBuffer& operator=(const IoBuffer& other)=delete;
 
     inline bool isEmpty() const { return d_buffer.empty(); };
 

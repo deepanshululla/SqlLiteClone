@@ -13,6 +13,11 @@
 namespace Utilities {
     class Utils {
     public:
+        Utils()=delete;
+        Utils(const Utils& other)=delete;
+        Utils& operator=(const Utils& other)=delete;
+        Utils(const Utils&& other)=delete;
+        Utils& operator=(const Utils&& other)=delete;
         static void split(std::string s, std::string &delimiter, std::vector<std::string> &list);
 
         static void getFileNamesFromDirectory(std::vector<std::string> &list, const std::string &directory);

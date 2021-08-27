@@ -22,7 +22,7 @@ namespace SQLInterpreter {
         SqlFrontend();
         SqlFrontend& operator=(const SqlFrontend& other)=delete;
         SqlFrontend(const SqlFrontend& other)=delete;
-        bool execute(Statement s);
+        bool execute(const Statement& s);
 
     private:
         std::shared_ptr<SQLCore::DataTable> d_dataTable;

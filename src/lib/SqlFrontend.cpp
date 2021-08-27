@@ -4,7 +4,7 @@
 
 namespace SQLInterpreter {
 
-    bool SqlFrontend::execute(Statement s) {
+    bool SqlFrontend::execute(const Statement& s) {
         std::shared_ptr<SQLCore::Cursor> cursor = SQLCore::getCursor(d_dataTable);
         if (s.statementType() == Statement::STATEMENT_SELECT) {
             std::vector<std::string> statementParts;
