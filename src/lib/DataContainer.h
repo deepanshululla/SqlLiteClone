@@ -12,7 +12,8 @@ namespace SQLCore {
     class DataContainer {
     public:
         DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows, std::shared_ptr<MetaDataStore>& metaDataStore);
-
+        DataContainer(const DataContainer& other)=delete;
+        DataContainer& operator=(const DataContainer& other)=delete;
         const bool addRow(const std::shared_ptr<DataRow> &dataRow);
 
         inline const int numRows() const { return d_numRows; };

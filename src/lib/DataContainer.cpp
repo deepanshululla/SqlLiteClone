@@ -33,7 +33,7 @@ namespace SQLCore {
 
     std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory) {
         std::shared_ptr<Serializer<MetaDataStore, std::string>> metaSerializer = getMetaDataSerializer(directory);
-        std::shared_ptr<MetaDataStore> metaDataStore(new MetaDataStore);
+        std::shared_ptr<MetaDataStore> metaDataStore;
         metaSerializer->deserialize(metaDataStore, "index");
         return metaDataStore;
     }

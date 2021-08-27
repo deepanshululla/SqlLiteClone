@@ -20,6 +20,8 @@ namespace SQLInterpreter {
     class SqlFrontend {
     public:
         SqlFrontend();
+        SqlFrontend& operator=(const SqlFrontend& other)=delete;
+        SqlFrontend(const SqlFrontend& other)=delete;
         bool execute(Statement s);
 
     private:

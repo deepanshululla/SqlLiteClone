@@ -16,7 +16,8 @@ namespace SQLCore {
     class Page {
     public:
         Page(uint32_t id);
-
+        Page(const Page& other)=delete;
+        Page& operator=(const Page& other)=delete;
         Page(uint32_t id, std::map<uint32_t,std::shared_ptr<DataRow>> &rows);
 
         inline const bool isUnloaded() const { return d_isUnloaded; };

@@ -8,6 +8,8 @@ namespace SQLCore {
         //to do: implement it as an iterator
     public:
         Cursor(std::shared_ptr<DataTable> &datatable);
+        Cursor(const Cursor & other)=delete;
+        Cursor& operator=(const Cursor& other)=delete;
         inline const uint32_t pageNum() const { return d_pageNum;};
         inline const uint32_t cellNum() const {return d_cellNum;};
         std::shared_ptr<DataRow> cursorValue() const;

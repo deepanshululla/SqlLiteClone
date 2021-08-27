@@ -39,7 +39,7 @@ namespace DbCore {
         }
     }
 
-    Repl::Repl() : d_sqlFrontEnd(std::make_shared<SQLInterpreter::SqlFrontend>(SQLInterpreter::SqlFrontend())) {
+    Repl::Repl() : d_sqlFrontEnd(std::make_shared<SQLInterpreter::SqlFrontend>()) {
 
     }
 }

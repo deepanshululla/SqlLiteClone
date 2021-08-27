@@ -22,6 +22,8 @@ namespace DbCore {
     class Repl {
 
     public:
+        Repl(const Repl& repl)=delete;
+        Repl& operator=(const Repl& repl)=delete;
         typedef enum {
             META_COMMAND_SUCCESS,
             META_COMMAND_UNRECOGNIZED_COMMAND

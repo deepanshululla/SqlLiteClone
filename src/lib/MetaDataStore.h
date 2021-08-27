@@ -9,6 +9,9 @@ namespace SQLCore {
 class MetaDataStore {
 public:
     int getMapping(uint32_t cellNum);
+    // fixme: copy constructors are compulsory
+//    MetaDataStore(const MetaDataStore& other)=delete;
+//    MetaDataStore& operator=(const MetaDataStore& other)=delete;
     bool addMapping(uint32_t cellNum, int pageId);
     template<class Archive>
     void serialize(Archive &archive) {

@@ -23,6 +23,8 @@ namespace SQLCore {
     class DataTable {
     public:
         DataTable();
+        DataTable(const DataTable& other)=delete;
+        DataTable& operator=(const DataTable& other)=delete;
 
         bool insert(const std::shared_ptr<DataRow> &dataRow);
 
