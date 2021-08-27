@@ -8,14 +8,20 @@
 namespace SQLCore {
 class MetaDataStore {
 public:
+    MetaDataStore(const std::map<uint32_t,int>& cellMapping);
     int getMapping(uint32_t cellNum);
-    // fixme: copy constructors are compulsory
-//    MetaDataStore(const MetaDataStore& other)=delete;
-//    MetaDataStore& operator=(const MetaDataStore& other)=delete;
+    MetaDataStore(const MetaDataStore& other)=delete;
+    MetaDataStore& operator=(const MetaDataStore& other)=delete;
     bool addMapping(uint32_t cellNum, int pageId);
     template<class Archive>
     void serialize(Archive &archive) {
         archive(d_cellMapping);  // Simply list all the fields to be serialized/deserialized.
+    }
+    template<class Archive>
+    static void load_and_construct(Archive &ar, cereal::construct<MetaDataStore> &construct) {
+        std::map<uint32_t,int> cellMapping;
+        ar(cellMapping);
+        construct(cellMapping);
     }
 
 private:

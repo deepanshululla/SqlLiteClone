@@ -8,7 +8,7 @@ namespace SQLCore {
         std::shared_ptr<MetaDataStore> metaDataStore = loadMetaData(DIRECTORY_LOCATION);
         std::shared_ptr<DataContainer> dataContainer(new DataContainer(pages, 0, metaDataStore));
         size_t numRowsInLastPage;
-        if (!pages.empty()){
+        if (!pages.empty()) {
             numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
             dataContainer->setNumRows(numRowsInLastPage + (pages.size() - 1) * ROWS_PER_PAGE);
         }
@@ -21,8 +21,7 @@ namespace SQLCore {
         const std::regex r("[0-9]+(.bin)");
 
         for (auto file : files) {
-            if (std::regex_match(file, r))
-            {
+            if (std::regex_match(file, r)) {
                 int id = getFileId(file);
                 std::shared_ptr<Page> page(new Page(id));
                 pages.push_back(page);
@@ -33,7 +32,7 @@ namespace SQLCore {
 
     std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory) {
         std::shared_ptr<Serializer<MetaDataStore, std::string>> metaSerializer = getMetaDataSerializer(directory);
-        std::shared_ptr<MetaDataStore> metaDataStore;
+        std::shared_ptr<MetaDataStore> metaDataStore{nullptr};
         metaSerializer->deserialize(metaDataStore, "index");
         return metaDataStore;
     }
@@ -45,7 +44,7 @@ namespace SQLCore {
             d_pages.emplace_back(getNewPage(numPages));
         }
         d_pages.back()->addRow(dataRow);
-        d_metaStore->addMapping(dataRow->id(), d_pages.size()-1);
+        d_metaStore->addMapping(dataRow->id(), d_pages.size() - 1);
         ++d_numRows;
 
         // todo: need to be in some sort of transaction
@@ -94,15 +93,18 @@ namespace SQLCore {
         return d_pages[pageId];
     }
 
-    DataContainer::DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows, std::shared_ptr<MetaDataStore>& metaDataStore) : d_pages(pages),
-                                                                                           d_numRows(numRows),
-                                                                                           d_directory(
-                                                                                                   SQLCore::DIRECTORY_LOCATION),
-                                                                                                   d_MetaSerializer(getMetaDataSerializer(SQLCore::DIRECTORY_LOCATION)),
-                                                                                           d_dataSerializer(
-                                                                                                   getSerializer(
-                                                                                                           SQLCore::DIRECTORY_LOCATION)),
-                                                                                                           d_metaStore(metaDataStore){
+    DataContainer::DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows,
+                                 std::shared_ptr<MetaDataStore> &metaDataStore) : d_pages(pages),
+                                                                                  d_numRows(numRows),
+                                                                                  d_directory(
+                                                                                          SQLCore::DIRECTORY_LOCATION),
+                                                                                  d_MetaSerializer(
+                                                                                          getMetaDataSerializer(
+                                                                                                  SQLCore::DIRECTORY_LOCATION)),
+                                                                                  d_dataSerializer(
+                                                                                          getSerializer(
+                                                                                                  SQLCore::DIRECTORY_LOCATION)),
+                                                                                  d_metaStore(metaDataStore) {
 
     }
 

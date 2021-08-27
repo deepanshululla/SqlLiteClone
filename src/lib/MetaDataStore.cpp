@@ -15,4 +15,8 @@ namespace SQLCore {
         }
         return it->second;
     }
+
+    MetaDataStore::MetaDataStore(const std::map<uint32_t, int>& cellMapping) :d_cellMapping(cellMapping){
+
+    }
 }
