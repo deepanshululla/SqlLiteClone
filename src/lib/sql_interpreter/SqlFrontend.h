@@ -4,15 +4,13 @@
 #include <unordered_map>
 #include <string>
 #include <memory>
-#include "DataTable.h"
+#include "../sql_core_lib/DataTable.h"
 #include "Statement.h"
-#include "Cursor.h"
+#include "../sql_core_lib/Cursor.h"
 
 namespace SQLCore {
     class Cursor;
-
     class DataTable;
-
     class DataRow;
 }
 

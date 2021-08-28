@@ -23,7 +23,7 @@ namespace SQLInterpreter {
                 if (dataRow!=nullptr) {
                     std::cout << std::string(*(dataRow)) << std::endl;
                 }
-                //move cursor to the position
+                    //move cursor to the position
                 else {
                     return false;
                 }
@@ -67,8 +67,5 @@ namespace SQLInterpreter {
 
     SqlFrontend::SqlFrontend() : d_dataTable(SQLCore::getDataTableFactory()) {
     }
-
-
-
 
 }

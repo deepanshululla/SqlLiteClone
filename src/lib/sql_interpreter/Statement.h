@@ -3,7 +3,7 @@
 
 #include <string>
 #include <unordered_map>
-#include "Utils.h"
+#include "../sql_core_lib/Utils.h"
 
 namespace SQLInterpreter {
     class Statement {
