@@ -16,7 +16,7 @@ namespace SQLCore {
     public:
         virtual ~Serializer() {};
         virtual bool serialize(std::shared_ptr<T> data, Id id) const = 0;
-        virtual bool deserialize(std::shared_ptr<T> &data, Id id) const = 0;
+        virtual bool deserialize(std::shared_ptr<T>& data, Id id) const = 0;
     };
 
     template<class T, class Id>
@@ -24,7 +24,7 @@ namespace SQLCore {
     public:
         explicit BinarySerializer<T, Id>(const std::string &fileDirectory);
         bool serialize(std::shared_ptr<T> data, Id id) const;
-        bool deserialize(std::shared_ptr<T> &data, Id id) const;
+        bool deserialize(std::shared_ptr<T>& data, Id id) const;
         // mark copy operations as restricted
         BinarySerializer<T, Id>(const BinarySerializer<T, Id>& other)=delete;
         BinarySerializer<T, Id>& operator=(const BinarySerializer<T, Id>& other)=delete;

@@ -11,7 +11,7 @@ namespace SQLCore {
 
     class DataContainer {
     public:
-        DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows, std::shared_ptr<MetaDataStore>& metaDataStore);
+        DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows, const std::shared_ptr<MetaDataStore>& metaDataStore);
         DataContainer(const DataContainer& other)=delete;
         DataContainer& operator=(const DataContainer& other)=delete;
         const bool addRow(const std::shared_ptr<DataRow> &dataRow);
@@ -33,7 +33,7 @@ namespace SQLCore {
     };
     std::unique_ptr<DataContainer> getDataContainerFactory();
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory);
-    std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory);
+    void loadMetaData(const std::string &directory, std::shared_ptr<MetaDataStore>& result);
 
 
 }

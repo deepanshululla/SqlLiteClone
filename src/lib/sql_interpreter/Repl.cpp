@@ -17,6 +17,9 @@ namespace DbCore {
             SQLInterpreter::Statement statement(ioBuffer->data());
             d_sqlFrontEnd->execute(statement);
         }
+
+
+
     }
 
     std::unique_ptr<IoBuffer> Repl::readInput() {

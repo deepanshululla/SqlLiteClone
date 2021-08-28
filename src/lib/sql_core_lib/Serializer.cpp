@@ -8,7 +8,7 @@ namespace SQLCore {
 
 
     template<class T, typename Id>
-    bool BinarySerializer<T, Id>::deserialize(std::shared_ptr<T> &data, Id id) const {
+    bool BinarySerializer<T, Id>::deserialize(std::shared_ptr<T>& data, Id id) const {
         std::string fileName;
 
         getFileName(id, fileName);

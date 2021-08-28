@@ -8,6 +8,7 @@
 namespace SQLCore {
 class MetaDataStore {
 public:
+    MetaDataStore()=default;
     MetaDataStore(const std::map<uint32_t,int>& cellMapping);
     int getMapping(uint32_t cellNum);
     MetaDataStore(const MetaDataStore& other)=delete;
@@ -23,7 +24,6 @@ public:
         ar(cellMapping);
         construct(cellMapping);
     }
-
 private:
     std::map<uint32_t,int> d_cellMapping;
 

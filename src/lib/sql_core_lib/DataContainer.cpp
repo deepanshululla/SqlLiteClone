@@ -5,7 +5,8 @@ namespace SQLCore {
     std::unique_ptr<DataContainer> getDataContainerFactory() {
         std::vector<std::shared_ptr<Page>> pages{};
         loadPages(pages, DIRECTORY_LOCATION);
-        std::shared_ptr<MetaDataStore> metaDataStore = loadMetaData(DIRECTORY_LOCATION);
+        std::shared_ptr<MetaDataStore> metaDataStore = std::make_shared<MetaDataStore>();
+        loadMetaData(DIRECTORY_LOCATION, metaDataStore);
         std::unique_ptr<DataContainer> dataContainer = std::make_unique<DataContainer>(pages, 0, metaDataStore);
         size_t numRowsInLastPage;
         if (!pages.empty()) {
@@ -20,7 +21,7 @@ namespace SQLCore {
         Utilities::Utils::getFileNamesFromDirectory(files, directory);
         const std::regex r("[0-9]+(.bin)");
 
-        for (auto file : files) {
+        for (auto& file : files) {
             if (std::regex_match(file, r)) {
                 int id = getFileId(file);
                 std::shared_ptr<Page> page(new Page(id));
@@ -30,11 +31,17 @@ namespace SQLCore {
         }
     }
 
-    std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory) {
+     void loadMetaData(const std::string &directory, std::shared_ptr<MetaDataStore>& metaDataStore) {
         BinarySerializer<MetaDataStore, std::string> metaSerializer(directory);
-        std::shared_ptr<MetaDataStore> metaDataStore{nullptr};
-        metaSerializer.deserialize(metaDataStore, "index");
-        return metaDataStore;
+         std::vector<std::string> files;
+         Utilities::Utils::getFileNamesFromDirectory(files, directory);
+         const std::regex r("index.bin");
+         for (auto file : files) {
+             if (std::regex_match(file, r)) {
+                 metaSerializer.deserialize(metaDataStore, "index");
+             }
+         }
+
     }
 
 
@@ -45,6 +52,7 @@ namespace SQLCore {
         }
         d_pages.back()->addRow(dataRow);
         d_metaStore->addMapping(dataRow->id(), d_pages.size() - 1);
+
         ++d_numRows;
 
         // todo: need to be in some sort of transaction
@@ -57,6 +65,7 @@ namespace SQLCore {
             std::cerr << "Failed to serialize data to file" << std::endl;
             return false;
         }
+
         return true;
     }
 
@@ -94,7 +103,7 @@ namespace SQLCore {
     }
 
     DataContainer::DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows,
-                                 std::shared_ptr<MetaDataStore> &metaDataStore) : d_pages(pages),
+                                 const std::shared_ptr<MetaDataStore> &metaDataStore) : d_pages(pages),
                                                                                   d_numRows(numRows),
                                                                                   d_directory(
                                                                                           SQLCore::DIRECTORY_LOCATION),
@@ -105,6 +114,7 @@ namespace SQLCore {
                                                                                           BinarySerializer<Page, int>(
                                                                                                   SQLCore::DIRECTORY_LOCATION)),
                                                                                   d_metaStore(metaDataStore) {
+        d_MetaSerializer.serialize(metaDataStore, "index");
 
     }
 

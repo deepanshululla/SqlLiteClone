@@ -48,13 +48,16 @@ namespace SQLInterpreter {
                 return false;
             }
 
+
             if (!(InsertStatement::validate(dataParts))) {
                 return false;
             }
+
             std::shared_ptr<SQLCore::DataRow> dataRow(
                     new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
                                          dataParts[2],
                                          dataParts[3]));
+
             if (d_dataTable->insert(dataRow)){
                 std::cout << "Executed." << std::endl;
             }

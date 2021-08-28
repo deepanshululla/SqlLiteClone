@@ -4,7 +4,7 @@
 namespace SQLCore {
 
     bool MetaDataStore::addMapping(uint32_t cellNum, int pageId) {
-        d_cellMapping[cellNum]=pageId;
+        d_cellMapping.insert(std::make_pair(cellNum, pageId));
         return true;
     }
 
