@@ -12,7 +12,7 @@ namespace SQLCore {
             numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
             dataContainer->setNumRows(numRowsInLastPage + (pages.size() - 1) * ROWS_PER_PAGE);
         }
-        return dataContainer;
+        return std::move(dataContainer);
     }
 
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory) {
