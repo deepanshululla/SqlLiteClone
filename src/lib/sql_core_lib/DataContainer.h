@@ -21,7 +21,6 @@ namespace SQLCore {
         void setNumRows(int count) { d_numRows = count; };
         inline const int getPageId(uint32_t cellNumber) const { return d_metaStore->getMapping(cellNumber); };
         std::shared_ptr<Page> getLoadedPage(int pageId) const;
-
         void rows(std::vector<std::shared_ptr<DataRow>> &results) const;
 
     private:
@@ -29,11 +28,9 @@ namespace SQLCore {
         int d_numRows;
         std::string d_directory;
         BinarySerializer<Page, int> d_dataSerializer;
-        std::shared_ptr<Serializer<MetaDataStore, std::string>> d_MetaSerializer;
+        BinarySerializer<MetaDataStore, std::string> d_MetaSerializer;
         std::shared_ptr<MetaDataStore> d_metaStore;
     };
-
-
     std::unique_ptr<DataContainer> getDataContainerFactory();
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory);
     std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory);

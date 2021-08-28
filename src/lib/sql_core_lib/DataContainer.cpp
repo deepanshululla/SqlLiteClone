@@ -49,7 +49,7 @@ namespace SQLCore {
 
         // todo: need to be in some sort of transaction
         // otherwise in case of failure might lead to consistency bugs
-        if (!d_MetaSerializer->serialize(d_metaStore, "index")) {
+        if (!d_MetaSerializer.serialize(d_metaStore, "index")) {
             std::cerr << "Failed to serialize metadata to file" << std::endl;
             return false;
         }
@@ -99,7 +99,7 @@ namespace SQLCore {
                                                                                   d_directory(
                                                                                           SQLCore::DIRECTORY_LOCATION),
                                                                                   d_MetaSerializer(
-                                                                                          getMetaDataSerializer(
+                                                                                          BinarySerializer<MetaDataStore, std::string>(
                                                                                                   SQLCore::DIRECTORY_LOCATION)),
                                                                                   d_dataSerializer(
                                                                                           BinarySerializer<Page, int>(

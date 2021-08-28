@@ -45,7 +45,6 @@ namespace SQLCore {
     }
     template class BinarySerializer<Page, int>;
     template class BinarySerializer<MetaDataStore, std::string>;
-    std::shared_ptr<Serializer<MetaDataStore, std::string>> getMetaDataSerializer(const std::string &fileDirectory);
 }
 
 #endif //SQLLITECLONE_SERIALIZER_H
