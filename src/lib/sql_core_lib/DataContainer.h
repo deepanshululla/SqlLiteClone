@@ -34,7 +34,7 @@ namespace SQLCore {
     };
 
 
-    std::shared_ptr<DataContainer> getDataContainerFactory();
+    std::unique_ptr<DataContainer> getDataContainerFactory();
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory);
     std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory);
 

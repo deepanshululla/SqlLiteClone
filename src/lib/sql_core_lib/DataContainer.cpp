@@ -2,11 +2,11 @@
 #include <regex>
 
 namespace SQLCore {
-    std::shared_ptr<DataContainer> getDataContainerFactory() {
+    std::unique_ptr<DataContainer> getDataContainerFactory() {
         std::vector<std::shared_ptr<Page>> pages{};
         loadPages(pages, DIRECTORY_LOCATION);
         std::shared_ptr<MetaDataStore> metaDataStore = loadMetaData(DIRECTORY_LOCATION);
-        std::shared_ptr<DataContainer> dataContainer(new DataContainer(pages, 0, metaDataStore));
+        std::unique_ptr<DataContainer> dataContainer = std::make_unique<DataContainer>(pages, 0, metaDataStore);
         size_t numRowsInLastPage;
         if (!pages.empty()) {
             numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
