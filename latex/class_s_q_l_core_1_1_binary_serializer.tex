@@ -15,13 +15,15 @@ Collaboration diagram for SQLCore\+::Binary\+Serializer$<$ T, Id $>$\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename U , typename V $>$ }\\\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_af442e1f863029f7bed87df0157cc7a03}{Binary\+Serializer}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ U, V $>$ \&other)
-\item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_ae7aa10b48c9d58fda8881db9ba064c26}{Binary\+Serializer}} (const std\+::string \&file\+Directory)
 \item 
 bool \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_a33ba315e1f0fac2cf8d88c3de2cf3408}{serialize}} (std\+::shared\+\_\+ptr$<$ T $>$ data, Id id) const
 \item 
 bool \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_adffeef05aa26a6c8adf07f3440102e55}{deserialize}} (std\+::shared\+\_\+ptr$<$ T $>$ \&data, Id id) const
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_aa21e1e588c9fef0d4c7c1a28ed36867c}{Binary\+Serializer}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ T, Id $>$ \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ T, Id $>$ \& \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_a57766b680dd0cee7abadc66e9e52fbb2}{operator=}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ T, Id $>$ \&other)=delete
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -38,20 +40,19 @@ std\+::string \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer_abc2b49f89
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_s_q_l_core_1_1_binary_serializer_af442e1f863029f7bed87df0157cc7a03}\label{class_s_q_l_core_1_1_binary_serializer_af442e1f863029f7bed87df0157cc7a03}} 
-\index{SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}!BinarySerializer@{BinarySerializer}}
-\index{BinarySerializer@{BinarySerializer}!SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}}
-\doxysubsubsection{\texorpdfstring{BinarySerializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
-template$<$typename U , typename V $>$ \\
-\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+::\+Binary\+Serializer}}$<$ T, Id $>$\+::\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ U, V $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
 \mbox{\Hypertarget{class_s_q_l_core_1_1_binary_serializer_ae7aa10b48c9d58fda8881db9ba064c26}\label{class_s_q_l_core_1_1_binary_serializer_ae7aa10b48c9d58fda8881db9ba064c26}} 
 \index{SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}!BinarySerializer@{BinarySerializer}}
 \index{BinarySerializer@{BinarySerializer}!SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}}
-\doxysubsubsection{\texorpdfstring{BinarySerializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{BinarySerializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$class T , typename Id $>$ \\
 \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+::\+Binary\+Serializer}}$<$ T, Id $>$\+::\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_binary_serializer_aa21e1e588c9fef0d4c7c1a28ed36867c}\label{class_s_q_l_core_1_1_binary_serializer_aa21e1e588c9fef0d4c7c1a28ed36867c}} 
+\index{SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}!BinarySerializer@{BinarySerializer}}
+\index{BinarySerializer@{BinarySerializer}!SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}}
+\doxysubsubsection{\texorpdfstring{BinarySerializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
+\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+::\+Binary\+Serializer}}$<$ T, Id $>$\+::\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ T, Id $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 
 
@@ -81,6 +82,13 @@ Implements \mbox{\hyperlink{class_s_q_l_core_1_1_serializer_a2e2d2909f24a94f046d
 {\footnotesize\ttfamily template$<$class T , class Id $>$ \\
 void \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+::\+Binary\+Serializer}}$<$ T, Id $>$\+::get\+File\+Name (\begin{DoxyParamCaption}\item[{Id}]{id,  }\item[{std\+::string \&}]{file\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{class_s_q_l_core_1_1_binary_serializer_a57766b680dd0cee7abadc66e9e52fbb2}\label{class_s_q_l_core_1_1_binary_serializer_a57766b680dd0cee7abadc66e9e52fbb2}} 
+\index{SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T , class Id $>$ \\
+\mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$T, Id$>$\& \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+::\+Binary\+Serializer}}$<$ T, Id $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{Binary\+Serializer}}$<$ T, Id $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
 \mbox{\Hypertarget{class_s_q_l_core_1_1_binary_serializer_a33ba315e1f0fac2cf8d88c3de2cf3408}\label{class_s_q_l_core_1_1_binary_serializer_a33ba315e1f0fac2cf8d88c3de2cf3408}} 
 \index{SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}!serialize@{serialize}}
 \index{serialize@{serialize}!SQLCore::BinarySerializer$<$ T, Id $>$@{SQLCore::BinarySerializer$<$ T, Id $>$}}
@@ -106,5 +114,5 @@ std\+::string \mbox{\hyperlink{class_s_q_l_core_1_1_binary_serializer}{SQLCore\+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_serializer_8h}{Serializer.\+h}}\item 
-src/lib/\mbox{\hyperlink{_serializer_8cpp}{Serializer.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_serializer_8h}{Serializer.\+h}}\item 
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_serializer_8cpp}{Serializer.\+cpp}}\end{DoxyCompactItemize}

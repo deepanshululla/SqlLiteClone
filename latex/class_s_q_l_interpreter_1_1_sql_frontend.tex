@@ -9,7 +9,11 @@
 \item 
 \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend_a055f6ce54facd60449ac512e96c7c46e}{Sql\+Frontend}} ()
 \item 
-bool \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend_a07b12217c63f3f8d7b3b7ff323f4fbbf}{execute}} (\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement}{Statement}} s)
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}} \& \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend_a08c4884d1ff84b7d0303e592fe059f78}{operator=}} (const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend_ab853190cd3b46ea041339b1b1e7881b6}{Sql\+Frontend}} (const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}} \&other)=delete
+\item 
+bool \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend_a0241b990f442c18eda833dbb3b96acea}{execute}} (const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement}{Statement}} \&s)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -22,20 +26,32 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table}{SQLC
 \mbox{\Hypertarget{class_s_q_l_interpreter_1_1_sql_frontend_a055f6ce54facd60449ac512e96c7c46e}\label{class_s_q_l_interpreter_1_1_sql_frontend_a055f6ce54facd60449ac512e96c7c46e}} 
 \index{SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}!SqlFrontend@{SqlFrontend}}
 \index{SqlFrontend@{SqlFrontend}!SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}}
-\doxysubsubsection{\texorpdfstring{SqlFrontend()}{SqlFrontend()}}
+\doxysubsubsection{\texorpdfstring{SqlFrontend()}{SqlFrontend()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily SQLInterpreter\+::\+Sql\+Frontend\+::\+Sql\+Frontend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_sql_frontend_ab853190cd3b46ea041339b1b1e7881b6}\label{class_s_q_l_interpreter_1_1_sql_frontend_ab853190cd3b46ea041339b1b1e7881b6}} 
+\index{SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}!SqlFrontend@{SqlFrontend}}
+\index{SqlFrontend@{SqlFrontend}!SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}}
+\doxysubsubsection{\texorpdfstring{SqlFrontend()}{SqlFrontend()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily SQLInterpreter\+::\+Sql\+Frontend\+::\+Sql\+Frontend (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_sql_frontend_a07b12217c63f3f8d7b3b7ff323f4fbbf}\label{class_s_q_l_interpreter_1_1_sql_frontend_a07b12217c63f3f8d7b3b7ff323f4fbbf}} 
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_sql_frontend_a0241b990f442c18eda833dbb3b96acea}\label{class_s_q_l_interpreter_1_1_sql_frontend_a0241b990f442c18eda833dbb3b96acea}} 
 \index{SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}!execute@{execute}}
 \index{execute@{execute}!SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}}
 \doxysubsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily bool SQLInterpreter\+::\+Sql\+Frontend\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement}{Statement}}}]{s }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool SQLInterpreter\+::\+Sql\+Frontend\+::execute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_statement}{Statement}} \&}]{s }\end{DoxyParamCaption})}
 
 Here is the call graph for this function\+:
 % FIG 0
+\mbox{\Hypertarget{class_s_q_l_interpreter_1_1_sql_frontend_a08c4884d1ff84b7d0303e592fe059f78}\label{class_s_q_l_interpreter_1_1_sql_frontend_a08c4884d1ff84b7d0303e592fe059f78}} 
+\index{SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLInterpreter::SqlFrontend@{SQLInterpreter::SqlFrontend}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}}\& SQLInterpreter\+::\+Sql\+Frontend\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_interpreter_1_1_sql_frontend}{Sql\+Frontend}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -49,5 +65,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_sql_frontend_8h}{Sql\+Frontend.\+h}}\item 
-src/lib/\mbox{\hyperlink{_sql_frontend_8cpp}{Sql\+Frontend.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+interpreter/\mbox{\hyperlink{_sql_frontend_8h}{Sql\+Frontend.\+h}}\item 
+src/lib/sql\+\_\+interpreter/\mbox{\hyperlink{_sql_frontend_8cpp}{Sql\+Frontend.\+cpp}}\end{DoxyCompactItemize}

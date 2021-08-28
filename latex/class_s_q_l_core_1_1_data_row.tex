@@ -9,6 +9,10 @@
 \item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}{Data\+Row}} (uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}{id}}, const std\+::string \&username, const std\+::string \&email)
 \item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_data_row_acc7d2670a254d047815c8b6128aceb4f}{Data\+Row}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} \& \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a63b36186657247d1ea2a9a1dbd24ebf9}{operator=}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} \&other)=delete
+\item 
 const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a21aac6ff14cb48baf76c01d92d21c636}{id}} () const
 \item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a273e6af06e8bd6f01d67e0b8feb0ab6d}{operator std\+::string}} () const
@@ -35,8 +39,14 @@ std\+::string \mbox{\hyperlink{class_s_q_l_core_1_1_data_row_a2478da0de2f5653455
 \mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}\label{class_s_q_l_core_1_1_data_row_a566f52b3b9653485e0fb14e9f114a461}} 
 \index{SQLCore::DataRow@{SQLCore::DataRow}!DataRow@{DataRow}}
 \index{DataRow@{DataRow}!SQLCore::DataRow@{SQLCore::DataRow}}
-\doxysubsubsection{\texorpdfstring{DataRow()}{DataRow()}}
+\doxysubsubsection{\texorpdfstring{DataRow()}{DataRow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily SQLCore\+::\+Data\+Row\+::\+Data\+Row (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{email }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_acc7d2670a254d047815c8b6128aceb4f}\label{class_s_q_l_core_1_1_data_row_acc7d2670a254d047815c8b6128aceb4f}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!DataRow@{DataRow}}
+\index{DataRow@{DataRow}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{DataRow()}{DataRow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily SQLCore\+::\+Data\+Row\+::\+Data\+Row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 
 
@@ -63,6 +73,12 @@ Here is the call graph for this function\+:
 \index{operator std::string@{operator std::string}!SQLCore::DataRow@{SQLCore::DataRow}}
 \doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
 {\footnotesize\ttfamily SQLCore\+::\+Data\+Row\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a63b36186657247d1ea2a9a1dbd24ebf9}\label{class_s_q_l_core_1_1_data_row_a63b36186657247d1ea2a9a1dbd24ebf9}} 
+\index{SQLCore::DataRow@{SQLCore::DataRow}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLCore::DataRow@{SQLCore::DataRow}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}}\& SQLCore\+::\+Data\+Row\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{class_s_q_l_core_1_1_data_row_a245fabbff03fea69f3bd008128098318}\label{class_s_q_l_core_1_1_data_row_a245fabbff03fea69f3bd008128098318}} 
 \index{SQLCore::DataRow@{SQLCore::DataRow}!serialize@{serialize}}
@@ -96,5 +112,5 @@ void SQLCore\+::\+Data\+Row\+::serialize (\begin{DoxyParamCaption}\item[{Archive
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_data_row_8h}{Data\+Row.\+h}}\item 
-src/lib/\mbox{\hyperlink{_data_row_8cpp}{Data\+Row.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_data_row_8h}{Data\+Row.\+h}}\item 
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_data_row_8cpp}{Data\+Row.\+cpp}}\end{DoxyCompactItemize}

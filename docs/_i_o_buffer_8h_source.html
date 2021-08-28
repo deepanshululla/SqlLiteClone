@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sqllite clone: src/lib/IOBuffer.h Source File</title>
+<title>Sqllite clone: src/lib/sql_interpreter/IOBuffer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_484cf17c9a8744bdc6c44dee0a5045cd.html">sql_interpreter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,19 +81,23 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">   10</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a22a169a6e010bd40c6d20f679bf9e2d1">   12</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_io_buffer.html#a22a169a6e010bd40c6d20f679bf9e2d1">IoBuffer</a>(<span class="keyword">const</span> std::string buffer) : <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>(buffer) {};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">   14</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">isEmpty</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>.empty(); };</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a80715e6c22b49e6b3a57dfb1659586c9">   13</a></span>&#160;    <a class="code" href="class_io_buffer.html#a80715e6c22b49e6b3a57dfb1659586c9">IoBuffer</a>(<span class="keyword">const</span> <a class="code" href="class_io_buffer.html">IoBuffer</a>&amp; other)=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a90ab244338fe822d719b7221e57a695b">   14</a></span>&#160;    <a class="code" href="class_io_buffer.html">IoBuffer</a>&amp; <a class="code" href="class_io_buffer.html#a90ab244338fe822d719b7221e57a695b">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_io_buffer.html">IoBuffer</a>&amp; other)=<span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">   16</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::string &amp;<a class="code" href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">data</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>; };</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SQLLITECLONE_IOBUFFER_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">   16</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">isEmpty</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>.empty(); };</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">   18</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::string &amp;<a class="code" href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">data</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">d_buffer</a>; };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SQLLITECLONE_IOBUFFER_H</span></div>
 <div class="ttc" id="aclass_io_buffer_html"><div class="ttname"><a href="class_io_buffer.html">IoBuffer</a></div><div class="ttdef"><b>Definition:</b> IOBuffer.h:8</div></div>
-<div class="ttc" id="aclass_io_buffer_html_a15be6fd008e4000296b5abee984c5d6d"><div class="ttname"><a href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">IoBuffer::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:14</div></div>
+<div class="ttc" id="aclass_io_buffer_html_a15be6fd008e4000296b5abee984c5d6d"><div class="ttname"><a href="class_io_buffer.html#a15be6fd008e4000296b5abee984c5d6d">IoBuffer::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:16</div></div>
 <div class="ttc" id="aclass_io_buffer_html_a22a169a6e010bd40c6d20f679bf9e2d1"><div class="ttname"><a href="class_io_buffer.html#a22a169a6e010bd40c6d20f679bf9e2d1">IoBuffer::IoBuffer</a></div><div class="ttdeci">IoBuffer(const std::string buffer)</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:12</div></div>
 <div class="ttc" id="aclass_io_buffer_html_a58332205dc2322d95c58fcab218e1c4e"><div class="ttname"><a href="class_io_buffer.html#a58332205dc2322d95c58fcab218e1c4e">IoBuffer::d_buffer</a></div><div class="ttdeci">const std::string d_buffer</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:10</div></div>
-<div class="ttc" id="aclass_io_buffer_html_a79f6e6de6763c7927d1d8c28126afaaf"><div class="ttname"><a href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">IoBuffer::data</a></div><div class="ttdeci">const std::string &amp; data() const</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:16</div></div>
+<div class="ttc" id="aclass_io_buffer_html_a79f6e6de6763c7927d1d8c28126afaaf"><div class="ttname"><a href="class_io_buffer.html#a79f6e6de6763c7927d1d8c28126afaaf">IoBuffer::data</a></div><div class="ttdeci">const std::string &amp; data() const</div><div class="ttdef"><b>Definition:</b> IOBuffer.h:18</div></div>
+<div class="ttc" id="aclass_io_buffer_html_a80715e6c22b49e6b3a57dfb1659586c9"><div class="ttname"><a href="class_io_buffer.html#a80715e6c22b49e6b3a57dfb1659586c9">IoBuffer::IoBuffer</a></div><div class="ttdeci">IoBuffer(const IoBuffer &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_io_buffer_html_a90ab244338fe822d719b7221e57a695b"><div class="ttname"><a href="class_io_buffer.html#a90ab244338fe822d719b7221e57a695b">IoBuffer::operator=</a></div><div class="ttdeci">IoBuffer &amp; operator=(const IoBuffer &amp;other)=delete</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

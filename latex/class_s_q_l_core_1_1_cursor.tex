@@ -9,6 +9,10 @@
 \item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a2aae3483d6c97120bb636f3b4b82381c}{Cursor}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table}{Data\+Table}} $>$ \&datatable)
 \item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a3b684a295679ce2196caf8cb5474ef83}{Cursor}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} \& \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a9fd57c2992e3397b7acbc3330fc0660a}{operator=}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} \&other)=delete
+\item 
 const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a252305bb179294d2084e3447e5a77a32}{page\+Num}} () const
 \item 
 const uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_ad5ad9d27c8c4aaa4a925150fe56a2989}{cell\+Num}} () const
@@ -42,8 +46,14 @@ bool \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a81b56dd9afaac86c8b1535899e54f
 \mbox{\Hypertarget{class_s_q_l_core_1_1_cursor_a2aae3483d6c97120bb636f3b4b82381c}\label{class_s_q_l_core_1_1_cursor_a2aae3483d6c97120bb636f3b4b82381c}} 
 \index{SQLCore::Cursor@{SQLCore::Cursor}!Cursor@{Cursor}}
 \index{Cursor@{Cursor}!SQLCore::Cursor@{SQLCore::Cursor}}
-\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}}
+\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily SQLCore\+::\+Cursor\+::\+Cursor (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_table}{Data\+Table}} $>$ \&}]{datatable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_cursor_a3b684a295679ce2196caf8cb5474ef83}\label{class_s_q_l_core_1_1_cursor_a3b684a295679ce2196caf8cb5474ef83}} 
+\index{SQLCore::Cursor@{SQLCore::Cursor}!Cursor@{Cursor}}
+\index{Cursor@{Cursor}!SQLCore::Cursor@{SQLCore::Cursor}}
+\doxysubsubsection{\texorpdfstring{Cursor()}{Cursor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily SQLCore\+::\+Cursor\+::\+Cursor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 
 
@@ -90,6 +100,12 @@ bool \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a81b56dd9afaac86c8b1535899e54f
 \doxysubsubsection{\texorpdfstring{isEnd()}{isEnd()}}
 {\footnotesize\ttfamily bool SQLCore\+::\+Cursor\+::is\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+\mbox{\Hypertarget{class_s_q_l_core_1_1_cursor_a9fd57c2992e3397b7acbc3330fc0660a}\label{class_s_q_l_core_1_1_cursor_a9fd57c2992e3397b7acbc3330fc0660a}} 
+\index{SQLCore::Cursor@{SQLCore::Cursor}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLCore::Cursor@{SQLCore::Cursor}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}}\& SQLCore\+::\+Cursor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_cursor}{Cursor}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
 \mbox{\Hypertarget{class_s_q_l_core_1_1_cursor_a252305bb179294d2084e3447e5a77a32}\label{class_s_q_l_core_1_1_cursor_a252305bb179294d2084e3447e5a77a32}} 
 \index{SQLCore::Cursor@{SQLCore::Cursor}!pageNum@{pageNum}}
 \index{pageNum@{pageNum}!SQLCore::Cursor@{SQLCore::Cursor}}
@@ -127,5 +143,5 @@ bool \mbox{\hyperlink{class_s_q_l_core_1_1_cursor_a81b56dd9afaac86c8b1535899e54f
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_cursor_8h}{Cursor.\+h}}\item 
-src/lib/\mbox{\hyperlink{_cursor_8cpp}{Cursor.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_cursor_8h}{Cursor.\+h}}\item 
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_cursor_8cpp}{Cursor.\+cpp}}\end{DoxyCompactItemize}

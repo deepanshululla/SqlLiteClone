@@ -9,6 +9,10 @@
 \item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_page_a51ab3f6742c6f47bef17cbffe07403c0}{Page}} (uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_page_a52a01aa6ce77d218f28a2f98d58d560d}{id}})
 \item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_page_af44e46c03437c902f46fbebffc2fe946}{Page}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} \& \mbox{\hyperlink{class_s_q_l_core_1_1_page_a1ee64b936fda2726a87344c106a2d082}{operator=}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} \&other)=delete
+\item 
 \mbox{\hyperlink{class_s_q_l_core_1_1_page_a3a8563fb36b327648410266dcebfaf9b}{Page}} (uint32\+\_\+t \mbox{\hyperlink{class_s_q_l_core_1_1_page_a52a01aa6ce77d218f28a2f98d58d560d}{id}}, std\+::map$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$$>$ \&\mbox{\hyperlink{class_s_q_l_core_1_1_page_a5245e69e1f33ac94f99091744caf153c}{rows}})
 \item 
 const bool \mbox{\hyperlink{class_s_q_l_core_1_1_page_ac7dd847d2eac89b84bda4bb75eb7df1c}{is\+Unloaded}} () const
@@ -45,13 +49,19 @@ bool \mbox{\hyperlink{class_s_q_l_core_1_1_page_a86ebb2c8b464018146e71895b1d9a8a
 \mbox{\Hypertarget{class_s_q_l_core_1_1_page_a51ab3f6742c6f47bef17cbffe07403c0}\label{class_s_q_l_core_1_1_page_a51ab3f6742c6f47bef17cbffe07403c0}} 
 \index{SQLCore::Page@{SQLCore::Page}!Page@{Page}}
 \index{Page@{Page}!SQLCore::Page@{SQLCore::Page}}
-\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily SQLCore\+::\+Page\+::\+Page (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_page_af44e46c03437c902f46fbebffc2fe946}\label{class_s_q_l_core_1_1_page_af44e46c03437c902f46fbebffc2fe946}} 
+\index{SQLCore::Page@{SQLCore::Page}!Page@{Page}}
+\index{Page@{Page}!SQLCore::Page@{SQLCore::Page}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily SQLCore\+::\+Page\+::\+Page (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{class_s_q_l_core_1_1_page_a3a8563fb36b327648410266dcebfaf9b}\label{class_s_q_l_core_1_1_page_a3a8563fb36b327648410266dcebfaf9b}} 
 \index{SQLCore::Page@{SQLCore::Page}!Page@{Page}}
 \index{Page@{Page}!SQLCore::Page@{SQLCore::Page}}
-\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Page()}{Page()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily SQLCore\+::\+Page\+::\+Page (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{std\+::map$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_data_row}{Data\+Row}} $>$$>$ \&}]{rows }\end{DoxyParamCaption})}
 
 
@@ -98,6 +108,12 @@ static void SQLCore\+::\+Page\+::load\+\_\+and\+\_\+construct (\begin{DoxyParamC
 
 Here is the call graph for this function\+:
 % FIG 1
+\mbox{\Hypertarget{class_s_q_l_core_1_1_page_a1ee64b936fda2726a87344c106a2d082}\label{class_s_q_l_core_1_1_page_a1ee64b936fda2726a87344c106a2d082}} 
+\index{SQLCore::Page@{SQLCore::Page}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLCore::Page@{SQLCore::Page}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}}\& SQLCore\+::\+Page\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_page}{Page}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
 \mbox{\Hypertarget{class_s_q_l_core_1_1_page_a5245e69e1f33ac94f99091744caf153c}\label{class_s_q_l_core_1_1_page_a5245e69e1f33ac94f99091744caf153c}} 
 \index{SQLCore::Page@{SQLCore::Page}!rows@{rows}}
 \index{rows@{rows}!SQLCore::Page@{SQLCore::Page}}
@@ -136,5 +152,5 @@ void SQLCore\+::\+Page\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_page_8h}{Page.\+h}}\item 
-src/lib/\mbox{\hyperlink{_page_8cpp}{Page.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_page_8h}{Page.\+h}}\item 
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_page_8cpp}{Page.\+cpp}}\end{DoxyCompactItemize}

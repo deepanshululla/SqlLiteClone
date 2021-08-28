@@ -5,7 +5,7 @@ digraph "src/main.cpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="lib/Repl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_repl_8h.html",tooltip=" "];
+  Node2 [label="./lib/sql_interpreter\l/Repl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_repl_8h.html",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -27,7 +27,7 @@ digraph "src/main.cpp"
   Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="DataTable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_data_table_8h.html",tooltip=" "];
+  Node11 [label="../sql_core_lib/DataTable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_data_table_8h.html",tooltip=" "];
   Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -83,6 +83,6 @@ digraph "src/main.cpp"
   Node28 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node28 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node29 [label="Cursor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_cursor_8h.html",tooltip=" "];
+  Node29 [label="../sql_core_lib/Cursor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_cursor_8h.html",tooltip=" "];
   Node29 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

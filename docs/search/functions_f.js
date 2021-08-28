@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eserializer_235',['~Serializer',['../class_s_q_l_core_1_1_serializer.html#a99bb374063d20a3b1a60042cf6435685',1,'SQLCore::Serializer']]]
+  ['validate_238',['validate',['../class_s_q_l_interpreter_1_1_select_statement.html#ad42e0f0b82999cedf51b7c045ebed523',1,'SQLInterpreter::SelectStatement::validate()'],['../class_s_q_l_interpreter_1_1_insert_statement.html#ab1ac3a6483e3558f5bd4113473860918',1,'SQLInterpreter::InsertStatement::validate()']]]
 ];

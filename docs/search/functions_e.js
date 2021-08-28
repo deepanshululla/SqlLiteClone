@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validate_234',['validate',['../class_s_q_l_interpreter_1_1_select_statement.html#ad42e0f0b82999cedf51b7c045ebed523',1,'SQLInterpreter::SelectStatement::validate()'],['../class_s_q_l_interpreter_1_1_insert_statement.html#ab1ac3a6483e3558f5bd4113473860918',1,'SQLInterpreter::InsertStatement::validate()']]]
+  ['utils_237',['Utils',['../class_utilities_1_1_utils.html#a4aad4894baee610c13bb2754c072ede7',1,'Utilities::Utils::Utils()=delete'],['../class_utilities_1_1_utils.html#afb74d1f364e485c3ac45830f15c4550f',1,'Utilities::Utils::Utils(const Utils &amp;other)=delete'],['../class_utilities_1_1_utils.html#ad377c261a1e424c8c658c8173e3a3570',1,'Utilities::Utils::Utils(const Utils &amp;&amp;other)=delete']]]
 ];

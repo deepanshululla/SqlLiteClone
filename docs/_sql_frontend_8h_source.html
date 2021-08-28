@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sqllite clone: src/lib/SqlFrontend.h Source File</title>
+<title>Sqllite clone: src/lib/sql_interpreter/SqlFrontend.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_484cf17c9a8744bdc6c44dee0a5045cd.html">sql_interpreter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,23 +75,23 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_data_table_8h.html">DataTable.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../sql_core_lib/DataTable.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_statement_8h.html">Statement.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cursor_8h.html">Cursor.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../sql_core_lib/Cursor.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_s_q_l_core.html">SQLCore</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">class </span>Cursor;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">class </span>DataTable;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">class </span>DataRow;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_s_q_l_interpreter.html">SQLInterpreter</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_s_q_l_interpreter_1_1_sql_frontend.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html">SqlFrontend</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a055f6ce54facd60449ac512e96c7c46e">SqlFrontend</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a07b12217c63f3f8d7b3b7ff323f4fbbf">execute</a>(<a class="code" href="class_s_q_l_interpreter_1_1_statement.html">Statement</a> s);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">class </span>DataTable;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">class </span>DataRow;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_s_q_l_interpreter.html">SQLInterpreter</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_s_q_l_interpreter_1_1_sql_frontend.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html">SqlFrontend</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a055f6ce54facd60449ac512e96c7c46e">SqlFrontend</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a08c4884d1ff84b7d0303e592fe059f78">   21</a></span>&#160;        <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html">SqlFrontend</a>&amp; <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a08c4884d1ff84b7d0303e592fe059f78">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html">SqlFrontend</a>&amp; other)=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_s_q_l_interpreter_1_1_sql_frontend.html#ab853190cd3b46ea041339b1b1e7881b6">   22</a></span>&#160;        <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#ab853190cd3b46ea041339b1b1e7881b6">SqlFrontend</a>(<span class="keyword">const</span> <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html">SqlFrontend</a>&amp; other)=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a0241b990f442c18eda833dbb3b96acea">execute</a>(<span class="keyword">const</span> <a class="code" href="class_s_q_l_interpreter_1_1_statement.html">Statement</a>&amp; s);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a904064aaee0253ef9a1227d4a50b9ca8">   26</a></span>&#160;        std::shared_ptr&lt;SQLCore::DataTable&gt; <a class="code" href="class_s_q_l_interpreter_1_1_sql_frontend.html#a904064aaee0253ef9a1227d4a50b9ca8">d_dataTable</a>;</div>
@@ -101,13 +101,13 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SQLLITECLONE_SQLFRONTEND_H</span></div>
-<div class="ttc" id="a_cursor_8h_html"><div class="ttname"><a href="_cursor_8h.html">Cursor.h</a></div></div>
-<div class="ttc" id="a_data_table_8h_html"><div class="ttname"><a href="_data_table_8h.html">DataTable.h</a></div></div>
 <div class="ttc" id="a_statement_8h_html"><div class="ttname"><a href="_statement_8h.html">Statement.h</a></div></div>
-<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html">SQLInterpreter::SqlFrontend</a></div><div class="ttdef"><b>Definition:</b> SqlFrontend.h:20</div></div>
+<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html">SQLInterpreter::SqlFrontend</a></div><div class="ttdef"><b>Definition:</b> SqlFrontend.h:18</div></div>
+<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_a0241b990f442c18eda833dbb3b96acea"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#a0241b990f442c18eda833dbb3b96acea">SQLInterpreter::SqlFrontend::execute</a></div><div class="ttdeci">bool execute(const Statement &amp;s)</div><div class="ttdef"><b>Definition:</b> SqlFrontend.cpp:7</div></div>
 <div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_a055f6ce54facd60449ac512e96c7c46e"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#a055f6ce54facd60449ac512e96c7c46e">SQLInterpreter::SqlFrontend::SqlFrontend</a></div><div class="ttdeci">SqlFrontend()</div><div class="ttdef"><b>Definition:</b> SqlFrontend.cpp:68</div></div>
-<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_a07b12217c63f3f8d7b3b7ff323f4fbbf"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#a07b12217c63f3f8d7b3b7ff323f4fbbf">SQLInterpreter::SqlFrontend::execute</a></div><div class="ttdeci">bool execute(Statement s)</div><div class="ttdef"><b>Definition:</b> SqlFrontend.cpp:7</div></div>
+<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_a08c4884d1ff84b7d0303e592fe059f78"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#a08c4884d1ff84b7d0303e592fe059f78">SQLInterpreter::SqlFrontend::operator=</a></div><div class="ttdeci">SqlFrontend &amp; operator=(const SqlFrontend &amp;other)=delete</div></div>
 <div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_a904064aaee0253ef9a1227d4a50b9ca8"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#a904064aaee0253ef9a1227d4a50b9ca8">SQLInterpreter::SqlFrontend::d_dataTable</a></div><div class="ttdeci">std::shared_ptr&lt; SQLCore::DataTable &gt; d_dataTable</div><div class="ttdef"><b>Definition:</b> SqlFrontend.h:26</div></div>
+<div class="ttc" id="aclass_s_q_l_interpreter_1_1_sql_frontend_html_ab853190cd3b46ea041339b1b1e7881b6"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_sql_frontend.html#ab853190cd3b46ea041339b1b1e7881b6">SQLInterpreter::SqlFrontend::SqlFrontend</a></div><div class="ttdeci">SqlFrontend(const SqlFrontend &amp;other)=delete</div></div>
 <div class="ttc" id="aclass_s_q_l_interpreter_1_1_statement_html"><div class="ttname"><a href="class_s_q_l_interpreter_1_1_statement.html">SQLInterpreter::Statement</a></div><div class="ttdef"><b>Definition:</b> Statement.h:9</div></div>
 <div class="ttc" id="anamespace_s_q_l_core_html"><div class="ttname"><a href="namespace_s_q_l_core.html">SQLCore</a></div><div class="ttdef"><b>Definition:</b> Cursor.cpp:4</div></div>
 <div class="ttc" id="anamespace_s_q_l_interpreter_html"><div class="ttname"><a href="namespace_s_q_l_interpreter.html">SQLInterpreter</a></div><div class="ttdef"><b>Definition:</b> Repl.h:17</div></div>

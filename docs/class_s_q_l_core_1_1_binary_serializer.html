@@ -89,15 +89,16 @@ Collaboration diagram for SQLCore::BinarySerializer&lt; T, Id &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af442e1f863029f7bed87df0157cc7a03"><td class="memTemplParams" colspan="2">template&lt;typename U , typename V &gt; </td></tr>
-<tr class="memitem:af442e1f863029f7bed87df0157cc7a03"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#af442e1f863029f7bed87df0157cc7a03">BinarySerializer</a> (const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; U, V &gt; &amp;other)</td></tr>
-<tr class="separator:af442e1f863029f7bed87df0157cc7a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7aa10b48c9d58fda8881db9ba064c26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#ae7aa10b48c9d58fda8881db9ba064c26">BinarySerializer</a> (const std::string &amp;fileDirectory)</td></tr>
 <tr class="separator:ae7aa10b48c9d58fda8881db9ba064c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33ba315e1f0fac2cf8d88c3de2cf3408"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#a33ba315e1f0fac2cf8d88c3de2cf3408">serialize</a> (std::shared_ptr&lt; T &gt; data, Id id) const</td></tr>
 <tr class="separator:a33ba315e1f0fac2cf8d88c3de2cf3408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adffeef05aa26a6c8adf07f3440102e55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#adffeef05aa26a6c8adf07f3440102e55">deserialize</a> (std::shared_ptr&lt; T &gt; &amp;data, Id id) const</td></tr>
 <tr class="separator:adffeef05aa26a6c8adf07f3440102e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21e1e588c9fef0d4c7c1a28ed36867c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#aa21e1e588c9fef0d4c7c1a28ed36867c">BinarySerializer</a> (const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; T, Id &gt; &amp;other)=delete</td></tr>
+<tr class="separator:aa21e1e588c9fef0d4c7c1a28ed36867c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57766b680dd0cee7abadc66e9e52fbb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; T, Id &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html#a57766b680dd0cee7abadc66e9e52fbb2">operator=</a> (const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; T, Id &gt; &amp;other)=delete</td></tr>
+<tr class="separator:a57766b680dd0cee7abadc66e9e52fbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_s_q_l_core_1_1_serializer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_s_q_l_core_1_1_serializer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_s_q_l_core_1_1_serializer.html">SQLCore::Serializer&lt; T, Id &gt;</a></td></tr>
 <tr class="memitem:a99bb374063d20a3b1a60042cf6435685 inherit pub_methods_class_s_q_l_core_1_1_serializer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l_core_1_1_serializer.html#a99bb374063d20a3b1a60042cf6435685">~Serializer</a> ()</td></tr>
 <tr class="separator:a99bb374063d20a3b1a60042cf6435685 inherit pub_methods_class_s_q_l_core_1_1_serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,38 +116,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abc2b49f8919561bf1a735455321938b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af442e1f863029f7bed87df0157cc7a03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af442e1f863029f7bed87df0157cc7a03">&#9670;&nbsp;</a></span>BinarySerializer() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , class Id &gt; </div>
-<div class="memtemplate">
-template&lt;typename U , typename V &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">SQLCore::BinarySerializer</a>&lt; T, Id &gt;::<a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; U, V &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae7aa10b48c9d58fda8881db9ba064c26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7aa10b48c9d58fda8881db9ba064c26">&#9670;&nbsp;</a></span>BinarySerializer() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7aa10b48c9d58fda8881db9ba064c26">&#9670;&nbsp;</a></span>BinarySerializer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +138,34 @@ template&lt;class T , typename Id &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa21e1e588c9fef0d4c7c1a28ed36867c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21e1e588c9fef0d4c7c1a28ed36867c">&#9670;&nbsp;</a></span>BinarySerializer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Id &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">SQLCore::BinarySerializer</a>&lt; T, Id &gt;::<a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; T, Id &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -280,6 +279,34 @@ template&lt;class T , class Id &gt; </div>
 
 </div>
 </div>
+<a id="a57766b680dd0cee7abadc66e9e52fbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57766b680dd0cee7abadc66e9e52fbb2">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Id &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt;T, Id&gt;&amp; <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">SQLCore::BinarySerializer</a>&lt; T, Id &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_s_q_l_core_1_1_binary_serializer.html">BinarySerializer</a>&lt; T, Id &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a33ba315e1f0fac2cf8d88c3de2cf3408"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33ba315e1f0fac2cf8d88c3de2cf3408">&#9670;&nbsp;</a></span>serialize()</h2>
 
@@ -346,8 +373,8 @@ template&lt;class T , class Id &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/lib/<a class="el" href="_serializer_8h_source.html">Serializer.h</a></li>
-<li>src/lib/<a class="el" href="_serializer_8cpp.html">Serializer.cpp</a></li>
+<li>src/lib/sql_core_lib/<a class="el" href="_serializer_8h_source.html">Serializer.h</a></li>
+<li>src/lib/sql_core_lib/<a class="el" href="_serializer_8cpp.html">Serializer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

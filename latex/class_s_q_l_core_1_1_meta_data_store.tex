@@ -7,17 +7,43 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a3b2a6f44643f9ee0c31e4ec39ef2d846}{Meta\+Data\+Store}} (const std\+::map$<$ uint32\+\_\+t, int $>$ \&cell\+Mapping)
+\item 
 int \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a9482101c864fe24dac34c42cf906313e}{get\+Mapping}} (uint32\+\_\+t cell\+Num)
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_aafebe041d8fb2bd7757aee31b7cad0e2}{Meta\+Data\+Store}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} \& \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_abbf7c9a93b6b2f2beba4fdf67e462556}{operator=}} (const \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} \&other)=delete
 \item 
 bool \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a74eab03e1a5a6cf75ae8a7b9bceccc62}{add\+Mapping}} (uint32\+\_\+t cell\+Num, int page\+Id)
 \item 
 {\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\static void \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a7400ed82d06f1faf2de8ccb0b60deec1}{load\+\_\+and\+\_\+construct}} (Archive \&ar, cereal\+::construct$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} $>$ \&construct)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::map$<$ uint32\+\_\+t, int $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store_a825345c4318f96a2eec33a6cb01cce8b}{d\+\_\+cell\+Mapping}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a3b2a6f44643f9ee0c31e4ec39ef2d846}\label{class_s_q_l_core_1_1_meta_data_store_a3b2a6f44643f9ee0c31e4ec39ef2d846}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!MetaDataStore@{MetaDataStore}}
+\index{MetaDataStore@{MetaDataStore}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{MetaDataStore()}{MetaDataStore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily SQLCore\+::\+Meta\+Data\+Store\+::\+Meta\+Data\+Store (\begin{DoxyParamCaption}\item[{const std\+::map$<$ uint32\+\_\+t, int $>$ \&}]{cell\+Mapping }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_aafebe041d8fb2bd7757aee31b7cad0e2}\label{class_s_q_l_core_1_1_meta_data_store_aafebe041d8fb2bd7757aee31b7cad0e2}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!MetaDataStore@{MetaDataStore}}
+\index{MetaDataStore@{MetaDataStore}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{MetaDataStore()}{MetaDataStore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily SQLCore\+::\+Meta\+Data\+Store\+::\+Meta\+Data\+Store (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -32,6 +58,19 @@ std\+::map$<$ uint32\+\_\+t, int $>$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_
 \index{getMapping@{getMapping}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
 \doxysubsubsection{\texorpdfstring{getMapping()}{getMapping()}}
 {\footnotesize\ttfamily int SQLCore\+::\+Meta\+Data\+Store\+::get\+Mapping (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{cell\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a7400ed82d06f1faf2de8ccb0b60deec1}\label{class_s_q_l_core_1_1_meta_data_store_a7400ed82d06f1faf2de8ccb0b60deec1}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!load\_and\_construct@{load\_and\_construct}}
+\index{load\_and\_construct@{load\_and\_construct}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{load\_and\_construct()}{load\_and\_construct()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+static void SQLCore\+::\+Meta\+Data\+Store\+::load\+\_\+and\+\_\+construct (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{cereal\+::construct$<$ \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} $>$ \&}]{construct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_abbf7c9a93b6b2f2beba4fdf67e462556}\label{class_s_q_l_core_1_1_meta_data_store_abbf7c9a93b6b2f2beba4fdf67e462556}} 
+\index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLCore::MetaDataStore@{SQLCore::MetaDataStore}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}}\& SQLCore\+::\+Meta\+Data\+Store\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_s_q_l_core_1_1_meta_data_store}{Meta\+Data\+Store}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}\label{class_s_q_l_core_1_1_meta_data_store_a3448ed7913f59473d77f3413a66104e7}} 
 \index{SQLCore::MetaDataStore@{SQLCore::MetaDataStore}!serialize@{serialize}}
@@ -53,5 +92,5 @@ void SQLCore\+::\+Meta\+Data\+Store\+::serialize (\begin{DoxyParamCaption}\item[
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lib/\mbox{\hyperlink{_meta_data_store_8h}{Meta\+Data\+Store.\+h}}\item 
-src/lib/\mbox{\hyperlink{_meta_data_store_8cpp}{Meta\+Data\+Store.\+cpp}}\end{DoxyCompactItemize}
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_meta_data_store_8h}{Meta\+Data\+Store.\+h}}\item 
+src/lib/sql\+\_\+core\+\_\+lib/\mbox{\hyperlink{_meta_data_store_8cpp}{Meta\+Data\+Store.\+cpp}}\end{DoxyCompactItemize}

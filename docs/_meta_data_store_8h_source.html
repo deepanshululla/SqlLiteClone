@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sqllite clone: src/lib/MetaDataStore.h Source File</title>
+<title>Sqllite clone: src/lib/sql_core_lib/MetaDataStore.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_76f538aae423a14c3c4f2b073f6afaa7.html">sql_core_lib</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,27 +79,40 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_s_q_l_core.html">SQLCore</a> {</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_s_q_l_core_1_1_meta_data_store.html">MetaDataStore</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a9482101c864fe24dac34c42cf906313e">getMapping</a>(uint32_t cellNum);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a74eab03e1a5a6cf75ae8a7b9bceccc62">addMapping</a>(uint32_t cellNum, <span class="keywordtype">int</span> pageId);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">   14</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">serialize</a>(Archive &amp;archive) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        archive(<a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">d_cellMapping</a>);  <span class="comment">// Simply list all the fields to be serialized/deserialized.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">   19</a></span>&#160;    std::map&lt;uint32_t,int&gt; <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">d_cellMapping</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SQLLITECLONE_METADATASTORE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a3b2a6f44643f9ee0c31e4ec39ef2d846">MetaDataStore</a>(<span class="keyword">const</span> std::map&lt;uint32_t,int&gt;&amp; cellMapping);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a9482101c864fe24dac34c42cf906313e">getMapping</a>(uint32_t cellNum);</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#aafebe041d8fb2bd7757aee31b7cad0e2">   13</a></span>&#160;    <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#aafebe041d8fb2bd7757aee31b7cad0e2">MetaDataStore</a>(<span class="keyword">const</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html">MetaDataStore</a>&amp; other)=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#abbf7c9a93b6b2f2beba4fdf67e462556">   14</a></span>&#160;    <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html">MetaDataStore</a>&amp; <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#abbf7c9a93b6b2f2beba4fdf67e462556">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html">MetaDataStore</a>&amp; other)=<span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a74eab03e1a5a6cf75ae8a7b9bceccc62">addMapping</a>(uint32_t cellNum, <span class="keywordtype">int</span> pageId);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">   17</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">serialize</a>(Archive &amp;archive) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        archive(<a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">d_cellMapping</a>);  <span class="comment">// Simply list all the fields to be serialized/deserialized.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#a7400ed82d06f1faf2de8ccb0b60deec1">   21</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a7400ed82d06f1faf2de8ccb0b60deec1">load_and_construct</a>(Archive &amp;ar, cereal::construct&lt;MetaDataStore&gt; &amp;construct) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::map&lt;uint32_t,int&gt; cellMapping;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ar(cellMapping);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        construct(cellMapping);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">   28</a></span>&#160;    std::map&lt;uint32_t,int&gt; <a class="code" href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">d_cellMapping</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//SQLLITECLONE_METADATASTORE_H</span></div>
 <div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html">SQLCore::MetaDataStore</a></div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:9</div></div>
-<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a3448ed7913f59473d77f3413a66104e7"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">SQLCore::MetaDataStore::serialize</a></div><div class="ttdeci">void serialize(Archive &amp;archive)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:14</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a3448ed7913f59473d77f3413a66104e7"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a3448ed7913f59473d77f3413a66104e7">SQLCore::MetaDataStore::serialize</a></div><div class="ttdeci">void serialize(Archive &amp;archive)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:17</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a3b2a6f44643f9ee0c31e4ec39ef2d846"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a3b2a6f44643f9ee0c31e4ec39ef2d846">SQLCore::MetaDataStore::MetaDataStore</a></div><div class="ttdeci">MetaDataStore(const std::map&lt; uint32_t, int &gt; &amp;cellMapping)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.cpp:19</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a7400ed82d06f1faf2de8ccb0b60deec1"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a7400ed82d06f1faf2de8ccb0b60deec1">SQLCore::MetaDataStore::load_and_construct</a></div><div class="ttdeci">static void load_and_construct(Archive &amp;ar, cereal::construct&lt; MetaDataStore &gt; &amp;construct)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:21</div></div>
 <div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a74eab03e1a5a6cf75ae8a7b9bceccc62"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a74eab03e1a5a6cf75ae8a7b9bceccc62">SQLCore::MetaDataStore::addMapping</a></div><div class="ttdeci">bool addMapping(uint32_t cellNum, int pageId)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.cpp:6</div></div>
-<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a825345c4318f96a2eec33a6cb01cce8b"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">SQLCore::MetaDataStore::d_cellMapping</a></div><div class="ttdeci">std::map&lt; uint32_t, int &gt; d_cellMapping</div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:19</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a825345c4318f96a2eec33a6cb01cce8b"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a825345c4318f96a2eec33a6cb01cce8b">SQLCore::MetaDataStore::d_cellMapping</a></div><div class="ttdeci">std::map&lt; uint32_t, int &gt; d_cellMapping</div><div class="ttdef"><b>Definition:</b> MetaDataStore.h:28</div></div>
 <div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_a9482101c864fe24dac34c42cf906313e"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#a9482101c864fe24dac34c42cf906313e">SQLCore::MetaDataStore::getMapping</a></div><div class="ttdeci">int getMapping(uint32_t cellNum)</div><div class="ttdef"><b>Definition:</b> MetaDataStore.cpp:11</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_aafebe041d8fb2bd7757aee31b7cad0e2"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#aafebe041d8fb2bd7757aee31b7cad0e2">SQLCore::MetaDataStore::MetaDataStore</a></div><div class="ttdeci">MetaDataStore(const MetaDataStore &amp;other)=delete</div></div>
+<div class="ttc" id="aclass_s_q_l_core_1_1_meta_data_store_html_abbf7c9a93b6b2f2beba4fdf67e462556"><div class="ttname"><a href="class_s_q_l_core_1_1_meta_data_store.html#abbf7c9a93b6b2f2beba4fdf67e462556">SQLCore::MetaDataStore::operator=</a></div><div class="ttdeci">MetaDataStore &amp; operator=(const MetaDataStore &amp;other)=delete</div></div>
 <div class="ttc" id="anamespace_s_q_l_core_html"><div class="ttname"><a href="namespace_s_q_l_core.html">SQLCore</a></div><div class="ttdef"><b>Definition:</b> Cursor.cpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
