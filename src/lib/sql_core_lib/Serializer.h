@@ -39,7 +39,12 @@ namespace SQLCore {
 
     int getFileId(std::string &fileName);
 
-    BinarySerializer<Page, int> getSerializer(const std::string &fileName);
+    template<class T, typename Id>
+    BinarySerializer<T, Id>::BinarySerializer(const std::string &fileDirectory) :d_fileDirectory(fileDirectory) {
+
+    }
+    template class BinarySerializer<Page, int>;
+    template class BinarySerializer<MetaDataStore, std::string>;
     std::shared_ptr<Serializer<MetaDataStore, std::string>> getMetaDataSerializer(const std::string &fileDirectory);
 }
 

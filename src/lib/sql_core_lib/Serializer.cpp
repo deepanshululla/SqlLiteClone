@@ -4,10 +4,8 @@
 
 namespace SQLCore {
 
-    template<class T, typename Id>
-    BinarySerializer<T, Id>::BinarySerializer(const std::string &fileDirectory) :d_fileDirectory(fileDirectory) {
+//    template class BinarySerializer<MetaDataStore, std::string>;
 
-    }
 
     template<class T, typename Id>
     bool BinarySerializer<T, Id>::deserialize(std::shared_ptr<T> &data, Id id) const {
@@ -62,9 +60,9 @@ namespace SQLCore {
         fileName = d_fileDirectory + "/" + myId + ".bin";
     }
 
-    BinarySerializer<Page, int> getSerializer(const std::string &fileDirectory) {
-        return BinarySerializer<Page, int>(fileDirectory);
-    }
+//    BinarySerializer<Page, int> getSerializer(const std::string &fileDirectory) {
+//        return BinarySerializer<Page, int>(fileDirectory);
+//    }
 
     int getFileId(std::string &fileName) {
         std::vector<std::string> splitVector;

@@ -31,9 +31,9 @@ namespace SQLCore {
     }
 
     std::shared_ptr<MetaDataStore> loadMetaData(const std::string &directory) {
-        std::shared_ptr<Serializer<MetaDataStore, std::string>> metaSerializer = getMetaDataSerializer(directory);
+        BinarySerializer<MetaDataStore, std::string> metaSerializer(directory);
         std::shared_ptr<MetaDataStore> metaDataStore{nullptr};
-        metaSerializer->deserialize(metaDataStore, "index");
+        metaSerializer.deserialize(metaDataStore, "index");
         return metaDataStore;
     }
 
@@ -86,7 +86,7 @@ namespace SQLCore {
         }
         if (d_pages[pageId]->isUnloaded()) {
             //cache miss
-            BinarySerializer<Page, int> serializer = getSerializer(d_directory);
+            BinarySerializer<Page, int> serializer(d_directory);
             std::shared_ptr<Page> page(new Page(pageId));
             serializer.deserialize(const_cast<std::shared_ptr<Page> &>(d_pages[pageId]), pageId);
         }
@@ -102,7 +102,7 @@ namespace SQLCore {
                                                                                           getMetaDataSerializer(
                                                                                                   SQLCore::DIRECTORY_LOCATION)),
                                                                                   d_dataSerializer(
-                                                                                          getSerializer(
+                                                                                          BinarySerializer<Page, int>(
                                                                                                   SQLCore::DIRECTORY_LOCATION)),
                                                                                   d_metaStore(metaDataStore) {
 
