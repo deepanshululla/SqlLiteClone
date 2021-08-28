@@ -5,7 +5,7 @@ describe 'database' do
 
   def run_script(commands)
     raw_output = nil
-    IO.popen("./cmake-build-debug/src/sqlLiteClone", "r+") do |pipe|
+    IO.popen("./cmake-build/src/sqlLiteClone", "r+") do |pipe|
       commands.each do |command|
         pipe.puts command
       end

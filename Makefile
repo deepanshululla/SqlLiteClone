@@ -14,5 +14,5 @@ buildDb:
 runDb: buildDb
 	./cmake-build/src/sqlLiteClone
 
-tests:
+tests: buildDb
 	./bin/rspec
