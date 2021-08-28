@@ -62,8 +62,8 @@ namespace SQLCore {
         fileName = d_fileDirectory + "/" + myId + ".bin";
     }
 
-    std::shared_ptr<Serializer<Page, int>> getSerializer(const std::string &fileDirectory) {
-        return std::make_shared<BinarySerializer<Page, int>>(fileDirectory);
+    BinarySerializer<Page, int> getSerializer(const std::string &fileDirectory) {
+        return BinarySerializer<Page, int>(fileDirectory);
     }
 
     int getFileId(std::string &fileName) {

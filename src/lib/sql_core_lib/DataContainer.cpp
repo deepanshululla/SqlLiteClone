@@ -53,7 +53,7 @@ namespace SQLCore {
             std::cerr << "Failed to serialize metadata to file" << std::endl;
             return false;
         }
-        if (!d_dataSerializer->serialize(d_pages.back(), d_pages.back()->id())) {
+        if (!d_dataSerializer.serialize(d_pages.back(), d_pages.back()->id())) {
             std::cerr << "Failed to serialize data to file" << std::endl;
             return false;
         }
@@ -86,9 +86,9 @@ namespace SQLCore {
         }
         if (d_pages[pageId]->isUnloaded()) {
             //cache miss
-            std::shared_ptr<Serializer<Page, int>> serializer = getSerializer(d_directory);
+            BinarySerializer<Page, int> serializer = getSerializer(d_directory);
             std::shared_ptr<Page> page(new Page(pageId));
-            serializer->deserialize(const_cast<std::shared_ptr<Page> &>(d_pages[pageId]), pageId);
+            serializer.deserialize(const_cast<std::shared_ptr<Page> &>(d_pages[pageId]), pageId);
         }
         return d_pages[pageId];
     }

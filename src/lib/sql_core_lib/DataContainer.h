@@ -28,7 +28,7 @@ namespace SQLCore {
         std::vector<std::shared_ptr<Page>> d_pages;
         int d_numRows;
         std::string d_directory;
-        std::shared_ptr<Serializer<Page, int>> d_dataSerializer;
+        BinarySerializer<Page, int> d_dataSerializer;
         std::shared_ptr<Serializer<MetaDataStore, std::string>> d_MetaSerializer;
         std::shared_ptr<MetaDataStore> d_metaStore;
     };
