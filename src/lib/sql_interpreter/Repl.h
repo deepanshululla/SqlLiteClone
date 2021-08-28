@@ -41,9 +41,9 @@ namespace DbCore {
             std::cout << PROMPT;
         };
 
-        std::shared_ptr<IoBuffer> readInput();
+        std::unique_ptr<IoBuffer> readInput();
 
-        MetaCommandResult executeMetaCommand(std::shared_ptr<IoBuffer> ioBuffer);
+        MetaCommandResult executeMetaCommand(const std::unique_ptr<IoBuffer>& ioBuffer);
 
     };
 }
