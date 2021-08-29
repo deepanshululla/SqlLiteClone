@@ -3,6 +3,7 @@ project(sqlLiteClone)
 set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(sql_core_lib)
 add_subdirectory(sql_interpreter)
+add_subdirectory(wal_logger)
 add_library(sqlLiteCloneLib sql_interpreter/SqlFrontend.cpp sql_interpreter/Statement.cpp sql_interpreter/Repl.cpp)
 
 
