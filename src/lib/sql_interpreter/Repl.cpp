@@ -9,8 +9,12 @@ namespace DbCore {
             print_prompt();
             std::unique_ptr<IoBuffer> ioBuffer = readInput();
             if (ioBuffer->data().find(".") == 0) {
-                if (executeMetaCommand(ioBuffer) != META_COMMAND_SUCCESS) {
-                    cout << "Unrecognized command: " << ioBuffer->data() << endl;;
+                auto result = executeMetaCommand(ioBuffer);
+                if (result == META_COMMAND_EXIT) {
+                    exit(EXIT_SUCCESS);
+                }
+                else if (result == META_COMMAND_UNRECOGNIZED_COMMAND) {
+                    cout << "Unrecognized command: " << ioBuffer->data() << endl;
                 }
             }
 
@@ -35,7 +39,7 @@ namespace DbCore {
 
     Repl::MetaCommandResult Repl::executeMetaCommand(const std::unique_ptr<IoBuffer>& ioBuffer) {
         if (ioBuffer->data().find(".exit") == 0) {
-            exit(EXIT_SUCCESS);
+            return META_COMMAND_EXIT;
         } else {
             cout << "Unrecognized command: " << ioBuffer->data() << endl;;
             return META_COMMAND_UNRECOGNIZED_COMMAND;
