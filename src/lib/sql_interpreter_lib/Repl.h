@@ -12,16 +12,21 @@
 #include <map>
 #include "IOBuffer.h"
 #include "SqlFrontend.h"
-
+#include "../wal_logger_lib/WalQueue.h"
 
 namespace SQLInterpreter {
     class Statement;
     class SqlFrontend;
 }
+namespace WALLogger {
+    template<class T>
+    class WalQueue;
+}
 namespace DbCore {
     class Repl {
 
     public:
+        explicit Repl(WALLogger::WalQueue<SQLInterpreter::Statement>& q, SQLCore::DataTable& d_table);
         Repl(const Repl& repl)=delete;
         Repl& operator=(const Repl& repl)=delete;
         typedef enum {
@@ -33,11 +38,13 @@ namespace DbCore {
 
         Repl();
 
-        [[noreturn]] void execute();
+        void execute();
 
     private:
         const std::string PROMPT = "db > ";
         SQLInterpreter::SqlFrontend d_sqlFrontEnd;
+        SQLCore::DataTable& d_table;
+        WALLogger::WalQueue<SQLInterpreter::Statement>& d_queue;
 
         inline void print_prompt() {
             std::cout << PROMPT;

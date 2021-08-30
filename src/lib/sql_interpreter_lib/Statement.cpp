@@ -19,6 +19,10 @@ namespace SQLInterpreter {
         }
     }
 
+    Statement::Statement() :d_statementString(), d_StatementType(STATEMENT_UNKNOWN){
+
+    }
+
     bool SelectStatement::extract(std::vector<std::string> &result, const std::string& statementString) {
         std::string delimiter = " ";
         Utilities::Utils::split(statementString, delimiter, result);

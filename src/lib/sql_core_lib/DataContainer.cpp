@@ -2,18 +2,18 @@
 #include <regex>
 
 namespace SQLCore {
-    std::unique_ptr<DataContainer> getDataContainerFactory() {
+    std::unique_ptr<DataContainer> getDataContainerFactory(const std::string& fileDirectory) {
         std::vector<std::shared_ptr<Page>> pages{};
-        loadPages(pages, DIRECTORY_LOCATION);
+        loadPages(pages, fileDirectory);
         std::shared_ptr<MetaDataStore> metaDataStore = std::make_shared<MetaDataStore>();
-        loadMetaData(DIRECTORY_LOCATION, metaDataStore);
-        std::unique_ptr<DataContainer> dataContainer = std::make_unique<DataContainer>(pages, 0, metaDataStore);
-        size_t numRowsInLastPage;
+        loadMetaData(fileDirectory, metaDataStore);
+        std::unique_ptr<DataContainer> dataContainer = std::make_unique<DataContainer>(fileDirectory, pages, 0, metaDataStore);
+        size_t numRowsInLastPage = 0;
         if (!pages.empty()) {
             numRowsInLastPage = dataContainer->getLoadedPage(pages.back()->id())->rows().size();
             dataContainer->setNumRows(numRowsInLastPage + (pages.size() - 1) * ROWS_PER_PAGE);
         }
-        return std::move(dataContainer);
+        return dataContainer;
     }
 
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory) {
@@ -21,7 +21,7 @@ namespace SQLCore {
         Utilities::Utils::getFileNamesFromDirectory(files, directory);
         const std::regex r("[0-9]+(.bin)");
 
-        for (auto& file : files) {
+        for (auto &file : files) {
             if (std::regex_match(file, r)) {
                 int id = getFileId(file);
                 std::shared_ptr<Page> page(new Page(id));
@@ -31,16 +31,16 @@ namespace SQLCore {
         }
     }
 
-     void loadMetaData(const std::string &directory, std::shared_ptr<MetaDataStore>& metaDataStore) {
+    void loadMetaData(const std::string &directory, std::shared_ptr<MetaDataStore> &metaDataStore) {
         BinarySerializer<MetaDataStore, std::string> metaSerializer(directory);
-         std::vector<std::string> files;
-         Utilities::Utils::getFileNamesFromDirectory(files, directory);
-         const std::regex r("index.bin");
-         for (auto file : files) {
-             if (std::regex_match(file, r)) {
-                 metaSerializer.deserialize(metaDataStore, "index");
-             }
-         }
+        std::vector<std::string> files;
+        Utilities::Utils::getFileNamesFromDirectory(files, directory);
+        const std::regex r("index.bin");
+        for (auto file : files) {
+            if (std::regex_match(file, r)) {
+                metaSerializer.deserialize(metaDataStore, "index");
+            }
+        }
 
     }
 
@@ -102,18 +102,18 @@ namespace SQLCore {
         return d_pages[pageId];
     }
 
-    DataContainer::DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows,
+    DataContainer::DataContainer(const std::string& fileDirectory, std::vector<std::shared_ptr<Page>> &pages, int numRows,
                                  const std::shared_ptr<MetaDataStore> &metaDataStore) : d_pages(pages),
-                                                                                  d_numRows(numRows),
-                                                                                  d_directory(
-                                                                                          SQLCore::DIRECTORY_LOCATION),
-                                                                                  d_MetaSerializer(
-                                                                                          BinarySerializer<MetaDataStore, std::string>(
-                                                                                                  SQLCore::DIRECTORY_LOCATION)),
-                                                                                  d_dataSerializer(
-                                                                                          BinarySerializer<Page, int>(
-                                                                                                  SQLCore::DIRECTORY_LOCATION)),
-                                                                                  d_metaStore(metaDataStore) {
+                                                                                        d_numRows(numRows),
+                                                                                        d_directory(
+                                                                                                fileDirectory),
+                                                                                        d_MetaSerializer(
+                                                                                                BinarySerializer<MetaDataStore, std::string>(
+                                                                                                        fileDirectory)),
+                                                                                        d_dataSerializer(
+                                                                                                BinarySerializer<Page, int>(
+                                                                                                        fileDirectory)),
+                                                                                        d_metaStore(metaDataStore) {
         d_MetaSerializer.serialize(metaDataStore, "index");
 
     }

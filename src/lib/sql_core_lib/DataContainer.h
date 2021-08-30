@@ -7,11 +7,10 @@
 #include "MetaDataStore.h"
 
 namespace SQLCore {
-    const std::string DIRECTORY_LOCATION = "/Users/deepanshululla/CLionProjects/sqlLiteClone/data";
 
     class DataContainer {
     public:
-        DataContainer(std::vector<std::shared_ptr<Page>> &pages, int numRows, const std::shared_ptr<MetaDataStore>& metaDataStore);
+        DataContainer(const std::string& fileDirectory, std::vector<std::shared_ptr<Page>> &pages, int numRows, const std::shared_ptr<MetaDataStore>& metaDataStore);
         DataContainer(const DataContainer& other)=delete;
         DataContainer& operator=(const DataContainer& other)=delete;
         const bool addRow(const std::shared_ptr<DataRow> &dataRow);
@@ -31,7 +30,7 @@ namespace SQLCore {
         BinarySerializer<MetaDataStore, std::string> d_MetaSerializer;
         std::shared_ptr<MetaDataStore> d_metaStore;
     };
-    std::unique_ptr<DataContainer> getDataContainerFactory();
+    std::unique_ptr<DataContainer> getDataContainerFactory(const std::string& fileDirectory);
     void loadPages(std::vector<std::shared_ptr<Page>> &pages, const std::string &directory);
     void loadMetaData(const std::string &directory, std::shared_ptr<MetaDataStore>& result);
 

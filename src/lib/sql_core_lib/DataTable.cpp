@@ -14,7 +14,8 @@ namespace SQLCore {
         return d_dataContainer->getRow(cellNumber);
     }
 
-    DataTable::DataTable() : d_dataContainer(getDataContainerFactory()) {}
+    DataTable::DataTable(const std::string& fileDirectory)  :d_dataContainer(getDataContainerFactory(fileDirectory)){
+    }
 
     const int DataTable::getPageId(uint32_t cellNumber) const { return d_dataContainer->getPageId(cellNumber);}
 

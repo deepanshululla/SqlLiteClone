@@ -22,7 +22,7 @@ namespace SQLCore {
 
     class DataTable {
     public:
-        DataTable();
+        DataTable(const std::string& fileDirectory);
         DataTable(const DataTable& other)=delete;
         DataTable& operator=(const DataTable& other)=delete;
 
@@ -42,7 +42,6 @@ namespace SQLCore {
         std::unique_ptr<DataContainer> d_dataContainer;
         uint32_t d_rootPageNum=0;
     };
-
 }
 
 

@@ -4,9 +4,8 @@ using namespace std;
 
 namespace DbCore {
 
-    [[noreturn]] void Repl::execute() {
-        auto datatable = SQLCore::DataTable();
-        while (true) {
+    void Repl::execute() {
+//        while (true) {
             print_prompt();
             std::unique_ptr<IoBuffer> ioBuffer = readInput();
             if (ioBuffer->data().find(".") == 0) {
@@ -20,10 +19,8 @@ namespace DbCore {
             }
 
             SQLInterpreter::Statement statement(ioBuffer->data());
-            d_sqlFrontEnd.execute(statement, datatable);
-        }
-
-
+            d_sqlFrontEnd.execute(statement, d_table);
+//        }
 
     }
 
@@ -47,7 +44,11 @@ namespace DbCore {
         }
     }
 
-    Repl::Repl() : d_sqlFrontEnd(SQLInterpreter::SqlFrontend{}) {
+
+
+    Repl::Repl(WALLogger::WalQueue<SQLInterpreter::Statement> &q, SQLCore::DataTable& table): d_sqlFrontEnd(SQLInterpreter::SqlFrontend{q, table}), d_queue(q), d_table(table) {
 
     }
+
+
 }

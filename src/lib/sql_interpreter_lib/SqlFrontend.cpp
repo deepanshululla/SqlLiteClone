@@ -16,24 +16,27 @@ namespace SQLInterpreter {
         }
     }
 
-    bool SqlFrontend::executeInsertStatement(const Statement &s, SQLCore::Cursor &cursor) const {
-        std::vector<std::string> dataParts;
-        if (!(InsertStatement::extract(dataParts, s.statementString()))) {
-            return false;
-        }
-        if (!(InsertStatement::validate(dataParts))) {
-            return false;
-        }
-        std::shared_ptr<SQLCore::DataRow> dataRow(
-                new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
-                                     dataParts[2],
-                                     dataParts[3]));
+    bool SqlFrontend::executeInsertStatement(const Statement &s, SQLCore::Cursor &cursor) {
+//        std::vector<std::string> dataParts;
+//        if (!(InsertStatement::extract(dataParts, s.statementString()))) {
+//            return false;
+//        }
+//        if (!(InsertStatement::validate(dataParts))) {
+//            return false;
+//        }
+//        std::shared_ptr<SQLCore::DataRow> dataRow(
+//                new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
+//                                     dataParts[2],
+//                                     dataParts[3]));
+//
+//        if (cursor.insert(dataRow)) {
+//
+//            return true;
+//        }
+        d_queue.addToQueue(s);
+        std::cout << "Executed." << std::endl;
 
-        if (cursor.insert(dataRow)) {
-            std::cout << "Executed." << std::endl;
-            return true;
-        }
-        return false;
+        return true;
     }
 
     bool SqlFrontend::executeSelectStatement(const Statement &s, SQLCore::Cursor &cursor) const {
@@ -71,7 +74,7 @@ namespace SQLInterpreter {
         return true;
     }
 
-    SqlFrontend::SqlFrontend() {
+    SqlFrontend::SqlFrontend(WALLogger::WalQueue<SQLInterpreter::Statement>& queue, SQLCore::DataTable& table) :d_queue(queue), d_table(table) {
     }
 
 }

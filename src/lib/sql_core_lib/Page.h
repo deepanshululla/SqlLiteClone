@@ -1,6 +1,7 @@
 #ifndef SQLLITECLONE_PAGE_H
 #define SQLLITECLONE_PAGE_H
-
+// Before including any cereal header file
+#define CEREAL_THREAD_SAFE 1
 #include <memory>
 #include <map>
 #include "DataRow.h"

@@ -1,6 +1,7 @@
 #ifndef SQLLITECLONE_DATAROW_H
 #define SQLLITECLONE_DATAROW_H
-
+// Before including any cereal header file
+#define CEREAL_THREAD_SAFE 1
 #include <string>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>

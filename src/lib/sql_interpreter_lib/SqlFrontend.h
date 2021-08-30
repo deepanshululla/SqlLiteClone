@@ -7,6 +7,7 @@
 #include "../sql_core_lib/DataTable.h"
 #include "Statement.h"
 #include "../sql_core_lib/Cursor.h"
+#include "../wal_logger_lib/WalQueue.h"
 
 namespace SQLCore {
     class Cursor;
@@ -17,14 +18,16 @@ namespace SQLCore {
 namespace SQLInterpreter {
     class SqlFrontend {
     public:
-        SqlFrontend();
+        SqlFrontend(WALLogger::WalQueue<SQLInterpreter::Statement>& queue, SQLCore::DataTable& d_table);
         SqlFrontend& operator=(const SqlFrontend& other)=delete;
         SqlFrontend(const SqlFrontend& other)=delete;
         bool execute(const Statement& s,  SQLCore::DataTable& dataTable);
 
     private:
+        WALLogger::WalQueue<SQLInterpreter::Statement>& d_queue;
+        SQLCore::DataTable& d_table;
         bool executeSelectStatement(const Statement &s,  SQLCore::Cursor &cursor) const;
-        bool executeInsertStatement(const Statement &s,  SQLCore::Cursor &cursor) const;
+        bool executeInsertStatement(const Statement &s,  SQLCore::Cursor &cursor);
     };
 
 }

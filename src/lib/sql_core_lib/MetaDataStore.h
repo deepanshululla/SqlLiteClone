@@ -1,5 +1,7 @@
 #ifndef SQLLITECLONE_METADATASTORE_H
 #define SQLLITECLONE_METADATASTORE_H
+// Before including any cereal header file
+#define CEREAL_THREAD_SAFE 1
 
 #include <map>
 #include <cereal/archives/binary.hpp>

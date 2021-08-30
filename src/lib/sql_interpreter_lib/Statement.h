@@ -11,9 +11,8 @@ namespace SQLInterpreter {
         typedef enum {
             STATEMENT_INSERT, STATEMENT_SELECT, STATEMENT_UNKNOWN
         } StatementType;
+        Statement();
         explicit Statement(const std::string &statementString);
-        Statement(const Statement& other)=delete;
-        Statement& operator=(const Statement& other)=delete;
         inline const std::string statementString() const { return d_statementString;};
         [[nodiscard]] inline const StatementType statementType() const { return d_StatementType; };
     private:
@@ -30,7 +29,7 @@ namespace SQLInterpreter {
     };
 
     class InsertStatement  {
-        public:
+    public:
             static bool extract(std::vector<std::string> &result, const std::string &statementString);
             static bool validate(std::vector<std::string>& dataParts);
     };
