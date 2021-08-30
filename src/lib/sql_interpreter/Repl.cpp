@@ -5,6 +5,7 @@ using namespace std;
 namespace DbCore {
 
     [[noreturn]] void Repl::execute() {
+        auto datatable = SQLCore::getDataTableFactory();
         while (true) {
             print_prompt();
             std::unique_ptr<IoBuffer> ioBuffer = readInput();
@@ -19,7 +20,7 @@ namespace DbCore {
             }
 
             SQLInterpreter::Statement statement(ioBuffer->data());
-            d_sqlFrontEnd.execute(statement);
+            d_sqlFrontEnd.execute(statement, datatable);
         }
 
 

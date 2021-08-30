@@ -3,7 +3,7 @@
 
 namespace SQLCore {
 
-    Cursor::Cursor(std::shared_ptr<DataTable> &datatable) : d_dataTable(datatable),
+    Cursor::Cursor(const std::shared_ptr<DataTable> &datatable) : d_dataTable(datatable),
                                                             d_endOfTable(datatable->isEmpty()),
                                                             d_pageNum(datatable->rootPageNum()),
                                                             d_cellNum(0)
@@ -52,7 +52,10 @@ namespace SQLCore {
 
 
 
-    std::shared_ptr<Cursor> getCursor(std::shared_ptr<DataTable>& datatable) {
+    std::shared_ptr<Cursor> getCursor(const std::shared_ptr<DataTable>& datatable) {
         return std::shared_ptr<Cursor>(new Cursor(datatable));
+    }
+    std::shared_ptr<Cursor> getCursor() {
+        return std::shared_ptr<Cursor>(new Cursor(getDataTableFactory()));
     }
 }

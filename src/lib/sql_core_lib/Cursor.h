@@ -7,7 +7,7 @@ namespace SQLCore {
     class Cursor {
         //to do: implement it as an iterator
     public:
-        Cursor(std::shared_ptr<DataTable> &datatable);
+        Cursor(const std::shared_ptr<DataTable> &datatable);
         Cursor(const Cursor & other)=delete;
         Cursor& operator=(const Cursor& other)=delete;
         inline const uint32_t pageNum() const { return d_pageNum;};
@@ -24,7 +24,8 @@ namespace SQLCore {
         uint32_t d_cellNum;
         bool d_endOfTable;
     };
-    std::shared_ptr<Cursor> getCursor(std::shared_ptr<DataTable> &datatable);
+    std::shared_ptr<Cursor> getCursor(const std::shared_ptr<DataTable> &datatable);
+    std::shared_ptr<Cursor> getCursor();
 }
 
 #endif //SQLLITECLONE_CURSOR_H
