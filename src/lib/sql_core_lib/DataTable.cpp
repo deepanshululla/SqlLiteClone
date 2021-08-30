@@ -1,8 +1,6 @@
 #include "DataTable.h"
 
 namespace SQLCore {
-
-
     bool DataTable::insert(const std::shared_ptr<DataRow> &dataRow) {
         if (isFull()) {
             std::cout << "Error: Table full." << std::endl;
@@ -22,8 +20,4 @@ namespace SQLCore {
 
     std::shared_ptr<Page> DataTable::getPage(int pageId) const { return d_dataContainer->getLoadedPage(pageId); };
 
-    std::shared_ptr<DataTable> getDataTableFactory() {
-        return std::shared_ptr<DataTable>(new DataTable());
-    }
-
-}; //DBCore
+}; //SQLCore

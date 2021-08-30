@@ -43,7 +43,6 @@ namespace SQLCore {
         uint32_t d_rootPageNum=0;
     };
 
-    std::shared_ptr<DataTable> getDataTableFactory();;
 }
 
 
