@@ -15,7 +15,7 @@ namespace DbCore {
             }
 
             SQLInterpreter::Statement statement(ioBuffer->data());
-            d_sqlFrontEnd->execute(statement);
+            d_sqlFrontEnd.execute(statement);
         }
 
 
@@ -42,7 +42,7 @@ namespace DbCore {
         }
     }
 
-    Repl::Repl() : d_sqlFrontEnd(std::make_shared<SQLInterpreter::SqlFrontend>()) {
+    Repl::Repl() : d_sqlFrontEnd(SQLInterpreter::SqlFrontend{}) {
 
     }
 }

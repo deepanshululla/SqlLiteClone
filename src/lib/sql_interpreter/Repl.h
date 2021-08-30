@@ -35,7 +35,7 @@ namespace DbCore {
 
     private:
         const std::string PROMPT = "db > ";
-        const std::shared_ptr<SQLInterpreter::SqlFrontend> d_sqlFrontEnd;
+        SQLInterpreter::SqlFrontend d_sqlFrontEnd;
 
         inline void print_prompt() {
             std::cout << PROMPT;
