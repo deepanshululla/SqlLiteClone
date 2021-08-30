@@ -16,7 +16,7 @@ namespace SQLInterpreter {
         }
     }
 
-    bool SqlFrontend::executeInsertStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor) {
+    bool SqlFrontend::executeInsertStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor) const {
         std::vector<std::string> dataParts;
         if (!(InsertStatement::extract(dataParts, s.statementString()))) {
             return false;

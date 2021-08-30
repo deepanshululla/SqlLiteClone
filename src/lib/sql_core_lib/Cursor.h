@@ -25,7 +25,6 @@ namespace SQLCore {
         bool d_endOfTable;
     };
     std::shared_ptr<Cursor> getCursor(const std::shared_ptr<DataTable> &datatable);
-    std::shared_ptr<Cursor> getCursor();
 }
 
 #endif //SQLLITECLONE_CURSOR_H

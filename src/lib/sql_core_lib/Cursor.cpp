@@ -50,12 +50,7 @@ namespace SQLCore {
         return true;
     }
 
-
-
     std::shared_ptr<Cursor> getCursor(const std::shared_ptr<DataTable>& datatable) {
         return std::shared_ptr<Cursor>(new Cursor(datatable));
-    }
-    std::shared_ptr<Cursor> getCursor() {
-        return std::shared_ptr<Cursor>(new Cursor(getDataTableFactory()));
     }
 }
