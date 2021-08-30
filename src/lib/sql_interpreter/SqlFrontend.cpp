@@ -29,11 +29,11 @@ namespace SQLInterpreter {
                                      dataParts[2],
                                      dataParts[3]));
 
-        if (!d_dataTable->insert(dataRow)) {
-            std::cout << "Execution error." << std::endl;
-            return false;
+        if (d_dataTable->insert(dataRow)) {
+            std::cout << "Executed." << std::endl;
+            return true;
         }
-        return true;
+        return false;
     }
 
     bool SqlFrontend::executeSelectStatement(const Statement &s, std::shared_ptr<SQLCore::Cursor> &cursor) const {
