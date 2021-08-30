@@ -5,19 +5,20 @@
 namespace SQLInterpreter {
 
     bool SqlFrontend::execute(const Statement &s) {
-        std::shared_ptr<SQLCore::Cursor> cursor = SQLCore::getCursor(d_dataTable);
+        auto table = SQLCore::getDataTableFactory();
+        std::shared_ptr<SQLCore::Cursor> cursor = SQLCore::getCursor(table);
         if (s.statementType() == Statement::STATEMENT_SELECT) {
             return executeSelectStatement(s, cursor);
         } else if (s.statementType() == Statement::STATEMENT_INSERT) {
-            return executeInsertStatement(s);
+            return executeInsertStatement(s, cursor);
         } else {
             std::cout << "Unknown SQL command." << std::endl;
             return false;
         }
     }
 
-    bool SqlFrontend::executeInsertStatement(const Statement &s) {
-        std::__1::vector<std::string> dataParts;
+    bool SqlFrontend::executeInsertStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor) {
+        std::vector<std::string> dataParts;
         if (!(InsertStatement::extract(dataParts, s.statementString()))) {
             return false;
         }
@@ -29,7 +30,7 @@ namespace SQLInterpreter {
                                      dataParts[2],
                                      dataParts[3]));
 
-        if (d_dataTable->insert(dataRow)) {
+        if (cursor->insert(dataRow)) {
             std::cout << "Executed." << std::endl;
             return true;
         }
@@ -71,7 +72,7 @@ namespace SQLInterpreter {
         return true;
     }
 
-    SqlFrontend::SqlFrontend() : d_dataTable(SQLCore::getDataTableFactory()) {
+    SqlFrontend::SqlFrontend() {
     }
 
 }

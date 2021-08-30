@@ -23,9 +23,8 @@ namespace SQLInterpreter {
         bool execute(const Statement& s);
 
     private:
-        std::shared_ptr<SQLCore::DataTable> d_dataTable;
         bool executeSelectStatement(const Statement &s,const std::shared_ptr<SQLCore::Cursor> &cursor) const;
-        bool executeInsertStatement(const Statement &s);
+        bool executeInsertStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor);
     };
 
 }
