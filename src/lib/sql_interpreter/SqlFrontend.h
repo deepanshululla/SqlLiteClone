@@ -20,7 +20,7 @@ namespace SQLInterpreter {
         SqlFrontend();
         SqlFrontend& operator=(const SqlFrontend& other)=delete;
         SqlFrontend(const SqlFrontend& other)=delete;
-        bool execute(const Statement& s, const std::shared_ptr<SQLCore::DataTable>& dataTable);
+        bool execute(const Statement& s,  SQLCore::DataTable& dataTable);
 
     private:
         bool executeSelectStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor) const;
