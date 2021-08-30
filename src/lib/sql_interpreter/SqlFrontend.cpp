@@ -36,7 +36,7 @@ namespace SQLInterpreter {
         return false;
     }
 
-    bool SqlFrontend::executeSelectStatement(const Statement &s, std::shared_ptr<SQLCore::Cursor> &cursor) const {
+    bool SqlFrontend::executeSelectStatement(const Statement &s, const std::shared_ptr<SQLCore::Cursor> &cursor) const {
         std::vector<std::string> statementParts;
         if (!SelectStatement::extract(statementParts, s.statementString())) {
             return false;
