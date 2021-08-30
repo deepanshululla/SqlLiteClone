@@ -2,7 +2,7 @@
 #define SQLLITECLONE_WALLOGGER_H
 
 #include <queue>
-#include "../sql_interpreter/Statement.h"
+//#include "../sql_interpreter_lib/Statement.h"
 
 namespace Wal {
     template <typename T>
@@ -18,7 +18,7 @@ namespace Wal {
 
     };
 
-    template class WalQueue<SQLInterpreter::Statement>;
+//    template class WalQueue<SQLInterpreter::Statement>;
 
 }
 

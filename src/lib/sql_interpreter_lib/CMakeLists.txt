@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.18)
 project(sql_interpreter_lib)
 set(CMAKE_CXX_STANDARD 20)
 add_library(sql_interpreter_lib SqlFrontend.cpp Statement.cpp Repl.cpp IOBuffer.h)

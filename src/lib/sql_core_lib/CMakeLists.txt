@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.18)
 project(sql_core_lib)
 set(CMAKE_CXX_STANDARD 20)
 add_library(sql_core_lib DataTable.cpp Serializer.cpp DataRow.cpp DataContainer.cpp Page.cpp Cursor.cpp MetaDataStore.cpp Utils.cpp)
