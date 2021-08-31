@@ -5,7 +5,11 @@ add_library(sql_interpreter_lib SqlFrontend.cpp Statement.cpp Repl.cpp IOBuffer.
 
 # for address sanity checks
 set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+# asan checks
+#set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+# tsan checks
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=thread")
+
 include(${CMAKE_SOURCE_DIR}/build/conanbuildinfo.cmake)
 conan_basic_setup()
 message("conan libs = ${CONAN_LIBS}")

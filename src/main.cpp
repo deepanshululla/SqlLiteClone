@@ -12,30 +12,33 @@ bool pushed = false;
 
 
 void produce() {
+    while (true){
     DbCore::Repl repl(q, dataTable);
     repl.execute();
-    pushed = true;
+    }
 }
 
 void consume() {
-    while (!q.isEmpty()) {
-        SQLInterpreter::Statement s;
-        q.popFromQueue(s);
-        auto cursor = SQLCore::Cursor(dataTable);
-        std::vector<std::string> dataParts;
-        if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
-            throw std::runtime_error("Could not extract statement");
-        }
-        if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
-            throw std::runtime_error("Could not validate statement");
-        }
-        std::shared_ptr<SQLCore::DataRow> dataRow(
-                new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
-                                     dataParts[2],
-                                     dataParts[3]));
+    while (true) {
+        while (!q.isEmpty()) {
+            SQLInterpreter::Statement s;
+            q.popFromQueue(s);
+            auto cursor = SQLCore::Cursor(dataTable);
+            std::vector<std::string> dataParts;
+            if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
+                throw std::runtime_error("Could not extract statement");
+            }
+            if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
+                throw std::runtime_error("Could not validate statement");
+            }
+            std::shared_ptr<SQLCore::DataRow> dataRow(
+                    new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
+                                         dataParts[2],
+                                         dataParts[3]));
 
-        if (!cursor.insert(dataRow)) {
-           throw std::runtime_error("Error inserting data row");
+            if (!cursor.insert(dataRow)) {
+                throw std::runtime_error("Error inserting data row");
+            }
         }
     }
 
@@ -43,19 +46,19 @@ void consume() {
 }
 
 int main() {
-    while (true){
-        try{
-            std::thread p(produce);
 
-            std::thread c(consume);
+    try{
+        std::thread p(produce);
 
-            p.join();
-            c.join();
-        } catch (const std::exception& e) {
-            std::cerr << e.what() << std::endl;
+        std::thread c(consume);
 
-        }
+        p.join();
+        c.join();
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
 
     }
+
+
 
 }
