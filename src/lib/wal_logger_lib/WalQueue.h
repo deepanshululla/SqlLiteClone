@@ -28,19 +28,19 @@ namespace WALLogger {
 
         bool isEmpty() const;
     private:
-        std::queue <T> d_queue;
+        std::queue<T> d_queue;
         mutable std::mutex d_mutex;
     };
 
     template<typename T>
     void WalQueue<T>::addToQueue(T item) {
-        std::lock_guard <std::mutex> lock(d_mutex);
+        std::lock_guard<std::mutex> lock(d_mutex);
         d_queue.push(std::move(item));
     }
 
     template<typename T>
     void WalQueue<T>::popFromQueue(T &item) {
-        std::lock_guard <std::mutex> lock(d_mutex);
+        std::lock_guard<std::mutex> lock(d_mutex);
         if (d_queue.size() == 0) {
             throw EmptyQueue();
         }
@@ -50,13 +50,13 @@ namespace WALLogger {
 
     template<typename T>
     WalQueue<T>::WalQueue(const WalQueue<T> &other) {
-        std::lock_guard <std::mutex> lock(d_mutex);
+        std::lock_guard<std::mutex> lock(d_mutex);
         d_queue = other.d_queue;
     }
 
     template<typename T>
     bool WalQueue<T>::isEmpty() const{
-        std::lock_guard <std::mutex> lock(d_mutex);
+        std::lock_guard<std::mutex> lock(d_mutex);
         return d_queue.empty();
     }
 }

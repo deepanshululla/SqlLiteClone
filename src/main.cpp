@@ -1,4 +1,3 @@
-
 #include "./lib/sql_interpreter_lib/Repl.h"
 
 #include <thread>
@@ -8,7 +7,6 @@
 const std::string DIRECTORY_LOCATION = "/Users/deepanshululla/CLionProjects/sqlLiteClone/data";
 WALLogger::WalQueue<SQLInterpreter::Statement> q{};
 SQLCore::DataTable dataTable{DIRECTORY_LOCATION};
-bool pushed = false;
 
 
 void produce() {
@@ -37,7 +35,7 @@ void consume() {
                                          dataParts[3]));
 
             if (cursor.insert(dataRow)) {
-//                std::cout << "Executed." << std::endl;
+                std::cout << "Executed." << std::endl;
             }
         }
     }

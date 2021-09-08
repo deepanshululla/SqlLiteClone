@@ -17,8 +17,14 @@ namespace SQLInterpreter {
     }
 
     bool SqlFrontend::executeInsertStatement(const Statement &s, SQLCore::Cursor &cursor) {
+        std::vector<std::string> dataParts;
+        if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
+            return false;
+        }
+        if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
+           return false;
+        }
         d_queue.addToQueue(s);
-        std::cout << "Executed." << std::endl;
 
         return true;
     }
