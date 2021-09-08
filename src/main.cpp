@@ -13,8 +13,8 @@ bool pushed = false;
 
 void produce() {
     while (true){
-    DbCore::Repl repl(q, dataTable);
-    repl.execute();
+        DbCore::Repl repl(q, dataTable);
+        repl.execute();
     }
 }
 
@@ -36,8 +36,8 @@ void consume() {
                                          dataParts[2],
                                          dataParts[3]));
 
-            if (!cursor.insert(dataRow)) {
-                throw std::runtime_error("Error inserting data row");
+            if (cursor.insert(dataRow)) {
+//                std::cout << "Executed." << std::endl;
             }
         }
     }
