@@ -26,7 +26,7 @@ namespace DbCore {
     class Repl {
 
     public:
-        explicit Repl(WALLogger::WalQueue<SQLInterpreter::Statement>& q, SQLCore::DataTable& d_table);
+        explicit Repl(WALLogger::WalQueue<SQLInterpreter::Statement>& q, SQLCore::DataTable& d_table, bool isSingleThreaded=false);
         Repl(const Repl& repl)=delete;
         Repl& operator=(const Repl& repl)=delete;
         typedef enum {
@@ -45,7 +45,7 @@ namespace DbCore {
         SQLInterpreter::SqlFrontend d_sqlFrontEnd;
         SQLCore::DataTable& d_table;
         WALLogger::WalQueue<SQLInterpreter::Statement>& d_queue;
-
+        bool d_is_single_threaded;
         inline void print_prompt() {
             std::cout << PROMPT;
         };

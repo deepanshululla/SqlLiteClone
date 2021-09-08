@@ -4,7 +4,7 @@
 
 namespace SQLInterpreter {
 
-    bool SqlFrontend::execute(const Statement &s, SQLCore::DataTable& dataTable) {
+    bool SqlFrontend::execute(const Statement &s, SQLCore::DataTable &dataTable) {
         auto cursor = SQLCore::Cursor(dataTable);
         if (s.statementType() == Statement::STATEMENT_SELECT) {
             return executeSelectStatement(s, cursor);
@@ -22,17 +22,22 @@ namespace SQLInterpreter {
             return false;
         }
         if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
-           return false;
+            return false;
         }
         if (d_table.isFull()) {
             std::cout << "Error: Table full." << std::endl;
             return false;
         }
         if (d_table.getRow(static_cast<uint32_t>(std::stoi(dataParts[1])))) {
-            std::cout << "Error: Duplicate key.." << std::endl;
+            std::cout << "Error: Duplicate key." << std::endl;
             return false;
         }
-        d_queue.addToQueue(s);
+        if (d_is_single_threaded) {
+            executeInsertImpl(s, cursor);
+        } else {
+            d_queue.addToQueue(s);
+        }
+
         std::cout << "Executed." << std::endl;
         return true;
     }
@@ -71,7 +76,25 @@ namespace SQLInterpreter {
         return true;
     }
 
-    SqlFrontend::SqlFrontend(WALLogger::WalQueue<SQLInterpreter::Statement>& queue, SQLCore::DataTable& table) :d_queue(queue), d_table(table) {
+    SqlFrontend::SqlFrontend(WALLogger::WalQueue<SQLInterpreter::Statement> &queue, SQLCore::DataTable &table,
+                             bool isSingleThreaded) : d_queue(queue), d_table(table),
+                                                      d_is_single_threaded(isSingleThreaded) {
+    }
+
+    bool executeInsertImpl(const SQLInterpreter::Statement &s, SQLCore::Cursor &cursor) {
+        std::__1::vector<std::string> dataParts;
+        if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
+            throw std::runtime_error("Could not extract statement");
+        }
+        if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
+            throw std::runtime_error("Could not validate statement");
+        }
+        std::__1::shared_ptr<SQLCore::DataRow> dataRow(
+                new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
+                                     dataParts[2],
+                                     dataParts[3]));
+
+        return cursor.insert(dataRow);
     }
 
 }

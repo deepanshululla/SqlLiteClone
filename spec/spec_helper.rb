@@ -106,6 +106,7 @@ describe 'database' do
       result = run_script(script)
       expect(result).to match_array([
         "db > Executed.",
+        "db > ",
         "db > Error: Duplicate key.",
         "db > (1, user1, person1@example.com)",
         "Executed.",

@@ -8,11 +8,11 @@
 
 
 namespace SQLCore {
-    const uint32_t ROW_SIZE = sizeof(DataRow);
+    constexpr uint32_t ROW_SIZE = sizeof(DataRow);
 
-    const int MAX_PAGE_SIZE = 4096;
-    const int TABLE_MAX_PAGES = 19;
-    const uint32_t ROWS_PER_PAGE = MAX_PAGE_SIZE / ROW_SIZE;
+    constexpr int MAX_PAGE_SIZE = 4096;
+    constexpr int TABLE_MAX_PAGES = 19;
+    constexpr uint32_t ROWS_PER_PAGE = MAX_PAGE_SIZE / ROW_SIZE;
 
     class Page {
     public:

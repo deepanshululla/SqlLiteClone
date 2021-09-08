@@ -40,8 +40,8 @@ namespace DbCore {
     }
 
 
-    Repl::Repl(WALLogger::WalQueue<SQLInterpreter::Statement> &q, SQLCore::DataTable &table) : d_sqlFrontEnd(
-            SQLInterpreter::SqlFrontend{q, table}), d_queue(q), d_table(table) {
+    Repl::Repl(WALLogger::WalQueue<SQLInterpreter::Statement> &q, SQLCore::DataTable &table, bool is_single_threaded) : d_sqlFrontEnd(
+            SQLInterpreter::SqlFrontend{q, table, is_single_threaded}), d_queue(q), d_table(table), d_is_single_threaded(is_single_threaded) {
 
     }
 

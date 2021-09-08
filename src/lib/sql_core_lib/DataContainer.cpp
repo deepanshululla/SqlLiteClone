@@ -120,6 +120,9 @@ namespace SQLCore {
 
     std::shared_ptr<DataRow> DataContainer::getRow(uint32_t cellNumber) const {
         int pageId = d_metaStore->getMapping(cellNumber);
+        if (pageId==-1) {
+            return nullptr;
+        }
         std::shared_ptr<Page> page = getLoadedPage(pageId);
         return page->getRow(cellNumber);
     }

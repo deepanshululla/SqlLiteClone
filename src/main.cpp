@@ -7,11 +7,13 @@
 const std::string DIRECTORY_LOCATION = "/Users/deepanshululla/CLionProjects/sqlLiteClone/data";
 WALLogger::WalQueue<SQLInterpreter::Statement> q{};
 SQLCore::DataTable dataTable{DIRECTORY_LOCATION};
+bool use_single_thread = false;
+
 
 
 void produce() {
     while (true){
-        DbCore::Repl repl(q, dataTable);
+        DbCore::Repl repl(q, dataTable, use_single_thread);
         repl.execute();
     }
 }
@@ -22,41 +24,34 @@ void consume() {
             SQLInterpreter::Statement s;
             q.popFromQueue(s);
             auto cursor = SQLCore::Cursor(dataTable);
-            std::vector<std::string> dataParts;
-            if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
-                throw std::runtime_error("Could not extract statement");
-            }
-            if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
-                throw std::runtime_error("Could not validate statement");
-            }
-            std::shared_ptr<SQLCore::DataRow> dataRow(
-                    new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
-                                         dataParts[2],
-                                         dataParts[3]));
+            executeInsertImpl(s, cursor);
 
-            if (cursor.insert(dataRow)) {
-//                std::cout << "Executed." << std::endl;
-            }
         }
     }
-
-
 }
 
+
+
+
+
 int main() {
+    if (!use_single_thread) {
 
-    try{
-        std::thread p(produce);
 
-        std::thread c(consume);
+        try {
+            std::thread p(produce);
 
-        p.join();
-        c.join();
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
+            std::thread c(consume);
 
+            p.join();
+            c.join();
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+
+        }
+    } else {
+       produce();
     }
-
 
 
 }

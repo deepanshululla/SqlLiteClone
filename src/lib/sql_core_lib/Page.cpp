@@ -9,7 +9,6 @@ namespace SQLCore {
     bool Page::addRow(const std::shared_ptr<DataRow>& dataRow) {
         auto it = d_rows.find(dataRow->id());
         if (it != d_rows.end()) {
-            std::cout << "Error: Duplicate key." << std::endl;
             return false;
         }
         d_rows[dataRow->id()] = dataRow;
@@ -28,8 +27,7 @@ namespace SQLCore {
     std::shared_ptr<DataRow> Page::getRow(uint32_t id) const{
         auto it = d_rows.find(id);
         if (it == d_rows.end()) {
-            std::cout << "Error: Cannot find row." << std::endl;
-            return  std::shared_ptr<DataRow>{nullptr};
+            return nullptr;
         }
         return it->second;
 
