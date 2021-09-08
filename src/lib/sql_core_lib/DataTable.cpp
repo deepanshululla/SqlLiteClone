@@ -3,8 +3,7 @@
 namespace SQLCore {
     bool DataTable::insert(const std::shared_ptr<DataRow> &dataRow) {
         if (isFull()) {
-            std::cout << "Error: Table full." << std::endl;
-            return false;
+            throw std::runtime_error("Failed to insert since table is full");
         }
         d_dataContainer->addRow(dataRow);
         return true;

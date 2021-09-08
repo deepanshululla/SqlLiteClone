@@ -1,9 +1,9 @@
 [settings]
     arch=x86_64
     build_type=Release
-    compiler=apple-clang
-    compiler.libcxx=libc++
-    compiler.version=11.0
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=11.2
     os=Macos
 
 [requires]
@@ -16,9 +16,9 @@
     arch=x86_64
     arch_build=x86_64
     build_type=Release
-    compiler=apple-clang
-    compiler.libcxx=libc++
-    compiler.version=11.0
+    compiler=gcc
+    compiler.libcxx=libstdc++11
+    compiler.version=11.2
     os=Macos
     os_build=Macos
 
@@ -32,4 +32,5 @@
 
 
 [env]
-
+    CC=/usr/local/bin/gcc
+    CXX=/usr/local/bin/g++-11

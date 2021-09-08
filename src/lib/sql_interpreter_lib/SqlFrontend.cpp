@@ -24,8 +24,16 @@ namespace SQLInterpreter {
         if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
            return false;
         }
+        if (d_table.isFull()) {
+            std::cout << "Error: Table full." << std::endl;
+            return false;
+        }
+        if (d_table.getRow(static_cast<uint32_t>(std::stoi(dataParts[1])))) {
+            std::cout << "Error: Duplicate key.." << std::endl;
+            return false;
+        }
         d_queue.addToQueue(s);
-
+        std::cout << "Executed." << std::endl;
         return true;
     }
 
@@ -56,7 +64,6 @@ namespace SQLInterpreter {
                 cursor.advance();
                 std::shared_ptr<SQLCore::DataRow> dataRow = cursor.cursorValue();
                 std::cout << std::string(*(dataRow)) << std::endl;
-
             }
         }
 

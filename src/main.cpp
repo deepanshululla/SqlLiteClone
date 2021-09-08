@@ -35,7 +35,7 @@ void consume() {
                                          dataParts[3]));
 
             if (cursor.insert(dataRow)) {
-                std::cout << "Executed." << std::endl;
+//                std::cout << "Executed." << std::endl;
             }
         }
     }
