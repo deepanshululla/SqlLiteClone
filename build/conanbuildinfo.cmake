@@ -38,14 +38,14 @@ endmacro()
 #################
 ###  CEREAL
 #################
-set(CONAN_CEREAL_ROOT "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
-set(CONAN_INCLUDE_DIRS_CEREAL "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include")
-set(CONAN_LIB_DIRS_CEREAL "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib")
+set(CONAN_CEREAL_ROOT "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9")
+set(CONAN_INCLUDE_DIRS_CEREAL "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include")
+set(CONAN_LIB_DIRS_CEREAL "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib")
 set(CONAN_BIN_DIRS_CEREAL )
 set(CONAN_RES_DIRS_CEREAL )
 set(CONAN_SRC_DIRS_CEREAL )
-set(CONAN_BUILD_DIRS_CEREAL "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
-			"/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib/cmake")
+set(CONAN_BUILD_DIRS_CEREAL "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
+			"/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib/cmake")
 set(CONAN_FRAMEWORK_DIRS_CEREAL )
 set(CONAN_LIBS_CEREAL )
 set(CONAN_PKG_LIBS_CEREAL )
@@ -83,10 +83,10 @@ set(CONAN_SETTINGS_ARCH "x86_64")
 set(CONAN_SETTINGS_ARCH_BUILD "x86_64")
 set(CONAN_SETTINGS_BUILD_TYPE "Release")
 set(CONAN_SETTINGS_COMPILER "gcc")
-set(CONAN_SETTINGS_COMPILER_LIBCXX "libstdc++")
-set(CONAN_SETTINGS_COMPILER_VERSION "11")
-set(CONAN_SETTINGS_OS "Linux")
-set(CONAN_SETTINGS_OS_BUILD "Linux")
+set(CONAN_SETTINGS_COMPILER_LIBCXX "libstdc++11")
+set(CONAN_SETTINGS_COMPILER_VERSION "11.2")
+set(CONAN_SETTINGS_OS "Macos")
+set(CONAN_SETTINGS_OS_BUILD "Macos")
 
 set(CONAN_DEPENDENCIES cereal)
 # Storing original command line args (CMake helper) flags
@@ -96,8 +96,8 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib" ${CONAN_LIB_DIRS})
+set(CONAN_INCLUDE_DIRS "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS  ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS  ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
@@ -108,8 +108,8 @@ set(CONAN_FRAMEWORKS  ${CONAN_FRAMEWORKS})
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
 set(CONAN_DEFINES  ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
-			"/root/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib/cmake" ${CONAN_CMAKE_MODULE_PATH})
+set(CONAN_CMAKE_MODULE_PATH "/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
+			"/Users/deepanshululla/.conan/data/cereal/1.3.0/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/lib/cmake" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
@@ -557,8 +557,6 @@ function(check_compiler_version)
         # https://cmake.org/cmake/help/v2.8.2/cmake.html#variable:MSVC_VERSION
         # https://cmake.org/cmake/help/v3.14/variable/MSVC_VERSION.html
         if(
-            # 1930 = VS 17.0 (v143 toolset)
-            (CONAN_COMPILER_VERSION STREQUAL "17" AND NOT MSVC_VERSION EQUAL 1930) OR
             # 1920-1929 = VS 16.0 (v142 toolset)
             (CONAN_COMPILER_VERSION STREQUAL "16" AND NOT((MSVC_VERSION GREATER 1919) AND (MSVC_VERSION LESS 1930))) OR
             # 1910-1919 = VS 15.0 (v141 toolset)

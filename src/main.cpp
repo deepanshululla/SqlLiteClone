@@ -4,10 +4,10 @@
 #include <iostream>
 #include "Config.h"
 
-const std::string DIRECTORY_LOCATION(Config::get_directory());
+const std::string DIRECTORY_LOCATION(Config().get_directory());
 WALLogger::WalQueue<SQLInterpreter::Statement> q;
 SQLCore::DataTable dataTable{DIRECTORY_LOCATION};
-bool use_single_thread = Config::use_single_thread();
+bool use_single_thread = Config().use_single_thread();
 
 
 void produce() {
