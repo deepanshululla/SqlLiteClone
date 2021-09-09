@@ -20,5 +20,5 @@
   "revisions_enabled": false
  },
  "version": "0.4",
- "profile_host": "[settings]\narch=x86_64\ncompiler=clang\ncompiler.libcxx=libstdc++11\ncompiler.version=12.0\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\nCC=/usr/local/opt/llvm/bin/clang\nCXX=/usr/local/opt/llvm/bin/clang++"
+ "profile_host": "[settings]\narch=x86_64\ncompiler=clang\ncompiler.libcxx=libstdc++11\ncompiler.version=11\nos=Macos\nos_build=Macos\n[options]\n[build_requires]\n[env]\nCC=/usr/local/opt/llvm/bin/clang\nCXX=/usr/local/opt/llvm/bin/clang++"
 }

@@ -34,8 +34,6 @@ void consume() {
 
 int main() {
     if (!use_single_thread) {
-
-
         try {
             std::thread p(produce);
 

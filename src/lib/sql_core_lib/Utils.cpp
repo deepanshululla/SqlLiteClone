@@ -21,7 +21,7 @@ namespace Utilities {
             return;
         }
         while ((entry = readdir(dir)) != NULL) {
-            if (!strcmp(entry->d_name,".") && !strcmp(entry->d_name,".")){
+            if (strcmp(entry->d_name,".")!=0 && strcmp(entry->d_name,"..")!=0){
                 list.push_back(entry->d_name);
             }
 
