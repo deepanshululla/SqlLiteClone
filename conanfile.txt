@@ -1,5 +1,5 @@
 [requires]
-cereal/1.2.2@conan/stable
+cereal/1.3.0
 
  [generators]
  cmake

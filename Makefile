@@ -9,7 +9,7 @@ installDeps:
 	cd build && conan install .. && bundle binstubs --all
 
 buildDb:
-	mkdir cmake-build || cd cmake-build && cmake .. && make
+	rm -rf cmake-build && mkdir cmake-build && cd cmake-build && cmake .. && make
 
 runDb: buildDb
 	./cmake-build/src/sqlLiteClone

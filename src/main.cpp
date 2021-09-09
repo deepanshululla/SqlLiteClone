@@ -5,10 +5,9 @@
 #include <memory>
 
 const std::string DIRECTORY_LOCATION = "/Users/deepanshululla/CLionProjects/sqlLiteClone/data";
-WALLogger::WalQueue<SQLInterpreter::Statement> q{};
+WALLogger::WalQueue<SQLInterpreter::Statement> q;
 SQLCore::DataTable dataTable{DIRECTORY_LOCATION};
 bool use_single_thread = false;
-
 
 
 void produce() {
@@ -25,7 +24,6 @@ void consume() {
             q.popFromQueue(s);
             auto cursor = SQLCore::Cursor(dataTable);
             executeInsertImpl(s, cursor);
-
         }
     }
 }

@@ -82,14 +82,14 @@ namespace SQLInterpreter {
     }
 
     bool executeInsertImpl(const SQLInterpreter::Statement &s, SQLCore::Cursor &cursor) {
-        std::__1::vector<std::string> dataParts;
+        std::vector<std::string> dataParts;
         if (!(SQLInterpreter::InsertStatement::extract(dataParts, s.statementString()))) {
             throw std::runtime_error("Could not extract statement");
         }
         if (!(SQLInterpreter::InsertStatement::validate(dataParts))) {
             throw std::runtime_error("Could not validate statement");
         }
-        std::__1::shared_ptr<SQLCore::DataRow> dataRow(
+        std::shared_ptr<SQLCore::DataRow> dataRow(
                 new SQLCore::DataRow(static_cast<uint32_t>(std::stoi(dataParts[1])),
                                      dataParts[2],
                                      dataParts[3]));
