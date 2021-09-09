@@ -12,7 +12,7 @@
 struct stat st = {0};
 
 struct Config {
-    inline std::string get_working_path()
+    inline static std::string get_working_path()
     {
         char temp [ 256 ];
         if ( getcwd(temp, 256) != 0)
@@ -38,7 +38,7 @@ struct Config {
             }
         }
     }
-    inline std::string get_directory() {
+    inline static std::string get_directory() {
         const char *directory = getenv("DB_DATA");
         if (directory == nullptr) {
             const auto dir = get_working_path()+"/data";
@@ -50,7 +50,7 @@ struct Config {
         }
         return directory;
     };
-    inline bool use_single_thread() {
+    inline static bool use_single_thread() {
         const char *useSingleThread = getenv("USE_SINGLE_THREAD");
         if (useSingleThread == nullptr) {
             return true;
