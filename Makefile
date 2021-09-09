@@ -24,10 +24,10 @@ buildImage:
 buildDb:
 	(mkdir cmake-build || echo "cmake exists") && cd cmake-build && cmake .. && make
 
-runDb: buildDb
+runDb: cleanCmake installDeps buildDb
 	./cmake-build/src/sqlLiteClone
 
-tests: buildDb
+tests: cleanCmake installDeps buildDb
 	./bin/rspec
 
 in_docker: buildImage ## Run like so: `make in_docker TARGET=tests`
