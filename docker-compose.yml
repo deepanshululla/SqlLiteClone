@@ -6,3 +6,5 @@ services:
     volumes:
       - .:/app/:rw
     command: ["make", "installDeps"]
+    environment:
+      - DB_DATA=/app/data

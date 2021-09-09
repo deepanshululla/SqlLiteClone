@@ -1,3 +1,4 @@
+#include <cstring>
 #include "Utils.h"
 
 
@@ -20,19 +21,11 @@ namespace Utilities {
             return;
         }
         while ((entry = readdir(dir)) != NULL) {
-            if (entry->d_name!="." or entry->d_name!="."){
+            if (!strcmp(entry->d_name,".") && !strcmp(entry->d_name,".")){
                 list.push_back(entry->d_name);
             }
 
         }
-//        for (const auto & entry : std::filesystem::directory_iterator(directory)){
-//            std::cout << entry.path() << std::endl;
-//        }
-
-        // delete current and parent directories
-//        list.erase(std::find(list.begin(), list.end(), "."));
-//        list.erase(std::find(list.begin(), list.end(), ".."));
-
         closedir(dir);
     }
 };
